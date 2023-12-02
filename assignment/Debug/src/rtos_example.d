@@ -18,7 +18,14 @@ src/rtos_example.o src/rtos_example.o: ../src/rtos_example.c \
  ../../assignment_bsp/ps7_cortexa9_0/include/bspconfig.h \
  ../../assignment_bsp/ps7_cortexa9_0/include/xparameters.h \
  ../../assignment_bsp/ps7_cortexa9_0/include/xil_types.h \
- G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h
+ G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h \
+ ../../assignment_bsp/ps7_cortexa9_0/include/xuartps_hw.h \
+ ../../assignment_bsp/ps7_cortexa9_0/include/xil_assert.h \
+ ../../assignment_bsp/ps7_cortexa9_0/include/xil_io.h \
+ ../../assignment_bsp/ps7_cortexa9_0/include/xil_printf.h \
+ ../../assignment_bsp/ps7_cortexa9_0/include/xpseudo_asm.h \
+ ../../assignment_bsp/ps7_cortexa9_0/include/xreg_cortexa9.h \
+ ../../assignment_bsp/ps7_cortexa9_0/include/xpseudo_asm_gcc.h
 
 ../../assignment_bsp/ps7_cortexa9_0/include/FreeRTOS.h:
 
@@ -59,3 +66,17 @@ src/rtos_example.o src/rtos_example.o: ../src/rtos_example.c \
 ../../assignment_bsp/ps7_cortexa9_0/include/xil_types.h:
 
 G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:
+
+../../assignment_bsp/ps7_cortexa9_0/include/xuartps_hw.h:
+
+../../assignment_bsp/ps7_cortexa9_0/include/xil_assert.h:
+
+../../assignment_bsp/ps7_cortexa9_0/include/xil_io.h:
+
+../../assignment_bsp/ps7_cortexa9_0/include/xil_printf.h:
+
+../../assignment_bsp/ps7_cortexa9_0/include/xpseudo_asm.h:
+
+../../assignment_bsp/ps7_cortexa9_0/include/xreg_cortexa9.h:
+
+../../assignment_bsp/ps7_cortexa9_0/include/xpseudo_asm_gcc.h:

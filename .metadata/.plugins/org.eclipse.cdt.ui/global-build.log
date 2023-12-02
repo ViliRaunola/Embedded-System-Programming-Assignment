@@ -378,3 +378,1729 @@ make pre-build main-build
 a9-linaro-pre-build-step
 ' '
 make: Nothing to be done for 'main-build'.
+14:39:05 **** Build of project assignment_bsp ****
+make -k all 
+"Running Make include in ps7_cortexa9_0/libsrc/axivdma_v6_6/src"
+make -C ps7_cortexa9_0/libsrc/axivdma_v6_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/bram_v4_3/src"
+make -C ps7_cortexa9_0/libsrc/bram_v4_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/canps_v3_2/src"
+make -C ps7_cortexa9_0/libsrc/canps_v3_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/freertos10_xilinx_v1_3/src"
+make -C ps7_cortexa9_0/libsrc/freertos10_xilinx_v1_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"include"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpio_v4_4/src"
+make -C ps7_cortexa9_0/libsrc/gpio_v4_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/iicps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/iicps_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/PWM_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/PWM_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/spips_v3_2/src"
+make -C ps7_cortexa9_0/libsrc/spips_v3_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sysmon_v7_5/src"
+make -C ps7_cortexa9_0/libsrc/sysmon_v7_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/vtc_v8_0/src"
+make -C ps7_cortexa9_0/libsrc/vtc_v8_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/axivdma_v6_6/src"
+make -C ps7_cortexa9_0/libsrc/axivdma_v6_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling axivdma"
+"Running Make libs in ps7_cortexa9_0/libsrc/bram_v4_3/src"
+make -C ps7_cortexa9_0/libsrc/bram_v4_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling bram"
+"Running Make libs in ps7_cortexa9_0/libsrc/canps_v3_2/src"
+make -C ps7_cortexa9_0/libsrc/canps_v3_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling canps"
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling coresightps_dcc"
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/freertos10_xilinx_v1_3/src"
+make -C ps7_cortexa9_0/libsrc/freertos10_xilinx_v1_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling standalone"
+"Compiling FreeRTOS"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpio_v4_4/src"
+make -C ps7_cortexa9_0/libsrc/gpio_v4_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpio"
+"Running Make libs in ps7_cortexa9_0/libsrc/iicps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/iicps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling iicps"
+"Running Make libs in ps7_cortexa9_0/libsrc/PWM_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/PWM_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling PWM..."
+PWM_selftest.c: In function 'PWM_Reg_SelfTest':
+PWM_selftest.c:52:52: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+    if ( PWM_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                    ^~
+PWM_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/spips_v3_2/src"
+make -C ps7_cortexa9_0/libsrc/spips_v3_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling spips"
+"Running Make libs in ps7_cortexa9_0/libsrc/sysmon_v7_5/src"
+make -C ps7_cortexa9_0/libsrc/sysmon_v7_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling sysmon"
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/vtc_v8_0/src"
+make -C ps7_cortexa9_0/libsrc/vtc_v8_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling video timing controller"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+14:40:15 **** Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c:114:21: warning: 'xTask4' defined but not used [-Wunused-variable]
+ static TaskHandle_t xTask4;
+                     ^~~~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77236	   3372	  89408	 170016	  29820	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+14:40:58 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+14:41:19 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+14:49:30 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c:114:21: warning: 'xTask4' defined but not used [-Wunused-variable]
+ static TaskHandle_t xTask4;
+                     ^~~~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77444	   3372	  89408	 170224	  298f0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+14:50:06 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c:114:21: warning: 'xTask4' defined but not used [-Wunused-variable]
+ static TaskHandle_t xTask4;
+                     ^~~~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77508	   3372	  89408	 170288	  29930	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+14:50:52 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+14:56:45 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c:114:21: warning: 'xTask4' defined but not used [-Wunused-variable]
+ static TaskHandle_t xTask4;
+                     ^~~~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77700	   3372	  89408	 170480	  299f0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+15:01:38 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:03:18 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c:114:21: warning: 'xTask4' defined but not used [-Wunused-variable]
+ static TaskHandle_t xTask4;
+                     ^~~~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77700	   3372	  89408	 170480	  299f0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+15:03:21 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:04:35 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c:114:21: warning: 'xTask4' defined but not used [-Wunused-variable]
+ static TaskHandle_t xTask4;
+                     ^~~~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77700	   3372	  89408	 170480	  299f0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+15:04:39 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:05:15 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c:114:21: warning: 'xTask4' defined but not used [-Wunused-variable]
+ static TaskHandle_t xTask4;
+                     ^~~~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77700	   3372	  89408	 170480	  299f0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+15:05:18 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:05:54 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c:114:21: warning: 'xTask4' defined but not used [-Wunused-variable]
+ static TaskHandle_t xTask4;
+                     ^~~~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77700	   3372	  89408	 170480	  299f0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+15:05:57 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:16:43 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c:114:21: warning: 'xTask4' defined but not used [-Wunused-variable]
+ static TaskHandle_t xTask4;
+                     ^~~~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77444	   3372	  89408	 170224	  298f0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+15:16:58 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:17:41 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c:114:21: warning: 'xTask4' defined but not used [-Wunused-variable]
+ static TaskHandle_t xTask4;
+                     ^~~~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77444	   3372	  89408	 170224	  298f0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+15:17:45 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:20:22 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c:114:21: warning: 'xTask4' defined but not used [-Wunused-variable]
+ static TaskHandle_t xTask4;
+                     ^~~~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77508	   3372	  89408	 170288	  29930	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+15:20:56 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77508	   3372	  89408	 170288	  29930	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+15:21:37 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:23:18 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:30:28 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:31:36 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:32:37 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:198:11: error: unknown type name 'uint4_t'
+  volatile uint4_t modeNumber = 1;
+           ^~~~~~~
+make: *** [src/subdir.mk:23: src/rtos_example.o] Error 1
+15:32:42 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:198:11: error: unknown type name 'uint4_t'
+  volatile uint4_t modeNumber = 1;
+           ^~~~~~~
+make: *** [src/subdir.mk:23: src/rtos_example.o] Error 1
+15:33:21 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77444	   3372	  89408	 170224	  298f0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+15:36:28 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77572	   3372	  89408	 170352	  29970	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+15:36:33 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:38:04 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77572	   3372	  89408	 170352	  29970	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+15:38:07 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:39:20 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77572	   3372	  89408	 170352	  29970	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+15:39:35 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:40:00 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77572	   3372	  89408	 170352	  29970	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+15:40:02 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:41:27 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:43:03 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77508	   3372	  89408	 170288	  29930	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+15:43:20 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77508	   3372	  89408	 170288	  29930	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+15:43:28 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:44:57 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77444	   3372	  89408	 170224	  298f0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+15:45:02 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:48:00 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:57:12 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:184:13: warning: variable 'wakeTime' set but not used [-Wunused-but-set-variable]
+  TickType_t wakeTime;
+             ^~~~~~~~
+../src/rtos_example.c:183:19: warning: unused variable 'freq' [-Wunused-variable]
+  const TickType_t freq = pdMS_TO_TICKS( 2000 );
+                   ^~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77444	   3372	  89408	 170224	  298f0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+15:57:16 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:58:27 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:184:13: warning: variable 'wakeTime' set but not used [-Wunused-but-set-variable]
+  TickType_t wakeTime;
+             ^~~~~~~~
+../src/rtos_example.c:183:19: warning: unused variable 'freq' [-Wunused-variable]
+  const TickType_t freq = pdMS_TO_TICKS( 2000 );
+                   ^~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77444	   3372	  89408	 170224	  298f0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+15:58:34 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:184:13: warning: variable 'wakeTime' set but not used [-Wunused-but-set-variable]
+  TickType_t wakeTime;
+             ^~~~~~~~
+../src/rtos_example.c:183:19: warning: unused variable 'freq' [-Wunused-variable]
+  const TickType_t freq = pdMS_TO_TICKS( 2000 );
+                   ^~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77444	   3372	  89408	 170224	  298f0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:04:43 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:184:13: warning: variable 'wakeTime' set but not used [-Wunused-but-set-variable]
+  TickType_t wakeTime;
+             ^~~~~~~~
+../src/rtos_example.c:183:19: warning: unused variable 'freq' [-Wunused-variable]
+  const TickType_t freq = pdMS_TO_TICKS( 2000 );
+                   ^~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77588	   3372	  89408	 170368	  29980	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:05:25 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:184:13: warning: variable 'wakeTime' set but not used [-Wunused-but-set-variable]
+  TickType_t wakeTime;
+             ^~~~~~~~
+../src/rtos_example.c:183:19: warning: unused variable 'freq' [-Wunused-variable]
+  const TickType_t freq = pdMS_TO_TICKS( 2000 );
+                   ^~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77588	   3372	  89408	 170368	  29980	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:05:29 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:10:19 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:186:13: warning: variable 'wakeTime' set but not used [-Wunused-but-set-variable]
+  TickType_t wakeTime;
+             ^~~~~~~~
+../src/rtos_example.c:185:19: warning: unused variable 'freq' [-Wunused-variable]
+  const TickType_t freq = pdMS_TO_TICKS( 2000 );
+                   ^~~~
+At top level:
+../src/rtos_example.c:177:13: warning: 'printMenu' defined but not used [-Wunused-function]
+ static void printMenu() {
+             ^~~~~~~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77700	   3372	  89408	 170480	  299f0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:10:25 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:10:53 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:187:13: warning: variable 'wakeTime' set but not used [-Wunused-but-set-variable]
+  TickType_t wakeTime;
+             ^~~~~~~~
+../src/rtos_example.c:186:19: warning: unused variable 'freq' [-Wunused-variable]
+  const TickType_t freq = pdMS_TO_TICKS( 2000 );
+                   ^~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77668	   3372	  89408	 170448	  299d0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:10:58 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:12:10 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77668	   3372	  89408	 170448	  299d0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:12:38 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77668	   3372	  89408	 170448	  299d0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:19:45 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'xUART_Receive':
+../src/rtos_example.c:193:29: error: 'MAX_TIME_TO_WAIT' undeclared (first use in this function)
+   TickType_t xTicksToWait = MAX_TIME_TO_WAIT;
+                             ^~~~~~~~~~~~~~~~
+../src/rtos_example.c:193:29: note: each undeclared identifier is reported only once for each function it appears in
+../src/rtos_example.c:198:10: warning: implicit declaration of function 'UART_bytes_in_rx_buffer' [-Wimplicit-function-declaration]
+   while( UART_bytes_in_rx_buffer( pxUARTInstance ) < uxWantedBytes )
+          ^~~~~~~~~~~~~~~~~~~~~~~
+../src/rtos_example.c:198:35: error: 'pxUARTInstance' undeclared (first use in this function)
+   while( UART_bytes_in_rx_buffer( pxUARTInstance ) < uxWantedBytes )
+                                   ^~~~~~~~~~~~~~
+../src/rtos_example.c:215:16: warning: implicit declaration of function 'UART_read_from_receive_buffer' [-Wimplicit-function-declaration]
+   uxReceived = UART_read_from_receive_buffer( pxUARTInstance, pucBuffer, uxWantedBytes );
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/rtos_example.c:217:3: warning: no return statement in function returning non-void [-Wreturn-type]
+   }
+   ^
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:185:10: warning: unused variable 'modeNumber' [-Wunused-variable]
+  uint8_t modeNumber = 0;
+          ^~~~~~~~~~
+At top level:
+../src/rtos_example.c:190:10: warning: 'xUART_Receive' defined but not used [-Wunused-function]
+   size_t xUART_Receive( uint8_t *pucBuffer, size_t uxWantedBytes )
+          ^~~~~~~~~~~~~
+make: *** [src/subdir.mk:23: src/rtos_example.o] Error 1
+16:33:17 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'main':
+../src/rtos_example.c:125:5: error: 'r' undeclared (first use in this function)
+     r = UART_CTRL;
+     ^
+../src/rtos_example.c:125:5: note: each undeclared identifier is reported only once for each function it appears in
+In file included from ../src/rtos_example.c:109:
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:166:57: error: 'XUARTPS_CR_OFFSET' undeclared (first use in this function)
+ #define UART_CTRL       POINTER_TO_REGISTER(UART_BASE + XUARTPS_CR_OFFSET) // Control Register
+                                                         ^~~~~~~~~~~~~~~~~
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:21:55: note: in definition of macro 'POINTER_TO_REGISTER'
+ #define POINTER_TO_REGISTER(REG)  ( *((volatile u32*)(REG))) //u32 (xil_types.h) data type is declared as uint32_t (stdint.h)
+                                                       ^~~
+../src/rtos_example.c:125:9: note: in expansion of macro 'UART_CTRL'
+     r = UART_CTRL;
+         ^~~~~~~~~
+../src/rtos_example.c:126:9: error: 'XUARTPS_CR_TX_EN' undeclared (first use in this function)
+  r &= ~(XUARTPS_CR_TX_EN | XUARTPS_CR_RX_EN); // Clear Tx & Rx Enable
+         ^~~~~~~~~~~~~~~~
+../src/rtos_example.c:126:28: error: 'XUARTPS_CR_RX_EN' undeclared (first use in this function)
+  r &= ~(XUARTPS_CR_TX_EN | XUARTPS_CR_RX_EN); // Clear Tx & Rx Enable
+                            ^~~~~~~~~~~~~~~~
+../src/rtos_example.c:127:7: error: 'XUARTPS_CR_RX_DIS' undeclared (first use in this function)
+  r |= XUARTPS_CR_RX_DIS | XUARTPS_CR_TX_DIS; // Tx & Rx Disable
+       ^~~~~~~~~~~~~~~~~
+../src/rtos_example.c:127:27: error: 'XUARTPS_CR_TX_DIS' undeclared (first use in this function)
+  r |= XUARTPS_CR_RX_DIS | XUARTPS_CR_TX_DIS; // Tx & Rx Disable
+                           ^~~~~~~~~~~~~~~~~
+In file included from ../src/rtos_example.c:109:
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:167:57: error: 'XUARTPS_MR_OFFSET' undeclared (first use in this function)
+ #define UART_MODE       POINTER_TO_REGISTER(UART_BASE + XUARTPS_MR_OFFSET) // Mode Register
+                                                         ^~~~~~~~~~~~~~~~~
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:21:55: note: in definition of macro 'POINTER_TO_REGISTER'
+ #define POINTER_TO_REGISTER(REG)  ( *((volatile u32*)(REG))) //u32 (xil_types.h) data type is declared as uint32_t (stdint.h)
+                                                       ^~~
+../src/rtos_example.c:129:2: note: in expansion of macro 'UART_MODE'
+  UART_MODE = 0;
+  ^~~~~~~~~
+../src/rtos_example.c:130:16: error: 'XUARTPS_MR_CLKSEL' undeclared (first use in this function)
+  UART_MODE &= ~XUARTPS_MR_CLKSEL; // Clear "Input clock selection" - 0: clock source
+                ^~~~~~~~~~~~~~~~~
+../src/rtos_example.c:131:2: error: unknown type name 'is'
+  is uart_ref_clk
+  ^~
+In file included from ../src/rtos_example.c:109:
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:21:37: error: expected declaration specifiers or '...' before '*' token
+ #define POINTER_TO_REGISTER(REG)  ( *((volatile u32*)(REG))) //u32 (xil_types.h) data type is declared as uint32_t (stdint.h)
+                                     ^
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:167:25: note: in expansion of macro 'POINTER_TO_REGISTER'
+ #define UART_MODE       POINTER_TO_REGISTER(UART_BASE + XUARTPS_MR_OFFSET) // Mode Register
+                         ^~~~~~~~~~~~~~~~~~~
+../src/rtos_example.c:132:2: note: in expansion of macro 'UART_MODE'
+  UART_MODE |= XUARTPS_MR_CHARLEN_8_BIT; // Set "8 bits data"
+  ^~~~~~~~~
+../src/rtos_example.c:133:15: error: 'XUARTPS_MR_PARITY_NONE' undeclared (first use in this function)
+  UART_MODE |= XUARTPS_MR_PARITY_NONE; // Set "No parity mode"
+               ^~~~~~~~~~~~~~~~~~~~~~
+../src/rtos_example.c:134:15: error: 'XUARTPS_MR_STOPMODE_1_BIT' undeclared (first use in this function)
+  UART_MODE |= XUARTPS_MR_STOPMODE_1_BIT; // Set "1 stop bit"
+               ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/rtos_example.c:135:15: error: 'XUARTPS_MR_CHMODE_NORM' undeclared (first use in this function)
+  UART_MODE |= XUARTPS_MR_CHMODE_NORM; // Set "Normal mode"
+               ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/rtos_example.c:109:
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:169:60: error: 'XUARTPS_BAUDDIV_OFFSET' undeclared (first use in this function); did you mean 'UART_BAUD_GEN'?
+ #define UART_BAUD_DIV      POINTER_TO_REGISTER(UART_BASE + XUARTPS_BAUDDIV_OFFSET) // Baud Rate Divider "BDIV"
+                                                            ^~~~~~~~~~~~~~~~~~~~~~
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:21:55: note: in definition of macro 'POINTER_TO_REGISTER'
+ #define POINTER_TO_REGISTER(REG)  ( *((volatile u32*)(REG))) //u32 (xil_types.h) data type is declared as uint32_t (stdint.h)
+                                                       ^~~
+../src/rtos_example.c:137:2: note: in expansion of macro 'UART_BAUD_DIV'
+  UART_BAUD_DIV = 6; // ("BDIV")
+  ^~~~~~~~~~~~~
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:168:60: error: 'XUARTPS_BAUDGEN_OFFSET' undeclared (first use in this function); did you mean 'UART_BAUD_GEN'?
+ #define UART_BAUD_GEN      POINTER_TO_REGISTER(UART_BASE + XUARTPS_BAUDGEN_OFFSET) // Baud Rate Generator "CD"
+                                                            ^~~~~~~~~~~~~~~~~~~~~~
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:21:55: note: in definition of macro 'POINTER_TO_REGISTER'
+ #define POINTER_TO_REGISTER(REG)  ( *((volatile u32*)(REG))) //u32 (xil_types.h) data type is declared as uint32_t (stdint.h)
+                                                       ^~~
+../src/rtos_example.c:138:2: note: in expansion of macro 'UART_BAUD_GEN'
+  UART_BAUD_GEN = 124; // ("CD")
+  ^~~~~~~~~~~~~
+../src/rtos_example.c:140:16: error: 'XUARTPS_CR_TXRST' undeclared (first use in this function); did you mean 'UART_CTRL'?
+  UART_CTRL |= (XUARTPS_CR_TXRST | XUARTPS_CR_RXRST); // TX & RX logic reset
+                ^~~~~~~~~~~~~~~~
+                UART_CTRL
+../src/rtos_example.c:140:35: error: 'XUARTPS_CR_RXRST' undeclared (first use in this function)
+  UART_CTRL |= (XUARTPS_CR_TXRST | XUARTPS_CR_RXRST); // TX & RX logic reset
+                                   ^~~~~~~~~~~~~~~~
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:209:10: warning: unused variable 'modeNumber' [-Wunused-variable]
+  uint8_t modeNumber = 0;
+          ^~~~~~~~~~
+In file included from ../src/rtos_example.c:109:
+../src/rtos_example.c: In function 'uart_receive':
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:171:58: error: 'XUARTPS_SR_OFFSET' undeclared (first use in this function)
+ #define UART_STATUS      POINTER_TO_REGISTER(UART_BASE + XUARTPS_SR_OFFSET) // Channel Status
+                                                          ^~~~~~~~~~~~~~~~~
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:21:55: note: in definition of macro 'POINTER_TO_REGISTER'
+ #define POINTER_TO_REGISTER(REG)  ( *((volatile u32*)(REG))) //u32 (xil_types.h) data type is declared as uint32_t (stdint.h)
+                                                       ^~~
+../src/rtos_example.c:253:7: note: in expansion of macro 'UART_STATUS'
+  if ((UART_STATUS & XUARTPS_SR_RXEMPTY) == XUARTPS_SR_RXEMPTY) return 0;
+       ^~~~~~~~~~~
+../src/rtos_example.c:253:21: error: 'XUARTPS_SR_RXEMPTY' undeclared (first use in this function)
+  if ((UART_STATUS & XUARTPS_SR_RXEMPTY) == XUARTPS_SR_RXEMPTY) return 0;
+                     ^~~~~~~~~~~~~~~~~~
+In file included from ../src/rtos_example.c:109:
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:170:57: error: 'XUARTPS_FIFO_OFFSET' undeclared (first use in this function)
+ #define UART_FIFO       POINTER_TO_REGISTER(UART_BASE + XUARTPS_FIFO_OFFSET) // FIFO
+                                                         ^~~~~~~~~~~~~~~~~~~
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:21:55: note: in definition of macro 'POINTER_TO_REGISTER'
+ #define POINTER_TO_REGISTER(REG)  ( *((volatile u32*)(REG))) //u32 (xil_types.h) data type is declared as uint32_t (stdint.h)
+                                                       ^~~
+../src/rtos_example.c:254:9: note: in expansion of macro 'UART_FIFO'
+  return UART_FIFO;
+         ^~~~~~~~~
+../src/rtos_example.c:255:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/subdir.mk:23: src/rtos_example.o] Error 1
+16:33:41 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+In file included from ../src/rtos_example.c:109:
+../src/rtos_example.c: In function 'main':
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:166:57: error: 'XUARTPS_CR_OFFSET' undeclared (first use in this function)
+ #define UART_CTRL       POINTER_TO_REGISTER(UART_BASE + XUARTPS_CR_OFFSET) // Control Register
+                                                         ^~~~~~~~~~~~~~~~~
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:21:55: note: in definition of macro 'POINTER_TO_REGISTER'
+ #define POINTER_TO_REGISTER(REG)  ( *((volatile u32*)(REG))) //u32 (xil_types.h) data type is declared as uint32_t (stdint.h)
+                                                       ^~~
+../src/rtos_example.c:126:9: note: in expansion of macro 'UART_CTRL'
+     r = UART_CTRL;
+         ^~~~~~~~~
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:166:57: note: each undeclared identifier is reported only once for each function it appears in
+ #define UART_CTRL       POINTER_TO_REGISTER(UART_BASE + XUARTPS_CR_OFFSET) // Control Register
+                                                         ^~~~~~~~~~~~~~~~~
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:21:55: note: in definition of macro 'POINTER_TO_REGISTER'
+ #define POINTER_TO_REGISTER(REG)  ( *((volatile u32*)(REG))) //u32 (xil_types.h) data type is declared as uint32_t (stdint.h)
+                                                       ^~~
+../src/rtos_example.c:126:9: note: in expansion of macro 'UART_CTRL'
+     r = UART_CTRL;
+         ^~~~~~~~~
+../src/rtos_example.c:127:9: error: 'XUARTPS_CR_TX_EN' undeclared (first use in this function)
+  r &= ~(XUARTPS_CR_TX_EN | XUARTPS_CR_RX_EN); // Clear Tx & Rx Enable
+         ^~~~~~~~~~~~~~~~
+../src/rtos_example.c:127:28: error: 'XUARTPS_CR_RX_EN' undeclared (first use in this function)
+  r &= ~(XUARTPS_CR_TX_EN | XUARTPS_CR_RX_EN); // Clear Tx & Rx Enable
+                            ^~~~~~~~~~~~~~~~
+../src/rtos_example.c:128:7: error: 'XUARTPS_CR_RX_DIS' undeclared (first use in this function)
+  r |= XUARTPS_CR_RX_DIS | XUARTPS_CR_TX_DIS; // Tx & Rx Disable
+       ^~~~~~~~~~~~~~~~~
+../src/rtos_example.c:128:27: error: 'XUARTPS_CR_TX_DIS' undeclared (first use in this function)
+  r |= XUARTPS_CR_RX_DIS | XUARTPS_CR_TX_DIS; // Tx & Rx Disable
+                           ^~~~~~~~~~~~~~~~~
+In file included from ../src/rtos_example.c:109:
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:167:57: error: 'XUARTPS_MR_OFFSET' undeclared (first use in this function)
+ #define UART_MODE       POINTER_TO_REGISTER(UART_BASE + XUARTPS_MR_OFFSET) // Mode Register
+                                                         ^~~~~~~~~~~~~~~~~
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:21:55: note: in definition of macro 'POINTER_TO_REGISTER'
+ #define POINTER_TO_REGISTER(REG)  ( *((volatile u32*)(REG))) //u32 (xil_types.h) data type is declared as uint32_t (stdint.h)
+                                                       ^~~
+../src/rtos_example.c:130:2: note: in expansion of macro 'UART_MODE'
+  UART_MODE = 0;
+  ^~~~~~~~~
+../src/rtos_example.c:131:16: error: 'XUARTPS_MR_CLKSEL' undeclared (first use in this function)
+  UART_MODE &= ~XUARTPS_MR_CLKSEL; // Clear "Input clock selection" - 0: clock source
+                ^~~~~~~~~~~~~~~~~
+../src/rtos_example.c:132:2: error: unknown type name 'is'
+  is uart_ref_clk
+  ^~
+In file included from ../src/rtos_example.c:109:
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:21:37: error: expected declaration specifiers or '...' before '*' token
+ #define POINTER_TO_REGISTER(REG)  ( *((volatile u32*)(REG))) //u32 (xil_types.h) data type is declared as uint32_t (stdint.h)
+                                     ^
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:167:25: note: in expansion of macro 'POINTER_TO_REGISTER'
+ #define UART_MODE       POINTER_TO_REGISTER(UART_BASE + XUARTPS_MR_OFFSET) // Mode Register
+                         ^~~~~~~~~~~~~~~~~~~
+../src/rtos_example.c:133:2: note: in expansion of macro 'UART_MODE'
+  UART_MODE |= XUARTPS_MR_CHARLEN_8_BIT; // Set "8 bits data"
+  ^~~~~~~~~
+../src/rtos_example.c:134:15: error: 'XUARTPS_MR_PARITY_NONE' undeclared (first use in this function)
+  UART_MODE |= XUARTPS_MR_PARITY_NONE; // Set "No parity mode"
+               ^~~~~~~~~~~~~~~~~~~~~~
+../src/rtos_example.c:135:15: error: 'XUARTPS_MR_STOPMODE_1_BIT' undeclared (first use in this function)
+  UART_MODE |= XUARTPS_MR_STOPMODE_1_BIT; // Set "1 stop bit"
+               ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/rtos_example.c:136:15: error: 'XUARTPS_MR_CHMODE_NORM' undeclared (first use in this function)
+  UART_MODE |= XUARTPS_MR_CHMODE_NORM; // Set "Normal mode"
+               ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/rtos_example.c:109:
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:169:60: error: 'XUARTPS_BAUDDIV_OFFSET' undeclared (first use in this function); did you mean 'UART_BAUD_GEN'?
+ #define UART_BAUD_DIV      POINTER_TO_REGISTER(UART_BASE + XUARTPS_BAUDDIV_OFFSET) // Baud Rate Divider "BDIV"
+                                                            ^~~~~~~~~~~~~~~~~~~~~~
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:21:55: note: in definition of macro 'POINTER_TO_REGISTER'
+ #define POINTER_TO_REGISTER(REG)  ( *((volatile u32*)(REG))) //u32 (xil_types.h) data type is declared as uint32_t (stdint.h)
+                                                       ^~~
+../src/rtos_example.c:138:2: note: in expansion of macro 'UART_BAUD_DIV'
+  UART_BAUD_DIV = 6; // ("BDIV")
+  ^~~~~~~~~~~~~
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:168:60: error: 'XUARTPS_BAUDGEN_OFFSET' undeclared (first use in this function); did you mean 'UART_BAUD_GEN'?
+ #define UART_BAUD_GEN      POINTER_TO_REGISTER(UART_BASE + XUARTPS_BAUDGEN_OFFSET) // Baud Rate Generator "CD"
+                                                            ^~~~~~~~~~~~~~~~~~~~~~
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:21:55: note: in definition of macro 'POINTER_TO_REGISTER'
+ #define POINTER_TO_REGISTER(REG)  ( *((volatile u32*)(REG))) //u32 (xil_types.h) data type is declared as uint32_t (stdint.h)
+                                                       ^~~
+../src/rtos_example.c:139:2: note: in expansion of macro 'UART_BAUD_GEN'
+  UART_BAUD_GEN = 124; // ("CD")
+  ^~~~~~~~~~~~~
+../src/rtos_example.c:141:16: error: 'XUARTPS_CR_TXRST' undeclared (first use in this function); did you mean 'UART_CTRL'?
+  UART_CTRL |= (XUARTPS_CR_TXRST | XUARTPS_CR_RXRST); // TX & RX logic reset
+                ^~~~~~~~~~~~~~~~
+                UART_CTRL
+../src/rtos_example.c:141:35: error: 'XUARTPS_CR_RXRST' undeclared (first use in this function)
+  UART_CTRL |= (XUARTPS_CR_TXRST | XUARTPS_CR_RXRST); // TX & RX logic reset
+                                   ^~~~~~~~~~~~~~~~
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:210:10: warning: unused variable 'modeNumber' [-Wunused-variable]
+  uint8_t modeNumber = 0;
+          ^~~~~~~~~~
+In file included from ../src/rtos_example.c:109:
+../src/rtos_example.c: In function 'uart_receive':
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:171:58: error: 'XUARTPS_SR_OFFSET' undeclared (first use in this function)
+ #define UART_STATUS      POINTER_TO_REGISTER(UART_BASE + XUARTPS_SR_OFFSET) // Channel Status
+                                                          ^~~~~~~~~~~~~~~~~
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:21:55: note: in definition of macro 'POINTER_TO_REGISTER'
+ #define POINTER_TO_REGISTER(REG)  ( *((volatile u32*)(REG))) //u32 (xil_types.h) data type is declared as uint32_t (stdint.h)
+                                                       ^~~
+../src/rtos_example.c:254:7: note: in expansion of macro 'UART_STATUS'
+  if ((UART_STATUS & XUARTPS_SR_RXEMPTY) == XUARTPS_SR_RXEMPTY) return 0;
+       ^~~~~~~~~~~
+../src/rtos_example.c:254:21: error: 'XUARTPS_SR_RXEMPTY' undeclared (first use in this function)
+  if ((UART_STATUS & XUARTPS_SR_RXEMPTY) == XUARTPS_SR_RXEMPTY) return 0;
+                     ^~~~~~~~~~~~~~~~~~
+In file included from ../src/rtos_example.c:109:
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:170:57: error: 'XUARTPS_FIFO_OFFSET' undeclared (first use in this function)
+ #define UART_FIFO       POINTER_TO_REGISTER(UART_BASE + XUARTPS_FIFO_OFFSET) // FIFO
+                                                         ^~~~~~~~~~~~~~~~~~~
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:21:55: note: in definition of macro 'POINTER_TO_REGISTER'
+ #define POINTER_TO_REGISTER(REG)  ( *((volatile u32*)(REG))) //u32 (xil_types.h) data type is declared as uint32_t (stdint.h)
+                                                       ^~~
+../src/rtos_example.c:255:9: note: in expansion of macro 'UART_FIFO'
+  return UART_FIFO;
+         ^~~~~~~~~
+../src/rtos_example.c:256:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/subdir.mk:23: src/rtos_example.o] Error 1
+16:34:37 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'main':
+../src/rtos_example.c:133:2: error: unknown type name 'is'; did you mean 'isb'?
+  is uart_ref_clk
+  ^~
+  isb
+In file included from ../src/rtos_example.c:109:
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:21:37: error: expected declaration specifiers or '...' before '*' token
+ #define POINTER_TO_REGISTER(REG)  ( *((volatile u32*)(REG))) //u32 (xil_types.h) data type is declared as uint32_t (stdint.h)
+                                     ^
+G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:167:25: note: in expansion of macro 'POINTER_TO_REGISTER'
+ #define UART_MODE       POINTER_TO_REGISTER(UART_BASE + XUARTPS_MR_OFFSET) // Mode Register
+                         ^~~~~~~~~~~~~~~~~~~
+../src/rtos_example.c:134:2: note: in expansion of macro 'UART_MODE'
+  UART_MODE |= XUARTPS_MR_CHARLEN_8_BIT; // Set "8 bits data"
+  ^~~~~~~~~
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:211:10: warning: unused variable 'modeNumber' [-Wunused-variable]
+  uint8_t modeNumber = 0;
+          ^~~~~~~~~~
+make: *** [src/subdir.mk:23: src/rtos_example.o] Error 1
+16:34:49 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:210:10: warning: unused variable 'modeNumber' [-Wunused-variable]
+  uint8_t modeNumber = 0;
+          ^~~~~~~~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77828	   3372	  89408	 170608	  29a70	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:35:01 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:35:46 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:217:25: warning: passing argument 1 of 'xil_printf' makes pointer from integer without a cast [-Wint-conversion]
+    if(input) xil_printf(input);
+                         ^~~~~
+In file included from ../src/rtos_example.c:104:
+../../assignment_bsp/ps7_cortexa9_0/include/xil_printf.h:39:31: note: expected 'const char8 *' {aka 'const char *'} but argument is of type 'char'
+ void xil_printf( const char8 *ctrl1, ...);
+                  ~~~~~~~~~~~~~^~~~~
+../src/rtos_example.c:210:10: warning: unused variable 'modeNumber' [-Wunused-variable]
+  uint8_t modeNumber = 0;
+          ^~~~~~~~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77764	   3372	  89408	 170544	  29a30	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:35:47 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:36:24 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:37:22 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:210:10: warning: unused variable 'modeNumber' [-Wunused-variable]
+  uint8_t modeNumber = 0;
+          ^~~~~~~~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77828	   3372	  89408	 170608	  29a70	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:37:25 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:39:26 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:210:10: warning: unused variable 'modeNumber' [-Wunused-variable]
+  uint8_t modeNumber = 0;
+          ^~~~~~~~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77844	   3372	  89408	 170624	  29a80	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:39:35 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:45:41 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:219:22: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+      int tempInput = atoi(input);
+                      ^~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  78316	   3372	  89408	 171096	  29c58	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:45:45 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:45:53 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:219:22: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+      int tempInput = atoi(input);
+                      ^~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  78308	   3372	  89408	 171088	  29c50	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:45:54 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:47:33 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:220:22: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+      int tempInput = atoi(input);
+                      ^~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  78308	   3372	  89408	 171088	  29c50	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:48:38 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:49:16 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:51:33 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:54:04 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:220:35: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+      uint8_t tempInput = (uint8_t)atoi(input);
+                                   ^~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  78308	   3372	  89408	 171088	  29c50	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:54:06 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:56:08 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  78308	   3372	  89408	 171088	  29c50	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:56:09 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:57:36 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:223:40: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast [-Wint-conversion]
+      uint8_t tempInput = (uint8_t)atoi(input);
+                                        ^~~~~
+In file included from ../src/rtos_example.c:113:
+g:\xilinix\sdk\2019.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdlib.h:81:23: note: expected 'const char *' but argument is of type 'char'
+ int atoi (const char *__nptr);
+           ~~~~~~~~~~~~^~~~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  78308	   3372	  89408	 171088	  29c50	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:57:40 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:59:18 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:00:10 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:01:11 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+../src/rtos_example.c: In function 'modeSelection':
+../src/rtos_example.c:223:27: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast [-Wint-conversion]
+      int tempInput = atoi(input);
+                           ^~~~~
+In file included from ../src/rtos_example.c:113:
+g:\xilinix\sdk\2019.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdlib.h:81:23: note: expected 'const char *' but argument is of type 'char'
+ int atoi (const char *__nptr);
+           ~~~~~~~~~~~~^~~~~~
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  78308	   3372	  89408	 171088	  29c50	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+17:01:13 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:06:55 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  78308	   3372	  89408	 171088	  29c50	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+17:06:56 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:14:49 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  78308	   3372	  89408	 171088	  29c50	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+17:14:52 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:18:56 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  78180	   3372	  89408	 170960	  29bd0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+17:20:56 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/rtos_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtos_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/rtos_example.d" -MT"src/rtos_example.o" -o "src/rtos_example.o" "../src/rtos_example.c"
+'Finished building: ../src/rtos_example.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/rtos_example.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  78308	   3372	  89408	 171088	  29c50	assignment.elf
+'Finished building: assignment.elf.size'
+' '
