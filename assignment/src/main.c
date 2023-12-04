@@ -104,6 +104,7 @@
 #include "xil_printf.h"
 #include "xparameters.h"
 #include "xil_types.h"
+#include <xuartps.h>
 
 /* LUT includes. */
 #include "zynq_registers.h"
@@ -121,7 +122,11 @@ static void configuration();
 static void selectModeBasedOnInput(uint8_t modeNumber);
 static char uart_receive();
 
-xSemaphoreHandle LEDsem;
+
+/* Semaphores */
+SemaphoreHandle_t configurationSemaphore;
+SemaphoreHandle_t modeSemaphore = 0;
+SemaphoreHandle_t selectionSemaphore = 0;
 
 
 int main( void ) {
@@ -170,6 +175,21 @@ int main( void ) {
 
 
 
+	/* Attempt to create a semaphore. */
+	modeSemaphore = xSemaphoreCreateBinary();
+	if( modeSemaphore == NULL )
+	{
+		xil_printf("Insufficient FreeRTOS heap available for the semaphore to be created successfully.");
+	}
+	xSemaphoreGive(modeSemaphore);
+
+	selectionSemaphore = xSemaphoreCreateBinary();
+	if( selectionSemaphore == NULL )
+	{
+		xil_printf("Insufficient FreeRTOS heap available for the semaphore to be created successfully.");
+	}
+	xSemaphoreGive(selectionSemaphore);
+
 	// Start the tasks and timer running.
 	// https://www.freertos.org/a00132.html
 	vTaskStartScheduler();
@@ -214,19 +234,28 @@ static void selectModeBasedOnInput(uint8_t modeNumber)
 	switch(modeNumber)
 		{
 			case 1:
-				AXI_LED_DATA = 0b0001;
-				xil_printf("Mode '%d. configuration' selected\n", modeNumber);
-				xTaskCreate( configuration, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
+				if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
+				{
+					AXI_LED_DATA = 0b0001;
+					//xil_printf("Mode '%d. configuration' selected\n", modeNumber);
+					xTaskCreate( configuration, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
+				}
 				break;
 			case 2:
-				AXI_LED_DATA = 0b0011;
-				xil_printf("Mode '%d. idle' selected\n", modeNumber);
-				xTaskCreate( idling, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
+				if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
+				{
+					AXI_LED_DATA = 0b0011;
+					//xil_printf("Mode '%d. idle' selected\n", modeNumber);
+					xTaskCreate( idling, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
+				}
 				break;
 			case 3:
-				AXI_LED_DATA = 0b0111;
-				xil_printf("Mode '%d. modulating' selected\n", modeNumber);
-				xTaskCreate( modulating, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
+				if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
+				{
+					AXI_LED_DATA = 0b0111;
+					//xil_printf("Mode '%d. modulating' selected\n", modeNumber);
+					xTaskCreate( modulating, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
+				}
 				break;
 			default:
 				break;
@@ -243,29 +272,42 @@ static void modeSelection()
 
 	for( ;; )
 	{
-		// delay loop
-		for(uint32_t i = 1; i < (1 << 20); i++){
-			 char input = uart_receive(); // polling UART receive buffer
-			 if(input)
-			 {
-				int tempInput = input - '0';
-				if (input >= '1' || '3' <= input)
+		if(uxSemaphoreGetCount(modeSemaphore))
+		{
+			char input = 'a';
+			// delay loop
+			for(uint32_t i = 1; i < (1 << 20); i++)
+			{
+				//TODO: add check if there is more than one input given. Example givin 11 will go to mode 1 --> not desired?
+				input = uart_receive(); // polling UART receive buffer
+				if(input)
 				{
-					modeNumber = tempInput;
-					selectModeBasedOnInput(modeNumber);
+					break;
 				}
 			 }
-		 }
-
-		if(AXI_BTN_DATA & 0x01){
-			modeNumber++;
-			if(modeNumber > 3)
+			int tempInput = input - '0';
+			if (input >= '1' || '3' <= input)
 			{
-				modeNumber = 1;
+				modeNumber = tempInput;
+				selectModeBasedOnInput(modeNumber);
 			}
-			selectModeBasedOnInput(modeNumber);
-		}
 
+			if(AXI_BTN_DATA & 0x01){
+				modeNumber++;
+				if(modeNumber > 3)
+				{
+					modeNumber = 1;
+				}
+				selectModeBasedOnInput(modeNumber);
+			}
+		} else
+		{
+			// Clearing the UART buffer
+			while (uart_receive())
+			{
+				 uart_receive();
+			}
+		}
 	}
 }
 
@@ -278,20 +320,30 @@ char uart_receive()
 
 static void idling()
 {
+
 	xil_printf("In idling task\n");
+	xSemaphoreGive(modeSemaphore);
 	vTaskDelete(NULL);
 }
 
 static void configuration()
 {
+
 	xil_printf("In configuration task\n");
+	vTaskDelay( pdMS_TO_TICKS( 10000 ) );
+	xil_printf("In configuration task after wait\n");
+	xSemaphoreGive(modeSemaphore);
 	vTaskDelete(NULL);
+
 }
 
 static void modulating()
 {
+
 	xil_printf("In modulating task\n");
+	xSemaphoreGive(modeSemaphore);
 	vTaskDelete(NULL);
+
 }
 
 
