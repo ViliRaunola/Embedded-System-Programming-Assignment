@@ -2138,3 +2138,9 @@ con
 ----------------End of Script----------------
 
 17:14:59 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+17:26:37 INFO  : Disconnected from the channel tcfchan#32.
+17:27:59 INFO  : Registering command handlers for SDK TCF services
+17:28:00 INFO  : Launching XSCT server: xsct.bat -interactive G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\temp_xsdb_launch_script.tcl
+17:28:02 INFO  : XSCT server has started successfully.
+17:28:02 INFO  : Successfully done setting XSCT server connection channel  
+17:28:02 INFO  : Successfully done setting SDK workspace  

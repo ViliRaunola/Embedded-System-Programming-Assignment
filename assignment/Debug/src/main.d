@@ -1,4 +1,4 @@
-src/rtos_example.o src/rtos_example.o: ../src/rtos_example.c \
+src/main.o src/main.o: ../src/main.c \
  ../../assignment_bsp/ps7_cortexa9_0/include/FreeRTOS.h \
  ../../assignment_bsp/ps7_cortexa9_0/include/FreeRTOSConfig.h \
  ../../assignment_bsp/ps7_cortexa9_0/include/xparameters.h \
