@@ -112,7 +112,15 @@
 
 /* Other imports */
 #include <stdlib.h>
+#include <stdio.h>
 
+/* Global variables */
+volatile float gKi = 0;
+volatile float gKp = 0;
+#define INCREMENT_AMOUNT 0.1
+#define BUFFER_SIZE 20
+
+/* Function declarations */
 static void modeSelection();
 static void testTask();
 static void printMenu();
@@ -121,7 +129,11 @@ static void modulating();
 static void configuration();
 static void selectModeBasedOnInput(uint8_t modeNumber);
 static char uart_receive();
-
+static void selectParameter(uint8_t selectedKParameter);
+static void uart_send(char c);
+static void uartSendString(char str[BUFFER_SIZE]);
+static void handleTaskExit();
+static char* uartReceiveString();
 
 /* Semaphores */
 SemaphoreHandle_t configurationSemaphore;
@@ -157,21 +169,11 @@ int main( void ) {
 	UART_CTRL = r;
 
 
-	xil_printf( "Hello from Freertos example main\r\n" );
-
-	/**
-	 * Create four tasks t
-	 * Each function behaves as if it had full control of the controller.
-	 * https://www.freertos.org/a00125.html
-	 */
-	xTaskCreate( 	modeSelection, 					// The function that implements the task.
-					"Mode Selection Task", 					// Text name for the task, provided to assist debugging only.
-					configMINIMAL_STACK_SIZE, 	// The stack allocated to the task.
-					NULL, 						// The task parameter is not used, so set to NULL.
-					tskIDLE_PRIORITY+1,			// The task runs at the idle priority. Higher number means higher priority.
-					NULL );
-
-	xTaskCreate( 	testTask, "test task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, NULL );
+	/*
+	 Create the needed tasks to start the program
+	*/
+	xTaskCreate( modeSelection, "Mode Selection Task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, NULL );
+	xTaskCreate( testTask, "test task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, NULL );
 
 
 
@@ -236,7 +238,6 @@ static void selectModeBasedOnInput(uint8_t modeNumber)
 			case 1:
 				if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
 				{
-					AXI_LED_DATA = 0b0001;
 					//xil_printf("Mode '%d. configuration' selected\n", modeNumber);
 					xTaskCreate( configuration, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
 				}
@@ -244,7 +245,6 @@ static void selectModeBasedOnInput(uint8_t modeNumber)
 			case 2:
 				if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
 				{
-					AXI_LED_DATA = 0b0011;
 					//xil_printf("Mode '%d. idle' selected\n", modeNumber);
 					xTaskCreate( idling, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
 				}
@@ -252,7 +252,6 @@ static void selectModeBasedOnInput(uint8_t modeNumber)
 			case 3:
 				if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
 				{
-					AXI_LED_DATA = 0b0111;
 					//xil_printf("Mode '%d. modulating' selected\n", modeNumber);
 					xTaskCreate( modulating, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
 				}
@@ -261,7 +260,7 @@ static void selectModeBasedOnInput(uint8_t modeNumber)
 				break;
 		}
 		vTaskDelay( pdMS_TO_TICKS( 2000 ) );
-		AXI_LED_DATA = 0b0000;
+
 }
 
 static void modeSelection()
@@ -320,30 +319,201 @@ char uart_receive()
 
 static void idling()
 {
-
+	AXI_LED_DATA = 0b0011;
 	xil_printf("In idling task\n");
+	vTaskDelay( pdMS_TO_TICKS( 10000 ) );
+
+	xSemaphoreGive(modeSemaphore);
+	AXI_LED_DATA = 0b0000;
+	vTaskDelete(NULL);
+}
+
+// Send one character through UART interface
+void uart_send(char c) {
+	while (UART_STATUS & XUARTPS_SR_TNFUL);
+	UART_FIFO = c;
+	while (UART_STATUS & XUARTPS_SR_TACTIVE);
+}
+
+// Send string (character array) through UART interface
+void uartSendString(char str[BUFFER_SIZE]) {
+	char *ptr = str;
+	// While the string still continues.
+	while (*ptr != '\0') {
+		uart_send(*ptr);
+		ptr++;
+	}
+}
+
+
+static void selectParameter(uint8_t selectedKParameter)
+{
+	switch(selectedKParameter)
+	{
+		case 1:
+			if(AXI_BTN_DATA & 0b0100)
+			{
+				gKi += INCREMENT_AMOUNT;
+				char buffer[1024];
+				snprintf(buffer, sizeof(buffer), "Ki: %.2f\n", gKi);
+				uartSendString(buffer);
+			}
+			if(AXI_BTN_DATA & 0b1000)
+			{
+				gKi -= INCREMENT_AMOUNT;
+				char buffer[1024];
+				snprintf(buffer, sizeof(buffer), "Ki: %.2f\n", gKi);
+				uartSendString(buffer);
+			}
+			break;
+		case 2:
+			if(AXI_BTN_DATA & 0b0100)
+			{
+				gKp += INCREMENT_AMOUNT;
+				char buffer[1024];
+				snprintf(buffer, sizeof(buffer), "Kp: %.2f\n", gKp);
+				uartSendString(buffer);
+			}
+			if(AXI_BTN_DATA & 0b1000)
+			{
+				gKp -= INCREMENT_AMOUNT;
+				char buffer[1024];
+				snprintf(buffer, sizeof(buffer), "Kp: %.2f\n", gKp);
+				uartSendString(buffer);
+			}
+			break;
+		default:
+			break;
+	}
+}
+
+static void handleTaskExit()
+{
+	AXI_LED_DATA = 0b0000;
 	xSemaphoreGive(modeSemaphore);
 	vTaskDelete(NULL);
 }
 
+
+static char* uartReceiveString(){
+	static int index = 0;
+	static char rx_buf[BUFFER_SIZE];
+	char input = uart_receive();
+
+	// If an UART message was received.
+	if (input != 0){
+		// Depending on the serial terminal used, UART messages can be terminated
+		// by either carriage return '\r' or line feed '\n'.
+		if (input == '\r' || input == '\n'){
+			rx_buf[index] = '\0';
+			index = 0;
+			return rx_buf;
+		}
+		else {
+			rx_buf[index] = input;
+			index++;
+		}
+	}
+	return 0;
+}
+
 static void configuration()
 {
-
+	AXI_LED_DATA = 0b0001;
 	xil_printf("In configuration task\n");
-	vTaskDelay( pdMS_TO_TICKS( 10000 ) );
-	xil_printf("In configuration task after wait\n");
-	xSemaphoreGive(modeSemaphore);
-	vTaskDelete(NULL);
+	xil_printf("Press the 2. button to toggle between Ki (default) and Kp values or write 'i' for Ki and 'p' for Kp\n");
+	xil_printf("Type 'e' to exit the mode\n\n");
+
+	uint8_t selectedKParameter = 1;
+	xil_printf("Ki selected\n");
+
+	for( ;; )
+	{
+		char* input;
+		// delay loop
+
+		input = uartReceiveString(); // polling UART receive buffer
+		if(input != 0)
+		{
+			if ((input[0] == 'i' || input[0] == 'p' ) && (strlen(input) < 2))
+			{
+				if(input[0] == 'i')
+				{
+					selectedKParameter = 1;
+					xil_printf("Ki selected\n");
+				}else
+				{
+					selectedKParameter = 2;
+					xil_printf("Kp selected\n");
+				}
+			}
+			if (input[0] == 'e' && (strlen(input) < 2))
+			{
+				char buffer[1024];
+				snprintf(buffer, sizeof(buffer), "Exiting configuration mode. Ki: %.2f Kp: %.2f\n", gKi, gKp);
+				uartSendString(buffer);
+				handleTaskExit();
+			}
+			float fuserInput = atof(input);
+			/* Set the user input as a float to the selected K-value */
+			if(selectedKParameter == 1  && (strlen(input) > 0) && fuserInput != 0)
+			{
+				gKi = fuserInput;
+				char buffer[1024];
+				snprintf(buffer, sizeof(buffer), "Ki: %.2f\n", gKi);
+				uartSendString(buffer);
+			}if(selectedKParameter == 2  && (strlen(input) > 0) && fuserInput != 0)
+			{
+				gKp = fuserInput;
+				char buffer[1024];
+				snprintf(buffer, sizeof(buffer), "Kp: %.2f\n", gKp);
+				uartSendString(buffer);
+			}
+			/* Special case if the user input for K-value is 0 */
+			if(selectedKParameter == 1  && (strlen(input) > 0) && input[0] == '0')
+			{
+				gKi = 0;
+				char buffer[1024];
+				snprintf(buffer, sizeof(buffer), "Ki: %.2f\n", gKi);
+				uartSendString(buffer);
+			}if(selectedKParameter == 2  && (strlen(input) > 0) && input[0] == '0')
+			{
+				gKp = 0;
+				char buffer[1024];
+				snprintf(buffer, sizeof(buffer), "Kp: %.2f\n", gKp);
+				uartSendString(buffer);
+			}
+		}
+
+
+		if(AXI_BTN_DATA & 0b0010){
+			selectedKParameter++;
+			if(selectedKParameter > 2)
+			{
+				selectedKParameter = 1;
+			}
+			if(selectedKParameter == 1)
+			{
+				xil_printf("Ki selected\n");
+			}else
+			{
+				xil_printf("Kp selected\n");
+			}
+		}
+		selectParameter(selectedKParameter);
+	}
 
 }
 
 static void modulating()
 {
-
+	AXI_LED_DATA = 0b0111;
 	xil_printf("In modulating task\n");
-	xSemaphoreGive(modeSemaphore);
-	vTaskDelete(NULL);
+	vTaskDelay( pdMS_TO_TICKS( 10000 ) );
 
+	xSemaphoreGive(modeSemaphore);
+	AXI_LED_DATA = 0b0000;
+	vTaskDelete(NULL);
 }
 
 

@@ -2331,3 +2331,1624 @@ con
 ----------------End of Script----------------
 
 14:37:33 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+15:22:39 INFO  : Disconnected from the channel tcfchan#4.
+15:22:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+15:22:40 INFO  : 'fpga -state' command is executed.
+15:22:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:22:41 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+15:22:41 INFO  : 'jtag frequency' command is executed.
+15:22:41 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+15:22:41 INFO  : Context for 'APU' is selected.
+15:22:43 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+15:22:43 INFO  : 'configparams force-mem-access 1' command is executed.
+15:22:43 INFO  : Context for 'APU' is selected.
+15:22:43 INFO  : 'stop' command is executed.
+15:22:43 INFO  : 'ps7_init' command is executed.
+15:22:43 INFO  : 'ps7_post_config' command is executed.
+15:22:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:22:44 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:22:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:22:44 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:22:44 INFO  : 'configparams force-mem-access 0' command is executed.
+15:22:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:22:44 INFO  : Memory regions updated for context APU
+15:22:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:22:44 INFO  : 'con' command is executed.
+15:22:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+15:22:44 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+15:23:07 INFO  : Disconnected from the channel tcfchan#5.
+15:23:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+15:23:09 INFO  : 'fpga -state' command is executed.
+15:23:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:23:09 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+15:23:09 INFO  : 'jtag frequency' command is executed.
+15:23:09 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+15:23:09 INFO  : Context for 'APU' is selected.
+15:23:11 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+15:23:11 INFO  : 'configparams force-mem-access 1' command is executed.
+15:23:11 INFO  : Context for 'APU' is selected.
+15:23:11 INFO  : 'stop' command is executed.
+15:23:12 INFO  : 'ps7_init' command is executed.
+15:23:12 INFO  : 'ps7_post_config' command is executed.
+15:23:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:23:12 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:23:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:23:12 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:23:12 INFO  : 'configparams force-mem-access 0' command is executed.
+15:23:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:23:12 INFO  : Memory regions updated for context APU
+15:23:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:23:12 INFO  : 'con' command is executed.
+15:23:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+15:23:12 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+15:25:46 INFO  : Disconnected from the channel tcfchan#6.
+15:25:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+15:25:47 INFO  : 'fpga -state' command is executed.
+15:25:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:25:48 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+15:25:48 INFO  : 'jtag frequency' command is executed.
+15:25:48 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+15:25:48 INFO  : Context for 'APU' is selected.
+15:25:50 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+15:25:50 INFO  : 'configparams force-mem-access 1' command is executed.
+15:25:50 INFO  : Context for 'APU' is selected.
+15:25:50 INFO  : 'stop' command is executed.
+15:25:51 INFO  : 'ps7_init' command is executed.
+15:25:51 INFO  : 'ps7_post_config' command is executed.
+15:25:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:25:51 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:25:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:25:51 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:25:51 INFO  : 'configparams force-mem-access 0' command is executed.
+15:25:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:25:51 INFO  : Memory regions updated for context APU
+15:25:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:25:51 INFO  : 'con' command is executed.
+15:25:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+15:25:51 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+15:27:07 INFO  : Disconnected from the channel tcfchan#7.
+15:27:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+15:27:09 INFO  : 'fpga -state' command is executed.
+15:27:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:27:09 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+15:27:09 INFO  : 'jtag frequency' command is executed.
+15:27:09 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+15:27:09 INFO  : Context for 'APU' is selected.
+15:27:11 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+15:27:11 INFO  : 'configparams force-mem-access 1' command is executed.
+15:27:11 INFO  : Context for 'APU' is selected.
+15:27:11 INFO  : 'stop' command is executed.
+15:27:12 INFO  : 'ps7_init' command is executed.
+15:27:12 INFO  : 'ps7_post_config' command is executed.
+15:27:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:27:12 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:27:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:27:12 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:27:12 INFO  : 'configparams force-mem-access 0' command is executed.
+15:27:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:27:12 INFO  : Memory regions updated for context APU
+15:27:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:27:12 INFO  : 'con' command is executed.
+15:27:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+15:27:12 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+15:30:34 INFO  : Disconnected from the channel tcfchan#8.
+15:30:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+15:30:35 INFO  : 'fpga -state' command is executed.
+15:30:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:30:35 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+15:30:35 INFO  : 'jtag frequency' command is executed.
+15:30:35 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+15:30:36 INFO  : Context for 'APU' is selected.
+15:30:38 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+15:30:38 INFO  : 'configparams force-mem-access 1' command is executed.
+15:30:38 INFO  : Context for 'APU' is selected.
+15:30:38 INFO  : 'stop' command is executed.
+15:30:39 INFO  : 'ps7_init' command is executed.
+15:30:39 INFO  : 'ps7_post_config' command is executed.
+15:30:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:30:39 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:30:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:30:39 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:30:39 INFO  : 'configparams force-mem-access 0' command is executed.
+15:30:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:30:39 INFO  : Memory regions updated for context APU
+15:30:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:30:39 INFO  : 'con' command is executed.
+15:30:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+15:30:39 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+15:31:00 INFO  : Disconnected from the channel tcfchan#9.
+15:31:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+15:31:02 INFO  : 'fpga -state' command is executed.
+15:31:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:31:02 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+15:31:02 INFO  : 'jtag frequency' command is executed.
+15:31:02 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+15:31:02 INFO  : Context for 'APU' is selected.
+15:31:04 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+15:31:04 INFO  : 'configparams force-mem-access 1' command is executed.
+15:31:04 INFO  : Context for 'APU' is selected.
+15:31:04 INFO  : 'stop' command is executed.
+15:31:05 INFO  : 'ps7_init' command is executed.
+15:31:05 INFO  : 'ps7_post_config' command is executed.
+15:31:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:31:05 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:31:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:31:05 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:31:05 INFO  : 'configparams force-mem-access 0' command is executed.
+15:31:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:31:05 INFO  : Memory regions updated for context APU
+15:31:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:31:05 INFO  : 'con' command is executed.
+15:31:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+15:31:05 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+15:36:36 INFO  : Disconnected from the channel tcfchan#10.
+15:36:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+15:36:37 INFO  : 'fpga -state' command is executed.
+15:36:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:36:37 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+15:36:37 INFO  : 'jtag frequency' command is executed.
+15:36:37 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+15:36:37 INFO  : Context for 'APU' is selected.
+15:36:40 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+15:36:40 INFO  : 'configparams force-mem-access 1' command is executed.
+15:36:40 INFO  : Context for 'APU' is selected.
+15:36:40 INFO  : 'stop' command is executed.
+15:36:40 INFO  : 'ps7_init' command is executed.
+15:36:40 INFO  : 'ps7_post_config' command is executed.
+15:36:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:36:40 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:36:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:36:41 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:36:41 INFO  : 'configparams force-mem-access 0' command is executed.
+15:36:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:36:41 INFO  : Memory regions updated for context APU
+15:36:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:36:41 INFO  : 'con' command is executed.
+15:36:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+15:36:41 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+15:37:27 INFO  : Disconnected from the channel tcfchan#11.
+15:37:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+15:37:28 INFO  : 'fpga -state' command is executed.
+15:37:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:37:29 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+15:37:29 INFO  : 'jtag frequency' command is executed.
+15:37:29 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+15:37:29 INFO  : Context for 'APU' is selected.
+15:37:31 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+15:37:31 INFO  : 'configparams force-mem-access 1' command is executed.
+15:37:31 INFO  : Context for 'APU' is selected.
+15:37:31 INFO  : 'stop' command is executed.
+15:37:31 INFO  : 'ps7_init' command is executed.
+15:37:31 INFO  : 'ps7_post_config' command is executed.
+15:37:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:37:31 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:37:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:37:32 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:37:32 INFO  : 'configparams force-mem-access 0' command is executed.
+15:37:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:37:32 INFO  : Memory regions updated for context APU
+15:37:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:37:32 INFO  : 'con' command is executed.
+15:37:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+15:37:32 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+15:41:15 INFO  : Disconnected from the channel tcfchan#12.
+15:41:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+15:41:17 INFO  : 'fpga -state' command is executed.
+15:41:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:41:17 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+15:41:17 INFO  : 'jtag frequency' command is executed.
+15:41:17 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+15:41:17 INFO  : Context for 'APU' is selected.
+15:41:19 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+15:41:19 INFO  : 'configparams force-mem-access 1' command is executed.
+15:41:19 INFO  : Context for 'APU' is selected.
+15:41:19 INFO  : 'stop' command is executed.
+15:41:20 INFO  : 'ps7_init' command is executed.
+15:41:20 INFO  : 'ps7_post_config' command is executed.
+15:41:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:41:20 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:41:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:41:20 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:41:20 INFO  : 'configparams force-mem-access 0' command is executed.
+15:41:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:41:20 INFO  : Memory regions updated for context APU
+15:41:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:41:20 INFO  : 'con' command is executed.
+15:41:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+15:41:20 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+15:42:07 INFO  : Disconnected from the channel tcfchan#13.
+15:42:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+15:42:08 INFO  : 'fpga -state' command is executed.
+15:42:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:42:08 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+15:42:08 INFO  : 'jtag frequency' command is executed.
+15:42:08 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+15:42:08 INFO  : Context for 'APU' is selected.
+15:42:11 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+15:42:11 INFO  : 'configparams force-mem-access 1' command is executed.
+15:42:11 INFO  : Context for 'APU' is selected.
+15:42:11 INFO  : 'stop' command is executed.
+15:42:11 INFO  : 'ps7_init' command is executed.
+15:42:11 INFO  : 'ps7_post_config' command is executed.
+15:42:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:42:11 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:42:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:42:12 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:42:12 INFO  : 'configparams force-mem-access 0' command is executed.
+15:42:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:42:12 INFO  : Memory regions updated for context APU
+15:42:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:42:12 INFO  : 'con' command is executed.
+15:42:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+15:42:12 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+15:43:04 INFO  : Disconnected from the channel tcfchan#14.
+15:43:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+15:43:05 INFO  : 'fpga -state' command is executed.
+15:43:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:43:05 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+15:43:05 INFO  : 'jtag frequency' command is executed.
+15:43:05 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+15:43:05 INFO  : Context for 'APU' is selected.
+15:43:08 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+15:43:08 INFO  : 'configparams force-mem-access 1' command is executed.
+15:43:08 INFO  : Context for 'APU' is selected.
+15:43:08 INFO  : 'stop' command is executed.
+15:43:08 INFO  : 'ps7_init' command is executed.
+15:43:08 INFO  : 'ps7_post_config' command is executed.
+15:43:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:43:09 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:43:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:43:09 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:43:09 INFO  : 'configparams force-mem-access 0' command is executed.
+15:43:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:43:09 INFO  : Memory regions updated for context APU
+15:43:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:43:09 INFO  : 'con' command is executed.
+15:43:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+15:43:09 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+15:43:41 INFO  : Disconnected from the channel tcfchan#15.
+15:43:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+15:43:42 INFO  : 'fpga -state' command is executed.
+15:43:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:43:42 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+15:43:42 INFO  : 'jtag frequency' command is executed.
+15:43:42 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+15:43:42 INFO  : Context for 'APU' is selected.
+15:43:45 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+15:43:45 INFO  : 'configparams force-mem-access 1' command is executed.
+15:43:45 INFO  : Context for 'APU' is selected.
+15:43:45 INFO  : 'stop' command is executed.
+15:43:45 INFO  : 'ps7_init' command is executed.
+15:43:45 INFO  : 'ps7_post_config' command is executed.
+15:43:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:43:45 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:43:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:43:45 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:43:45 INFO  : 'configparams force-mem-access 0' command is executed.
+15:43:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:43:45 INFO  : Memory regions updated for context APU
+15:43:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:43:46 INFO  : 'con' command is executed.
+15:43:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+15:43:46 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+15:46:07 INFO  : Disconnected from the channel tcfchan#16.
+15:46:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+15:46:08 INFO  : 'fpga -state' command is executed.
+15:46:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:46:08 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+15:46:08 INFO  : 'jtag frequency' command is executed.
+15:46:08 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+15:46:08 INFO  : Context for 'APU' is selected.
+15:46:11 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+15:46:11 INFO  : 'configparams force-mem-access 1' command is executed.
+15:46:11 INFO  : Context for 'APU' is selected.
+15:46:11 INFO  : 'stop' command is executed.
+15:46:11 INFO  : 'ps7_init' command is executed.
+15:46:11 INFO  : 'ps7_post_config' command is executed.
+15:46:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:46:11 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:46:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:46:11 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:46:11 INFO  : 'configparams force-mem-access 0' command is executed.
+15:46:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:46:11 INFO  : Memory regions updated for context APU
+15:46:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:46:12 INFO  : 'con' command is executed.
+15:46:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+15:46:12 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+15:49:15 INFO  : Disconnected from the channel tcfchan#17.
+15:49:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+15:49:16 INFO  : 'fpga -state' command is executed.
+15:49:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:49:16 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+15:49:16 INFO  : 'jtag frequency' command is executed.
+15:49:16 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+15:49:16 INFO  : Context for 'APU' is selected.
+15:49:18 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+15:49:18 INFO  : 'configparams force-mem-access 1' command is executed.
+15:49:18 INFO  : Context for 'APU' is selected.
+15:49:18 INFO  : 'stop' command is executed.
+15:49:18 INFO  : 'ps7_init' command is executed.
+15:49:18 INFO  : 'ps7_post_config' command is executed.
+15:49:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:49:18 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:49:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:49:19 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:49:19 INFO  : 'configparams force-mem-access 0' command is executed.
+15:49:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:49:19 INFO  : Memory regions updated for context APU
+15:49:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:49:19 INFO  : 'con' command is executed.
+15:49:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+15:49:19 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+15:51:22 INFO  : Disconnected from the channel tcfchan#18.
+15:51:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+15:51:23 INFO  : 'fpga -state' command is executed.
+15:51:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:51:24 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+15:51:24 INFO  : 'jtag frequency' command is executed.
+15:51:24 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+15:51:24 INFO  : Context for 'APU' is selected.
+15:51:26 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+15:51:26 INFO  : 'configparams force-mem-access 1' command is executed.
+15:51:26 INFO  : Context for 'APU' is selected.
+15:51:26 INFO  : 'stop' command is executed.
+15:51:26 INFO  : 'ps7_init' command is executed.
+15:51:26 INFO  : 'ps7_post_config' command is executed.
+15:51:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:51:26 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:51:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:51:27 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:51:27 INFO  : 'configparams force-mem-access 0' command is executed.
+15:51:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:51:27 INFO  : Memory regions updated for context APU
+15:51:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:51:27 INFO  : 'con' command is executed.
+15:51:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+15:51:27 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+15:58:21 INFO  : Disconnected from the channel tcfchan#19.
+15:58:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+15:58:22 INFO  : 'fpga -state' command is executed.
+15:58:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:58:22 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+15:58:22 INFO  : 'jtag frequency' command is executed.
+15:58:22 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+15:58:22 INFO  : Context for 'APU' is selected.
+15:58:24 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+15:58:24 INFO  : 'configparams force-mem-access 1' command is executed.
+15:58:24 INFO  : Context for 'APU' is selected.
+15:58:25 INFO  : 'stop' command is executed.
+15:58:25 INFO  : 'ps7_init' command is executed.
+15:58:25 INFO  : 'ps7_post_config' command is executed.
+15:58:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:58:25 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:58:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:58:25 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:58:25 INFO  : 'configparams force-mem-access 0' command is executed.
+15:58:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:58:25 INFO  : Memory regions updated for context APU
+15:58:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:58:25 INFO  : 'con' command is executed.
+15:58:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+15:58:25 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+16:00:24 INFO  : Disconnected from the channel tcfchan#20.
+16:00:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+16:00:25 INFO  : 'fpga -state' command is executed.
+16:00:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:00:25 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+16:00:25 INFO  : 'jtag frequency' command is executed.
+16:00:25 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+16:00:25 INFO  : Context for 'APU' is selected.
+16:00:27 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+16:00:27 INFO  : 'configparams force-mem-access 1' command is executed.
+16:00:27 INFO  : Context for 'APU' is selected.
+16:00:28 INFO  : 'stop' command is executed.
+16:00:28 INFO  : 'ps7_init' command is executed.
+16:00:28 INFO  : 'ps7_post_config' command is executed.
+16:00:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:00:28 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:00:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:00:28 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:00:28 INFO  : 'configparams force-mem-access 0' command is executed.
+16:00:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:00:28 INFO  : Memory regions updated for context APU
+16:00:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:00:28 INFO  : 'con' command is executed.
+16:00:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+16:00:28 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+16:00:51 INFO  : Disconnected from the channel tcfchan#21.
+16:00:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+16:00:52 INFO  : 'fpga -state' command is executed.
+16:00:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:00:52 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+16:00:52 INFO  : 'jtag frequency' command is executed.
+16:00:52 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+16:00:52 INFO  : Context for 'APU' is selected.
+16:00:54 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+16:00:54 INFO  : 'configparams force-mem-access 1' command is executed.
+16:00:54 INFO  : Context for 'APU' is selected.
+16:00:54 INFO  : 'stop' command is executed.
+16:00:55 INFO  : 'ps7_init' command is executed.
+16:00:55 INFO  : 'ps7_post_config' command is executed.
+16:00:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:00:55 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:00:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:00:55 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:00:55 INFO  : 'configparams force-mem-access 0' command is executed.
+16:00:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:00:55 INFO  : Memory regions updated for context APU
+16:00:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:00:55 INFO  : 'con' command is executed.
+16:00:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+16:00:55 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+16:04:34 INFO  : Disconnected from the channel tcfchan#22.
+16:04:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+16:04:35 INFO  : 'fpga -state' command is executed.
+16:04:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:04:35 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+16:04:35 INFO  : 'jtag frequency' command is executed.
+16:04:35 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+16:04:35 INFO  : Context for 'APU' is selected.
+16:04:38 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+16:04:38 INFO  : 'configparams force-mem-access 1' command is executed.
+16:04:38 INFO  : Context for 'APU' is selected.
+16:04:38 INFO  : 'stop' command is executed.
+16:04:38 INFO  : 'ps7_init' command is executed.
+16:04:38 INFO  : 'ps7_post_config' command is executed.
+16:04:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:04:38 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:04:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:04:38 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:04:38 INFO  : 'configparams force-mem-access 0' command is executed.
+16:04:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:04:39 INFO  : Memory regions updated for context APU
+16:04:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:04:39 INFO  : 'con' command is executed.
+16:04:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+16:04:39 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+16:13:21 INFO  : Disconnected from the channel tcfchan#23.
+16:13:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+16:13:22 INFO  : 'fpga -state' command is executed.
+16:13:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:13:23 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+16:13:23 INFO  : 'jtag frequency' command is executed.
+16:13:23 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+16:13:23 INFO  : Context for 'APU' is selected.
+16:13:25 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+16:13:25 INFO  : 'configparams force-mem-access 1' command is executed.
+16:13:25 INFO  : Context for 'APU' is selected.
+16:13:25 INFO  : 'stop' command is executed.
+16:13:25 INFO  : 'ps7_init' command is executed.
+16:13:25 INFO  : 'ps7_post_config' command is executed.
+16:13:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:13:26 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:13:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:13:26 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:13:26 INFO  : 'configparams force-mem-access 0' command is executed.
+16:13:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:13:26 INFO  : Memory regions updated for context APU
+16:13:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:13:26 INFO  : 'con' command is executed.
+16:13:26 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+16:13:26 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+16:14:11 INFO  : Disconnected from the channel tcfchan#24.
+16:14:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+16:14:12 INFO  : 'fpga -state' command is executed.
+16:14:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:14:12 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+16:14:12 INFO  : 'jtag frequency' command is executed.
+16:14:12 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+16:14:12 INFO  : Context for 'APU' is selected.
+16:14:15 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+16:14:15 INFO  : 'configparams force-mem-access 1' command is executed.
+16:14:15 INFO  : Context for 'APU' is selected.
+16:14:15 INFO  : 'stop' command is executed.
+16:14:15 INFO  : 'ps7_init' command is executed.
+16:14:15 INFO  : 'ps7_post_config' command is executed.
+16:14:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:14:15 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:14:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:14:15 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:14:15 INFO  : 'configparams force-mem-access 0' command is executed.
+16:14:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:14:16 INFO  : Memory regions updated for context APU
+16:14:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:14:16 INFO  : 'con' command is executed.
+16:14:16 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+16:14:16 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+16:15:46 INFO  : Disconnected from the channel tcfchan#25.
+16:15:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+16:15:47 INFO  : 'fpga -state' command is executed.
+16:15:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:15:47 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+16:15:47 INFO  : 'jtag frequency' command is executed.
+16:15:47 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+16:15:47 INFO  : Context for 'APU' is selected.
+16:15:49 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+16:15:49 INFO  : 'configparams force-mem-access 1' command is executed.
+16:15:49 INFO  : Context for 'APU' is selected.
+16:15:49 INFO  : 'stop' command is executed.
+16:15:50 INFO  : 'ps7_init' command is executed.
+16:15:50 INFO  : 'ps7_post_config' command is executed.
+16:15:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:15:50 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:15:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:15:50 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:15:50 INFO  : 'configparams force-mem-access 0' command is executed.
+16:15:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:15:50 INFO  : Memory regions updated for context APU
+16:15:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:15:50 INFO  : 'con' command is executed.
+16:15:50 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+16:15:50 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+16:19:00 INFO  : Disconnected from the channel tcfchan#26.
+16:19:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+16:19:01 INFO  : 'fpga -state' command is executed.
+16:19:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:19:02 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+16:19:02 INFO  : 'jtag frequency' command is executed.
+16:19:02 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+16:19:02 INFO  : Context for 'APU' is selected.
+16:19:04 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+16:19:04 INFO  : 'configparams force-mem-access 1' command is executed.
+16:19:04 INFO  : Context for 'APU' is selected.
+16:19:04 INFO  : 'stop' command is executed.
+16:19:05 INFO  : 'ps7_init' command is executed.
+16:19:05 INFO  : 'ps7_post_config' command is executed.
+16:19:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:19:05 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:19:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:19:05 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:19:05 INFO  : 'configparams force-mem-access 0' command is executed.
+16:19:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:19:05 INFO  : Memory regions updated for context APU
+16:19:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:19:05 INFO  : 'con' command is executed.
+16:19:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+16:19:05 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+16:19:57 INFO  : Disconnected from the channel tcfchan#27.
+16:19:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+16:19:58 INFO  : 'fpga -state' command is executed.
+16:19:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:19:58 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+16:19:58 INFO  : 'jtag frequency' command is executed.
+16:19:58 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+16:19:58 INFO  : Context for 'APU' is selected.
+16:20:01 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+16:20:01 INFO  : 'configparams force-mem-access 1' command is executed.
+16:20:01 INFO  : Context for 'APU' is selected.
+16:20:01 INFO  : 'stop' command is executed.
+16:20:01 INFO  : 'ps7_init' command is executed.
+16:20:01 INFO  : 'ps7_post_config' command is executed.
+16:20:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:20:01 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:20:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:20:01 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:20:01 INFO  : 'configparams force-mem-access 0' command is executed.
+16:20:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:20:02 INFO  : Memory regions updated for context APU
+16:20:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:20:02 INFO  : 'con' command is executed.
+16:20:02 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+16:20:02 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+16:23:03 INFO  : Disconnected from the channel tcfchan#28.
+16:23:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+16:23:04 INFO  : 'fpga -state' command is executed.
+16:23:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:23:04 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+16:23:04 INFO  : 'jtag frequency' command is executed.
+16:23:04 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+16:23:04 INFO  : Context for 'APU' is selected.
+16:23:06 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+16:23:06 INFO  : 'configparams force-mem-access 1' command is executed.
+16:23:07 INFO  : Context for 'APU' is selected.
+16:23:07 INFO  : 'stop' command is executed.
+16:23:07 INFO  : 'ps7_init' command is executed.
+16:23:07 INFO  : 'ps7_post_config' command is executed.
+16:23:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:23:07 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:23:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:23:07 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:23:07 INFO  : 'configparams force-mem-access 0' command is executed.
+16:23:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:23:07 INFO  : Memory regions updated for context APU
+16:23:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:23:07 INFO  : 'con' command is executed.
+16:23:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+16:23:07 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+16:26:29 INFO  : Disconnected from the channel tcfchan#29.
+16:26:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+16:26:31 INFO  : 'fpga -state' command is executed.
+16:26:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:26:31 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+16:26:31 INFO  : 'jtag frequency' command is executed.
+16:26:31 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+16:26:31 INFO  : Context for 'APU' is selected.
+16:26:33 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+16:26:33 INFO  : 'configparams force-mem-access 1' command is executed.
+16:26:33 INFO  : Context for 'APU' is selected.
+16:26:33 INFO  : 'stop' command is executed.
+16:26:33 INFO  : 'ps7_init' command is executed.
+16:26:33 INFO  : 'ps7_post_config' command is executed.
+16:26:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:26:34 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:26:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:26:34 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:26:34 INFO  : 'configparams force-mem-access 0' command is executed.
+16:26:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:26:34 INFO  : Memory regions updated for context APU
+16:26:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:26:34 INFO  : 'con' command is executed.
+16:26:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+16:26:34 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+16:27:58 INFO  : Disconnected from the channel tcfchan#30.
+16:27:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+16:27:59 INFO  : 'fpga -state' command is executed.
+16:27:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:27:59 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+16:27:59 INFO  : 'jtag frequency' command is executed.
+16:27:59 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+16:27:59 INFO  : Context for 'APU' is selected.
+16:28:01 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+16:28:01 INFO  : 'configparams force-mem-access 1' command is executed.
+16:28:01 INFO  : Context for 'APU' is selected.
+16:28:01 INFO  : 'stop' command is executed.
+16:28:02 INFO  : 'ps7_init' command is executed.
+16:28:02 INFO  : 'ps7_post_config' command is executed.
+16:28:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:28:02 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:28:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:28:02 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:28:02 INFO  : 'configparams force-mem-access 0' command is executed.
+16:28:02 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:28:02 INFO  : Memory regions updated for context APU
+16:28:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:28:02 INFO  : 'con' command is executed.
+16:28:02 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+16:28:02 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+16:28:50 INFO  : Disconnected from the channel tcfchan#31.
+16:28:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+16:28:51 INFO  : 'fpga -state' command is executed.
+16:28:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:28:52 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+16:28:52 INFO  : 'jtag frequency' command is executed.
+16:28:52 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+16:28:52 INFO  : Context for 'APU' is selected.
+16:28:54 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+16:28:54 INFO  : 'configparams force-mem-access 1' command is executed.
+16:28:54 INFO  : Context for 'APU' is selected.
+16:28:54 INFO  : 'stop' command is executed.
+16:28:54 INFO  : 'ps7_init' command is executed.
+16:28:54 INFO  : 'ps7_post_config' command is executed.
+16:28:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:28:54 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:28:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:28:55 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:28:55 INFO  : 'configparams force-mem-access 0' command is executed.
+16:28:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:28:55 INFO  : Memory regions updated for context APU
+16:28:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:28:55 INFO  : 'con' command is executed.
+16:28:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+16:28:55 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+16:38:33 INFO  : Disconnected from the channel tcfchan#32.
+16:38:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+16:38:35 INFO  : 'fpga -state' command is executed.
+16:38:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:38:35 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+16:38:35 INFO  : 'jtag frequency' command is executed.
+16:38:35 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+16:38:35 INFO  : Context for 'APU' is selected.
+16:38:37 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+16:38:37 INFO  : 'configparams force-mem-access 1' command is executed.
+16:38:37 INFO  : Context for 'APU' is selected.
+16:38:37 INFO  : 'stop' command is executed.
+16:38:37 INFO  : 'ps7_init' command is executed.
+16:38:37 INFO  : 'ps7_post_config' command is executed.
+16:38:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:38:37 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:38:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:38:38 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:38:38 INFO  : 'configparams force-mem-access 0' command is executed.
+16:38:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:38:38 INFO  : Memory regions updated for context APU
+16:38:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:38:38 INFO  : 'con' command is executed.
+16:38:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+16:38:38 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+16:41:37 INFO  : Disconnected from the channel tcfchan#33.
+16:41:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+16:41:38 INFO  : 'fpga -state' command is executed.
+16:41:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:41:38 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+16:41:38 INFO  : 'jtag frequency' command is executed.
+16:41:38 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+16:41:38 INFO  : Context for 'APU' is selected.
+16:41:40 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+16:41:40 INFO  : 'configparams force-mem-access 1' command is executed.
+16:41:40 INFO  : Context for 'APU' is selected.
+16:41:40 INFO  : 'stop' command is executed.
+16:41:41 INFO  : 'ps7_init' command is executed.
+16:41:41 INFO  : 'ps7_post_config' command is executed.
+16:41:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:41:41 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:41:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:41:41 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:41:41 INFO  : 'configparams force-mem-access 0' command is executed.
+16:41:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:41:41 INFO  : Memory regions updated for context APU
+16:41:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:41:41 INFO  : 'con' command is executed.
+16:41:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+16:41:41 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+16:45:13 INFO  : Disconnected from the channel tcfchan#34.
+16:45:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+16:45:14 INFO  : 'fpga -state' command is executed.
+16:45:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:45:14 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+16:45:14 INFO  : 'jtag frequency' command is executed.
+16:45:14 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+16:45:14 INFO  : Context for 'APU' is selected.
+16:45:16 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+16:45:16 INFO  : 'configparams force-mem-access 1' command is executed.
+16:45:17 INFO  : Context for 'APU' is selected.
+16:45:17 INFO  : 'stop' command is executed.
+16:45:17 INFO  : 'ps7_init' command is executed.
+16:45:17 INFO  : 'ps7_post_config' command is executed.
+16:45:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:45:17 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:45:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:45:17 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:45:17 INFO  : 'configparams force-mem-access 0' command is executed.
+16:45:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:45:17 INFO  : Memory regions updated for context APU
+16:45:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:45:17 INFO  : 'con' command is executed.
+16:45:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+16:45:17 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+16:46:23 INFO  : Disconnected from the channel tcfchan#35.
+16:46:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+16:46:24 INFO  : 'fpga -state' command is executed.
+16:46:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:46:24 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+16:46:24 INFO  : 'jtag frequency' command is executed.
+16:46:24 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+16:46:24 INFO  : Context for 'APU' is selected.
+16:46:26 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+16:46:26 INFO  : 'configparams force-mem-access 1' command is executed.
+16:46:26 INFO  : Context for 'APU' is selected.
+16:46:26 INFO  : 'stop' command is executed.
+16:46:27 INFO  : 'ps7_init' command is executed.
+16:46:27 INFO  : 'ps7_post_config' command is executed.
+16:46:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:46:27 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:46:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:46:27 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:46:27 INFO  : 'configparams force-mem-access 0' command is executed.
+16:46:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:46:27 INFO  : Memory regions updated for context APU
+16:46:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:46:27 INFO  : 'con' command is executed.
+16:46:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+16:46:27 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+16:48:54 INFO  : Disconnected from the channel tcfchan#36.
+16:48:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+16:48:55 INFO  : 'fpga -state' command is executed.
+16:48:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:48:55 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+16:48:55 INFO  : 'jtag frequency' command is executed.
+16:48:55 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+16:48:55 INFO  : Context for 'APU' is selected.
+16:48:58 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+16:48:58 INFO  : 'configparams force-mem-access 1' command is executed.
+16:48:58 INFO  : Context for 'APU' is selected.
+16:48:58 INFO  : 'stop' command is executed.
+16:48:58 INFO  : 'ps7_init' command is executed.
+16:48:58 INFO  : 'ps7_post_config' command is executed.
+16:48:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:48:58 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:48:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:48:59 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:48:59 INFO  : 'configparams force-mem-access 0' command is executed.
+16:48:59 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:48:59 INFO  : Memory regions updated for context APU
+16:48:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:48:59 INFO  : 'con' command is executed.
+16:48:59 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+16:48:59 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+16:54:12 INFO  : Disconnected from the channel tcfchan#37.
+16:54:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+16:54:14 INFO  : 'fpga -state' command is executed.
+16:54:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:54:14 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+16:54:14 INFO  : 'jtag frequency' command is executed.
+16:54:14 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+16:54:14 INFO  : Context for 'APU' is selected.
+16:54:16 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+16:54:16 INFO  : 'configparams force-mem-access 1' command is executed.
+16:54:16 INFO  : Context for 'APU' is selected.
+16:54:16 INFO  : 'stop' command is executed.
+16:54:17 INFO  : 'ps7_init' command is executed.
+16:54:17 INFO  : 'ps7_post_config' command is executed.
+16:54:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:54:17 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:54:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:54:17 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:54:17 INFO  : 'configparams force-mem-access 0' command is executed.
+16:54:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:54:17 INFO  : Memory regions updated for context APU
+16:54:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:54:17 INFO  : 'con' command is executed.
+16:54:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+16:54:17 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+17:12:18 INFO  : Disconnected from the channel tcfchan#38.
+17:12:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+17:12:19 INFO  : 'fpga -state' command is executed.
+17:12:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:12:19 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+17:12:19 INFO  : 'jtag frequency' command is executed.
+17:12:19 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+17:12:19 INFO  : Context for 'APU' is selected.
+17:12:22 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+17:12:22 INFO  : 'configparams force-mem-access 1' command is executed.
+17:12:22 INFO  : Context for 'APU' is selected.
+17:12:22 INFO  : 'stop' command is executed.
+17:12:22 INFO  : 'ps7_init' command is executed.
+17:12:22 INFO  : 'ps7_post_config' command is executed.
+17:12:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:12:23 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+17:12:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:12:23 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:12:23 INFO  : 'configparams force-mem-access 0' command is executed.
+17:12:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:12:23 INFO  : Memory regions updated for context APU
+17:12:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:12:23 INFO  : 'con' command is executed.
+17:12:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+17:12:23 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+17:15:50 INFO  : Disconnected from the channel tcfchan#39.
+17:15:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA" && level==0} -index 1' command is executed.
+17:15:51 INFO  : 'fpga -state' command is executed.
+17:15:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:15:51 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF232EA' is selected.
+17:15:51 INFO  : 'jtag frequency' command is executed.
+17:15:51 INFO  : Sourcing of 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl' is done.
+17:15:51 INFO  : Context for 'APU' is selected.
+17:15:54 INFO  : Hardware design information is loaded from 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf'.
+17:15:54 INFO  : 'configparams force-mem-access 1' command is executed.
+17:15:54 INFO  : Context for 'APU' is selected.
+17:15:54 INFO  : 'stop' command is executed.
+17:15:54 INFO  : 'ps7_init' command is executed.
+17:15:54 INFO  : 'ps7_post_config' command is executed.
+17:15:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:15:54 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+17:15:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:15:55 INFO  : The application 'G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:15:55 INFO  : 'configparams force-mem-access 0' command is executed.
+17:15:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+loadhw -hw G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/zybo_platform/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+dow G:/Opiskelu/Yliopisto/5.vuosi/EmbeddedSystemsProgramming/assignment/assignment/Debug/assignment.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:15:55 INFO  : Memory regions updated for context APU
+17:15:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:15:55 INFO  : 'con' command is executed.
+17:15:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351AF232EA"} -index 0
+con
+----------------End of Script----------------
+
+17:15:55 INFO  : Launch script is exported to file 'G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_assignment.elf_on_local.tcl'
+17:22:27 INFO  : Disconnected from the channel tcfchan#40.
