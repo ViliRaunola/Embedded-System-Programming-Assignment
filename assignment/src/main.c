@@ -113,12 +113,14 @@
 /* Other imports */
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 
 /* Global variables */
 volatile float gKi = 0;
 volatile float gKp = 0;
 #define INCREMENT_AMOUNT 0.1
 #define BUFFER_SIZE 20
+#define BUTTON_PRESS_DELAY 200
 
 /* Function declarations */
 static void modeSelection();
@@ -127,7 +129,7 @@ static void printMenu();
 static void idling();
 static void modulating();
 static void configuration();
-static void selectModeBasedOnInput(uint8_t modeNumber);
+static void selectModeBasedOnInput(uint8_t modeNumber, uint8_t uartCheck);
 static char uart_receive();
 static void selectParameter(uint8_t selectedKParameter);
 static void uart_send(char c);
@@ -138,7 +140,7 @@ static char* uartReceiveString();
 /* Semaphores */
 SemaphoreHandle_t configurationSemaphore;
 SemaphoreHandle_t modeSemaphore = 0;
-SemaphoreHandle_t selectionSemaphore = 0;
+SemaphoreHandle_t buttonSemaphore = 0;
 
 
 int main( void ) {
@@ -185,12 +187,12 @@ int main( void ) {
 	}
 	xSemaphoreGive(modeSemaphore);
 
-	selectionSemaphore = xSemaphoreCreateBinary();
-	if( selectionSemaphore == NULL )
+	buttonSemaphore = xSemaphoreCreateBinary();
+	if( buttonSemaphore == NULL )
 	{
 		xil_printf("Insufficient FreeRTOS heap available for the semaphore to be created successfully.");
 	}
-	xSemaphoreGive(selectionSemaphore);
+	xSemaphoreGive(buttonSemaphore);
 
 	// Start the tasks and timer running.
 	// https://www.freertos.org/a00132.html
@@ -231,28 +233,34 @@ static void printMenu()
 	xil_printf("Select a mode by pressing the 1. button\n1. mode is the configuration\n2. mode is the idling\n3. mode is the modulating\n\n");
 }
 
-static void selectModeBasedOnInput(uint8_t modeNumber)
+static void selectModeBasedOnInput(uint8_t modeNumber, uint8_t uartCheck)
 {
 	switch(modeNumber)
 		{
 			case 1:
 				if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
 				{
-					//xil_printf("Mode '%d. configuration' selected\n", modeNumber);
-					xTaskCreate( configuration, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
+					if(uartCheck)
+					{
+						if(xSemaphoreTake(buttonSemaphore, portMAX_DELAY))
+						{
+							xTaskCreate( configuration, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
+						}
+					}else
+					{
+						xTaskCreate( configuration, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
+					}
 				}
 				break;
 			case 2:
 				if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
 				{
-					//xil_printf("Mode '%d. idle' selected\n", modeNumber);
 					xTaskCreate( idling, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
 				}
 				break;
 			case 3:
 				if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
 				{
-					//xil_printf("Mode '%d. modulating' selected\n", modeNumber);
 					xTaskCreate( modulating, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
 				}
 				break;
@@ -271,8 +279,9 @@ static void modeSelection()
 
 	for( ;; )
 	{
-		if(uxSemaphoreGetCount(modeSemaphore))
+		if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
 		{
+			xSemaphoreGive(modeSemaphore);
 			char input = 'a';
 			// delay loop
 			for(uint32_t i = 1; i < (1 << 20); i++)
@@ -288,7 +297,7 @@ static void modeSelection()
 			if (input >= '1' || '3' <= input)
 			{
 				modeNumber = tempInput;
-				selectModeBasedOnInput(modeNumber);
+				selectModeBasedOnInput(modeNumber, 1);
 			}
 
 			if(AXI_BTN_DATA & 0x01){
@@ -297,16 +306,15 @@ static void modeSelection()
 				{
 					modeNumber = 1;
 				}
-				selectModeBasedOnInput(modeNumber);
-			}
-		} else
-		{
-			// Clearing the UART buffer
-			while (uart_receive())
-			{
-				 uart_receive();
+				selectModeBasedOnInput(modeNumber, 0);
 			}
 		}
+		/*else
+		{
+			vTaskDelay( pdMS_TO_TICKS( 1000 ) );
+		}*/
+
+
 	}
 }
 
@@ -321,11 +329,9 @@ static void idling()
 {
 	AXI_LED_DATA = 0b0011;
 	xil_printf("In idling task\n");
-	vTaskDelay( pdMS_TO_TICKS( 10000 ) );
+	vTaskDelay( pdMS_TO_TICKS( 1000 ) );
 
-	xSemaphoreGive(modeSemaphore);
-	AXI_LED_DATA = 0b0000;
-	vTaskDelete(NULL);
+	handleTaskExit();
 }
 
 // Send one character through UART interface
@@ -345,41 +351,59 @@ void uartSendString(char str[BUFFER_SIZE]) {
 	}
 }
 
+// Source: https://support.xilinx.com/s/question/0D52E00006hpTYOSA2/how-to-print-float-value-on-hyperterminal-using-xilprintf?language=en_US
+void floatToIntPrint(float fval) {
+	int whole, thousandths;
+	whole = fval;
+	thousandths = abs(round((fval - whole) * 1000));
+	if(whole == 0 && fval < 0 && thousandths != 0) {
+		xil_printf("-%d.%d", whole, thousandths);
+	} else {
+		xil_printf("%d.%d", whole, thousandths);
+	}
+}
 
 static void selectParameter(uint8_t selectedKParameter)
 {
+	TickType_t xLastWakeTime;
+	const TickType_t xPeriod = pdMS_TO_TICKS( BUTTON_PRESS_DELAY );
+	xLastWakeTime = xTaskGetTickCount();
 	switch(selectedKParameter)
 	{
 		case 1:
-			if(AXI_BTN_DATA & 0b0100)
-			{
-				gKi += INCREMENT_AMOUNT;
-				char buffer[1024];
-				snprintf(buffer, sizeof(buffer), "Ki: %.2f\n", gKi);
-				uartSendString(buffer);
-			}
 			if(AXI_BTN_DATA & 0b1000)
 			{
+				gKi += INCREMENT_AMOUNT;
+				uartSendString("Ki: ");
+				floatToIntPrint(gKi);
+				uartSendString("\n");
+				vTaskDelayUntil( &xLastWakeTime, xPeriod );
+			}
+			if(AXI_BTN_DATA & 0b0100)
+			{
 				gKi -= INCREMENT_AMOUNT;
-				char buffer[1024];
-				snprintf(buffer, sizeof(buffer), "Ki: %.2f\n", gKi);
-				uartSendString(buffer);
+				uartSendString("Ki: ");
+				floatToIntPrint(gKi);
+				uartSendString("\n");
+				vTaskDelayUntil( &xLastWakeTime, xPeriod );
 			}
 			break;
 		case 2:
-			if(AXI_BTN_DATA & 0b0100)
-			{
-				gKp += INCREMENT_AMOUNT;
-				char buffer[1024];
-				snprintf(buffer, sizeof(buffer), "Kp: %.2f\n", gKp);
-				uartSendString(buffer);
-			}
 			if(AXI_BTN_DATA & 0b1000)
 			{
+				gKp += INCREMENT_AMOUNT;
+				uartSendString("Kp: ");
+				floatToIntPrint(gKp);
+				uartSendString("\n");
+				vTaskDelayUntil( &xLastWakeTime, xPeriod );
+			}
+			if(AXI_BTN_DATA & 0b0100)
+			{
 				gKp -= INCREMENT_AMOUNT;
-				char buffer[1024];
-				snprintf(buffer, sizeof(buffer), "Kp: %.2f\n", gKp);
-				uartSendString(buffer);
+				uartSendString("Kp: ");
+				floatToIntPrint(gKp);
+				uartSendString("\n");
+				vTaskDelayUntil( &xLastWakeTime, xPeriod );
 			}
 			break;
 		default:
@@ -390,6 +414,7 @@ static void selectParameter(uint8_t selectedKParameter)
 static void handleTaskExit()
 {
 	AXI_LED_DATA = 0b0000;
+	printMenu();
 	xSemaphoreGive(modeSemaphore);
 	vTaskDelete(NULL);
 }
@@ -449,9 +474,13 @@ static void configuration()
 			}
 			if (input[0] == 'e' && (strlen(input) < 2))
 			{
-				char buffer[1024];
-				snprintf(buffer, sizeof(buffer), "Exiting configuration mode. Ki: %.2f Kp: %.2f\n", gKi, gKp);
-				uartSendString(buffer);
+				uartSendString("Exiting configuration mode. Ki: ");
+				floatToIntPrint(gKi);
+				uartSendString(" Kp: ");
+				floatToIntPrint(gKp);
+				uartSendString("\n\n");
+
+				xSemaphoreGive(buttonSemaphore);
 				handleTaskExit();
 			}
 			float fuserInput = atof(input);
@@ -459,34 +488,35 @@ static void configuration()
 			if(selectedKParameter == 1  && (strlen(input) > 0) && fuserInput != 0)
 			{
 				gKi = fuserInput;
-				char buffer[1024];
-				snprintf(buffer, sizeof(buffer), "Ki: %.2f\n", gKi);
-				uartSendString(buffer);
+				uartSendString("Ki: ");
+				floatToIntPrint(gKi);
+				uartSendString("\n");
 			}if(selectedKParameter == 2  && (strlen(input) > 0) && fuserInput != 0)
 			{
 				gKp = fuserInput;
-				char buffer[1024];
-				snprintf(buffer, sizeof(buffer), "Kp: %.2f\n", gKp);
-				uartSendString(buffer);
+				uartSendString("Kp: ");
+				floatToIntPrint(gKp);
+				uartSendString("\n");
 			}
 			/* Special case if the user input for K-value is 0 */
 			if(selectedKParameter == 1  && (strlen(input) > 0) && input[0] == '0')
 			{
 				gKi = 0;
-				char buffer[1024];
-				snprintf(buffer, sizeof(buffer), "Ki: %.2f\n", gKi);
-				uartSendString(buffer);
+				uartSendString("Ki: ");
+				floatToIntPrint(gKi);
+				uartSendString("\n");
 			}if(selectedKParameter == 2  && (strlen(input) > 0) && input[0] == '0')
 			{
 				gKp = 0;
-				char buffer[1024];
-				snprintf(buffer, sizeof(buffer), "Kp: %.2f\n", gKp);
-				uartSendString(buffer);
+				uartSendString("Kp: ");
+				floatToIntPrint(gKp);
+				uartSendString("\n");
 			}
 		}
 
 
-		if(AXI_BTN_DATA & 0b0010){
+		if((AXI_BTN_DATA & 0b0010) && uxSemaphoreGetCount(buttonSemaphore))
+		{
 			selectedKParameter++;
 			if(selectedKParameter > 2)
 			{
@@ -499,8 +529,16 @@ static void configuration()
 			{
 				xil_printf("Kp selected\n");
 			}
+			TickType_t xLastWakeTime;
+			const TickType_t xPeriod = pdMS_TO_TICKS( BUTTON_PRESS_DELAY );
+			xLastWakeTime = xTaskGetTickCount();
+			vTaskDelayUntil( &xLastWakeTime, xPeriod );
 		}
-		selectParameter(selectedKParameter);
+
+		if(uxSemaphoreGetCount(buttonSemaphore))
+		{
+			selectParameter(selectedKParameter);
+		}
 	}
 
 }
@@ -509,11 +547,9 @@ static void modulating()
 {
 	AXI_LED_DATA = 0b0111;
 	xil_printf("In modulating task\n");
-	vTaskDelay( pdMS_TO_TICKS( 10000 ) );
+	vTaskDelay( pdMS_TO_TICKS( 1000 ) );
 
-	xSemaphoreGive(modeSemaphore);
-	AXI_LED_DATA = 0b0000;
-	vTaskDelete(NULL);
+	handleTaskExit();
 }
 
 

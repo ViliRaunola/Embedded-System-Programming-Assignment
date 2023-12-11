@@ -2,17 +2,19 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="modeSemaphore" key="selection"/>
+		<item value="floatToAscii" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="floatToASCII"/>
 			<item value="buttonSemaphore"/>
 			<item value="In configuration task\n"/>
 			<item value="xTaskCreate( ledita_2, &quot;Led2&quot;, configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );"/>
 		</list>
 		<list key="replacehistory">
+			<item value="floatToAscii"/>
 			<item value="modeSemaphore"/>
 		</list>
 	</section>
