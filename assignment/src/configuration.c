@@ -48,51 +48,43 @@ void configuration()
 		input = uartReceiveString(); // polling UART receive buffer
 		if(input != 0)
 		{
-			if ((input[0] == 'i' || input[0] == 'p' || input[0] == 'e') && (strlen(input) < 2))
-			{
-				if(input[0] == 'i')
-				{
-					selectedKParameter = 1;
-					xil_printf("Ki selected\n");
-					if(uxSemaphoreGetCount(buttonSemaphore)) {
-						xil_printf("Type a value for the parameter: ");
-					} else {
-						xil_printf("Press the 3. button to decrease or the 4. button to increase the Ki parameter value.\n");
-						xil_printf("Type a value for the Ki parameter: \n");
-					}
-				}else if (input[0] == 'p')
-				{
-					selectedKParameter = 2;
-					xil_printf("Kp selected\n");
-						if(uxSemaphoreGetCount(buttonSemaphore)) {
-						xil_printf("Type a value for the Kp parameter: ");
-					} else {
-						xil_printf("Press the 3. button to decrease or the 4. button to increase the Kp parameter value.\n");
-						xil_printf("Type a value for the parameter: \n");
-					}
-				} else if (input[0] == 'e'){
-					uartSendString("Exiting Configuration Mode.\nParameters set as:\n Ki: ");
-					floatToIntPrint(gKi);
-					uartSendString("\nKp: ");
-					floatToIntPrint(gKp);
-					uartSendString("\n\n");
-
-					xSemaphoreGive(buttonSemaphore);
-					handleTaskExit();
-				} else {
-					xil_printf("Invalid input! Type 'i' to change the Ki parameter.\nType 'p' to change the Kp parameter.\n Type 'e' to EXIT the mode\n\n")
-				}
-			}
-
 			float fuserInput = atof(input);
-			/* Set the user input as a float to the selected K-value */
-			if(selectedKParameter == 1  && (strlen(input) > 0) && fuserInput != 0)
+			if((input[0] == 'i') && (strlen(input) < 2))
+			{
+				selectedKParameter = 1;
+				xil_printf("Ki selected\n");
+				if(uxSemaphoreGetCount(buttonSemaphore)) {
+					xil_printf("Type a value for the parameter: ");
+				} else {
+					xil_printf("Press the 3. button to decrease or the 4. button to increase the Ki parameter value.\n");
+					xil_printf("Type a value for the Ki parameter: \n");
+				}
+			} else if ((input[0] == 'p') && (strlen(input) < 2))
+			{
+				selectedKParameter = 2;
+				xil_printf("Kp selected\n");
+					if(uxSemaphoreGetCount(buttonSemaphore)) {
+					xil_printf("Type a value for the Kp parameter: ");
+				} else {
+					xil_printf("Press the 3. button to decrease or the 4. button to increase the Kp parameter value.\n");
+					xil_printf("Type a value for the parameter: \n");
+				}
+			} else if ((input[0] == 'e') && (strlen(input) < 2)){
+				uartSendString("Exiting Configuration Mode.\nParameters set as:\n Ki: ");
+				floatToIntPrint(gKi);
+				uartSendString("\nKp: ");
+				floatToIntPrint(gKp);
+				uartSendString("\n\n");
+
+				xSemaphoreGive(buttonSemaphore);
+				handleTaskExit();
+			} else if(selectedKParameter == 1  && (strlen(input) > 0) && fuserInput != 0)
 			{
 				gKi = fuserInput;
 				uartSendString("Set Ki as: ");
 				floatToIntPrint(gKi);
 				uartSendString("\n");
-			}if(selectedKParameter == 2  && (strlen(input) > 0) && fuserInput != 0)
+			} else if(selectedKParameter == 2  && (strlen(input) > 0) && fuserInput != 0)
 			{
 				gKp = fuserInput;
 				uartSendString("Set Kp as: ");
@@ -100,19 +92,26 @@ void configuration()
 				uartSendString("\n");
 			}
 			/* Special case if the user input for K-value is 0 */
-			if(selectedKParameter == 1  && (strlen(input) > 0) && input[0] == '0')
+			else if(selectedKParameter == 1  && (strlen(input) > 0) && input[0] == '0')
 			{
 				gKi = 0;
 				uartSendString("Set Ki as: ");
 				floatToIntPrint(gKi);
 				uartSendString("\n");
-			}if(selectedKParameter == 2  && (strlen(input) > 0) && input[0] == '0')
+			}
+			else if(selectedKParameter == 2  && (strlen(input) > 0) && input[0] == '0')
 			{
 				gKp = 0;
 				uartSendString("set Kp as: ");
 				floatToIntPrint(gKp);
 				uartSendString("\n");
+			} else {
+				xil_printf("Invalid input! Type 'i' to change the Ki parameter.\nType 'p' to change the Kp parameter.\n Type 'e' to EXIT the mode. Type a number to set the parameter value.\n\n")
 			}
+
+			
+			/* Set the user input as a float to the selected K-value */
+
 		}
 
 
