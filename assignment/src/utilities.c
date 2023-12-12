@@ -91,5 +91,9 @@ char* uartReceiveString(){
 
 void printMenu()
 {
-	xil_printf("Select a mode by pressing the 1. button\n1. mode is the configuration\n2. mode is the idling\n3. mode is the modulating\n\n");
+    xil_printf("\n################################## MAIN MENU ##################################\n");
+	xil_printf("Select a mode by pressing the 1. button on the board or by typing a number 1-3.\n");
+	xil_printf("###############################################################################\n\n");
+	xil_printf("Select Mode:\n1. Configuration Mode\n2. Idling Mode\n3. Modulating mode\n\n");
+
 }
