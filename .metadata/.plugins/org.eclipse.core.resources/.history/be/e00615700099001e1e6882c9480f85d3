@@ -25,15 +25,8 @@ void modulating()
 
 	for(;;)
 	{
-		if(AXI_BTN_DATA & 0b0001)
-		{
-			uartSendString("Exiting modulation\n\n");
-			handleTaskExit();
-		}
 		uIn = controllerPi(uRef, u3);
 		u3 = converterModel(uIn);
-
-		//TODO: add the controller output is fed to the RGB led
 		uartSendString("Output voltage (u3): ");
 		floatToIntPrint(u3);
 		uartSendString("\n");

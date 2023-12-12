@@ -1,11 +1,11 @@
-15:36:52 **** Auto Build of configuration Debug for project assignment ****
+17:10:48 **** Auto Build of configuration Debug for project assignment ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
-'Building file: ../src/main.c'
+'Building file: ../src/modulating.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+'Finished building: ../src/modulating.c'
 ' '
 'Building target: assignment.elf'
 'Invoking: ARM v7 gcc linker'
@@ -15,9 +15,9 @@ arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=non
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  87996	   3372	  89440	 180808	  2c248	assignment.elf
+  90164	   3372	  89504	 183040	  2cb00	assignment.elf
 'Finished building: assignment.elf.size'
 ' '
 
-15:36:53 Build Finished (took 943ms)
+17:10:49 Build Finished (took 1s.2ms)
 

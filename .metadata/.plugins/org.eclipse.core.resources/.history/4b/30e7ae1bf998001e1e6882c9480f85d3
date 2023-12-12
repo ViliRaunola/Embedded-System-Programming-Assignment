@@ -32,7 +32,6 @@
 #define INCREMENT_AMOUNT 0.1
 #define BUTTON_PRESS_DELAY 200
 #define BUFFER_SIZE 20
-#define U1MAX 5
 
 void printMenu();
 void uart_send(char c);

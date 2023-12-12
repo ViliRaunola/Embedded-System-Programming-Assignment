@@ -12,7 +12,5 @@
 #include "utilities.h"
 
 void modulating();
-static float converterModel(float uIn);
-static float controllerPi(float uRef, float uAct);
 
 #endif /* SRC_MODULATING_H_ */

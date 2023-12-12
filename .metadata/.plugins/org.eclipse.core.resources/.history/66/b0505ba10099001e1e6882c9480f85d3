@@ -27,7 +27,7 @@ void modulating()
 	{
 		if(AXI_BTN_DATA & 0b0001)
 		{
-			uartSendString("Exiting modulation\n\n");
+			uartSendString("Exiting modulation\n");
 			handleTaskExit();
 		}
 		uIn = controllerPi(uRef, u3);

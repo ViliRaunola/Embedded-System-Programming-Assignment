@@ -7,38 +7,12 @@
 
 #include "modulating.h"
 
-extern float gKi;
-extern float gKp;
-
 void modulating()
 {
 	AXI_LED_DATA = 0b0111;
 	xil_printf("In modulating task\n");
+	vTaskDelay( pdMS_TO_TICKS( 1000 ) );
 
-	TickType_t xLastWakeTime;
-	const TickType_t xPeriod = pdMS_TO_TICKS( 200 );
-	xLastWakeTime = xTaskGetTickCount();
-
-	float uRef = 2.0;
-	static float u3 = 0;
-	static float uIn;
-
-	for(;;)
-	{
-		if(AXI_BTN_DATA & 0b0001)
-		{
-			uartSendString("Exiting modulation\n\n");
-			handleTaskExit();
-		}
-		uIn = controllerPi(uRef, u3);
-		u3 = converterModel(uIn);
-
-		//TODO: add the controller output is fed to the RGB led
-		uartSendString("Output voltage (u3): ");
-		floatToIntPrint(u3);
-		uartSendString("\n");
-		vTaskDelayUntil( &xLastWakeTime, xPeriod );
-	}
 	handleTaskExit();
 }
 
@@ -75,19 +49,4 @@ static float converterModel(float uIn)
 	u3K = u3KPlusH;
 
 	return u3KPlusH;
-}
-
-static float controllerPi(float uRef, float uAct)
-{
-	static float u1Old = 0;
-	float errorNew, uNew, u1New;
-	errorNew = uRef - uAct;
-	u1New = u1Old + gKi*errorNew;
-	if(abs(u1New)>=U1MAX)
-	{
-		u1New = u1Old;
-	}
-	uNew = gKp*errorNew + u1New;
-	u1Old = u1New;
-	return uNew;
 }

@@ -22885,3 +22885,513 @@ arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
   87996	   3372	  89440	 180808	  2c248	assignment.elf
 'Finished building: assignment.elf.size'
 ' '
+15:40:35 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:102:
+../src/modulating.h:15:14: warning: 'converterModel' declared 'static' but never defined [-Wunused-function]
+ static float converterModel(float uIn);
+              ^~~~~~~~~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+In file included from ../src/modulating.c:8:
+../src/modulating.h:15:14: warning: 'converterModel' declared 'static' but never defined [-Wunused-function]
+ static float converterModel(float uIn);
+              ^~~~~~~~~~~~~~
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  87996	   3372	  89440	 180808	  2c248	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+15:40:37 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+../src/modulating.c: In function 'converterModel':
+../src/modulating.c:22:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/modulating.c:19:14: warning: 'converterModel' defined but not used [-Wunused-function]
+ static float converterModel(float uIn)
+              ^~~~~~~~~~~~~~
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  88060	   3372	  89440	 180872	  2c288	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:03:27 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+../src/modulating.c:19:14: warning: 'converterModel' defined but not used [-Wunused-function]
+ static float converterModel(float uIn)
+              ^~~~~~~~~~~~~~
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  89748	   3372	  89488	 182608	  2c950	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:06:13 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:102:
+../src/modulating.h:15:14: warning: 'converterModel' declared 'static' but never defined [-Wunused-function]
+ static float converterModel(float uIn);
+              ^~~~~~~~~~~~~~
+../src/modulating.h:16:14: warning: 'controllerPi' declared 'static' but never defined [-Wunused-function]
+ static float controllerPi(float uRef);
+              ^~~~~~~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+In file included from ../src/modulating.c:8:
+../src/modulating.h:16:14: warning: 'controllerPi' declared 'static' but never defined [-Wunused-function]
+ static float controllerPi(float uRef);
+              ^~~~~~~~~~~~
+../src/modulating.c:19:14: warning: 'converterModel' defined but not used [-Wunused-function]
+ static float converterModel(float uIn)
+              ^~~~~~~~~~~~~~
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  89748	   3372	  89488	 182608	  2c950	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:06:14 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+../src/modulating.c: In function 'controllerPi':
+../src/modulating.c:57:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/modulating.c:54:14: warning: 'controllerPi' defined but not used [-Wunused-function]
+ static float controllerPi(float uRef)
+              ^~~~~~~~~~~~
+../src/modulating.c:19:14: warning: 'converterModel' defined but not used [-Wunused-function]
+ static float converterModel(float uIn)
+              ^~~~~~~~~~~~~~
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  89788	   3372	  89488	 182648	  2c978	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:09:51 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:102:
+../src/modulating.h:15:14: warning: 'converterModel' declared 'static' but never defined [-Wunused-function]
+ static float converterModel(float uIn);
+              ^~~~~~~~~~~~~~
+../src/modulating.h:16:14: warning: 'controllerPi' declared 'static' but never defined [-Wunused-function]
+ static float controllerPi(float uRef, float uAct);
+              ^~~~~~~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+../src/modulating.c:54:14: error: conflicting types for 'controllerPi'
+ static float controllerPi(float uRef)
+              ^~~~~~~~~~~~
+In file included from ../src/modulating.c:8:
+../src/modulating.h:16:14: note: previous declaration of 'controllerPi' was here
+ static float controllerPi(float uRef, float uAct);
+              ^~~~~~~~~~~~
+../src/modulating.c: In function 'controllerPi':
+../src/modulating.c:57:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/modulating.c:54:14: warning: 'controllerPi' defined but not used [-Wunused-function]
+ static float controllerPi(float uRef)
+              ^~~~~~~~~~~~
+../src/modulating.c:19:14: warning: 'converterModel' defined but not used [-Wunused-function]
+ static float converterModel(float uIn)
+              ^~~~~~~~~~~~~~
+make: *** [src/subdir.mk:35: src/modulating.o] Error 1
+16:09:53 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+../src/modulating.c: In function 'controllerPi':
+../src/modulating.c:57:18: warning: unused variable 'u1New' [-Wunused-variable]
+  float errorNew, u1New;
+                  ^~~~~
+../src/modulating.c:57:8: warning: variable 'errorNew' set but not used [-Wunused-but-set-variable]
+  float errorNew, u1New;
+        ^~~~~~~~
+../src/modulating.c:56:15: warning: unused variable 'u1Old' [-Wunused-variable]
+  static float u1Old = 0;
+               ^~~~~
+../src/modulating.c:59:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/modulating.c:56:15: warning: 'u1Old' defined but not used [-Wunused-variable]
+  static float u1Old = 0;
+               ^~~~~
+../src/modulating.c:54:14: warning: 'controllerPi' defined but not used [-Wunused-function]
+ static float controllerPi(float uRef, float uAct)
+              ^~~~~~~~~~~~
+../src/modulating.c:19:14: warning: 'converterModel' defined but not used [-Wunused-function]
+ static float converterModel(float uIn)
+              ^~~~~~~~~~~~~~
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  89788	   3372	  89488	 182648	  2c978	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:14:22 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+../src/modulating.c: In function 'controllerPi':
+../src/modulating.c:59:18: error: 'gKi' undeclared (first use in this function)
+  u1New = u1Old + gKi*errorNew;
+                  ^~~
+../src/modulating.c:59:18: note: each undeclared identifier is reported only once for each function it appears in
+../src/modulating.c:60:17: error: 'u1Max' undeclared (first use in this function)
+  if(abs(u1New)>=u1Max)
+                 ^~~~~
+../src/modulating.c:64:9: error: 'gKp' undeclared (first use in this function)
+  uNew = gKp*errorNew + u1New;
+         ^~~
+At top level:
+../src/modulating.c:54:14: warning: 'controllerPi' defined but not used [-Wunused-function]
+ static float controllerPi(float uRef, float uAct)
+              ^~~~~~~~~~~~
+../src/modulating.c:19:14: warning: 'converterModel' defined but not used [-Wunused-function]
+ static float converterModel(float uIn)
+              ^~~~~~~~~~~~~~
+make: *** [src/subdir.mk:35: src/modulating.o] Error 1
+16:14:51 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+../src/modulating.c: In function 'controllerPi':
+../src/modulating.c:63:17: error: 'u1Max' undeclared (first use in this function)
+  if(abs(u1New)>=u1Max)
+                 ^~~~~
+../src/modulating.c:63:17: note: each undeclared identifier is reported only once for each function it appears in
+At top level:
+../src/modulating.c:57:14: warning: 'controllerPi' defined but not used [-Wunused-function]
+ static float controllerPi(float uRef, float uAct)
+              ^~~~~~~~~~~~
+../src/modulating.c:22:14: warning: 'converterModel' defined but not used [-Wunused-function]
+ static float converterModel(float uIn)
+              ^~~~~~~~~~~~~~
+make: *** [src/subdir.mk:35: src/modulating.o] Error 1
+16:16:30 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+../src/modulating.c: In function 'controllerPi':
+../src/modulating.c:63:17: error: 'U1MAX' undeclared (first use in this function)
+  if(abs(u1New)>=U1MAX)
+                 ^~~~~
+../src/modulating.c:63:17: note: each undeclared identifier is reported only once for each function it appears in
+At top level:
+../src/modulating.c:57:14: warning: 'controllerPi' defined but not used [-Wunused-function]
+ static float controllerPi(float uRef, float uAct)
+              ^~~~~~~~~~~~
+../src/modulating.c:22:14: warning: 'converterModel' defined but not used [-Wunused-function]
+ static float converterModel(float uIn)
+              ^~~~~~~~~~~~~~
+make: *** [src/subdir.mk:35: src/modulating.o] Error 1
+16:16:57 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/configuration.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/configuration.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/configuration.d" -MT"src/configuration.o" -o "src/configuration.o" "../src/configuration.c"
+'Finished building: ../src/configuration.c'
+' '
+'Building file: ../src/idling.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/idling.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/idling.d" -MT"src/idling.o" -o "src/idling.o" "../src/idling.c"
+'Finished building: ../src/idling.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:102:
+../src/modulating.h:15:14: warning: 'converterModel' declared 'static' but never defined [-Wunused-function]
+ static float converterModel(float uIn);
+              ^~~~~~~~~~~~~~
+../src/modulating.h:16:14: warning: 'controllerPi' declared 'static' but never defined [-Wunused-function]
+ static float controllerPi(float uRef, float uAct);
+              ^~~~~~~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+../src/modulating.c:57:14: warning: 'controllerPi' defined but not used [-Wunused-function]
+ static float controllerPi(float uRef, float uAct)
+              ^~~~~~~~~~~~
+../src/modulating.c:22:14: warning: 'converterModel' defined but not used [-Wunused-function]
+ static float converterModel(float uIn)
+              ^~~~~~~~~~~~~~
+'Finished building: ../src/modulating.c'
+' '
+'Building file: ../src/utilities.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/utilities.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/utilities.d" -MT"src/utilities.o" -o "src/utilities.o" "../src/utilities.c"
+'Finished building: ../src/utilities.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  89916	   3372	  89488	 182776	  2c9f8	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:33:57 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+../src/modulating.c: In function 'modulating':
+../src/modulating.c:29:8: error: too few arguments to function 'converterModel'
+   u3 = converterModel();
+        ^~~~~~~~~~~~~~
+In file included from ../src/modulating.c:8:
+../src/modulating.h:15:14: note: declared here
+ static float converterModel(float uIn);
+              ^~~~~~~~~~~~~~
+../src/modulating.c:24:15: warning: variable 'uIn' set but not used [-Wunused-but-set-variable]
+  static float uIn;
+               ^~~
+make: *** [src/subdir.mk:35: src/modulating.o] Error 1
+16:34:08 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90076	   3372	  89504	 182952	  2caa8	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:34:18 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:36:20 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/configuration.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/configuration.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/configuration.d" -MT"src/configuration.o" -o "src/configuration.o" "../src/configuration.c"
+'Finished building: ../src/configuration.c'
+' '
+'Building file: ../src/idling.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/idling.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/idling.d" -MT"src/idling.o" -o "src/idling.o" "../src/idling.c"
+'Finished building: ../src/idling.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:102:
+../src/modulating.h:15:14: warning: 'converterModel' declared 'static' but never defined [-Wunused-function]
+ static float converterModel(float uIn);
+              ^~~~~~~~~~~~~~
+../src/modulating.h:16:14: warning: 'controllerPi' declared 'static' but never defined [-Wunused-function]
+ static float controllerPi(float uRef, float uAct);
+              ^~~~~~~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+'Finished building: ../src/modulating.c'
+' '
+'Building file: ../src/utilities.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/utilities.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/utilities.d" -MT"src/utilities.o" -o "src/utilities.o" "../src/utilities.c"
+'Finished building: ../src/utilities.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90076	   3372	  89504	 182952	  2caa8	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+16:36:29 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:45:49 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:47:16 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:51:33 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:09:25 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90156	   3372	  89504	 183032	  2caf8	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+17:09:41 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:10:48 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90164	   3372	  89504	 183040	  2cb00	assignment.elf
+'Finished building: assignment.elf.size'
+' '
