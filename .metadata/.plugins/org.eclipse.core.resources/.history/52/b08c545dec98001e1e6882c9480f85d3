@@ -1,0 +1,36 @@
+/*
+ * utilities.h
+ *
+ *  Created on: 12 Dec 2023
+ *      Author: vraun
+ */
+
+#ifndef SRC_UTILITIES_H_
+#define SRC_UTILITIES_H_
+
+/* FreeRTOS includes. */
+#include "FreeRTOS.h"
+#include "task.h"
+#include "semphr.h"
+
+/* LUT includes. */
+#include "zynq_registers.h"
+#include <xuartps_hw.h>
+
+
+/* Global variables */
+volatile float gKi = 0;
+volatile float gKp = 0;
+#define INCREMENT_AMOUNT 0.1
+#define BUFFER_SIZE 20
+#define BUTTON_PRESS_DELAY 200
+
+
+void uart_send(char c);
+void uartSendString(char str[BUFFER_SIZE]);
+char uart_receive();
+static void handleTaskExit();
+void floatToIntPrint(float fval);
+static char* uartReceiveString();
+
+#endif /* SRC_UTILITIES_H_ */

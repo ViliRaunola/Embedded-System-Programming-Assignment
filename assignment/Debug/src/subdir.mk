@@ -7,13 +7,25 @@ LD_SRCS += \
 ../src/lscript.ld 
 
 C_SRCS += \
-../src/main.c 
+../src/configuration.c \
+../src/idling.c \
+../src/main.c \
+../src/modulating.c \
+../src/utilities.c 
 
 OBJS += \
-./src/main.o 
+./src/configuration.o \
+./src/idling.o \
+./src/main.o \
+./src/modulating.o \
+./src/utilities.o 
 
 C_DEPS += \
-./src/main.d 
+./src/configuration.d \
+./src/idling.d \
+./src/main.d \
+./src/modulating.d \
+./src/utilities.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

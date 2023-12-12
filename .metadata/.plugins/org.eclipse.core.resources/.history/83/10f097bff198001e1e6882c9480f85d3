@@ -1,0 +1,28 @@
+/*
+ * modulating.h
+ *
+ *  Created on: 12 Dec 2023
+ *      Author: vraun
+ */
+
+#ifndef SRC_MODULATING_H_
+#define SRC_MODULATING_H_
+
+/* FreeRTOS includes. */
+#include "FreeRTOS.h"
+#include "task.h"
+#include "semphr.h"
+
+/* Xilinx includes. */
+#include "xil_printf.h"
+#include "xparameters.h"
+#include "xil_types.h"
+#include <xuartps.h>
+
+/* LUT includes. */
+#include "zynq_registers.h"
+#include <xuartps_hw.h>
+
+void modulating();
+
+#endif /* SRC_MODULATING_H_ */

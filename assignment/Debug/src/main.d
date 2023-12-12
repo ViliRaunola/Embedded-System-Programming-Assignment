@@ -1,4 +1,4 @@
-src/main.o src/main.o: ../src/main.c \
+src/main.o src/main.o: ../src/main.c ../src/utilities.h \
  ../../assignment_bsp/ps7_cortexa9_0/include/FreeRTOS.h \
  ../../assignment_bsp/ps7_cortexa9_0/include/FreeRTOSConfig.h \
  ../../assignment_bsp/ps7_cortexa9_0/include/xparameters.h \
@@ -29,7 +29,10 @@ src/main.o src/main.o: ../src/main.c \
  ../../assignment_bsp/ps7_cortexa9_0/include/xpseudo_asm_gcc.h \
  ../../assignment_bsp/ps7_cortexa9_0/include/xplatform_info.h \
  G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h \
- ../../assignment_bsp/ps7_cortexa9_0/include/xuartps_hw.h
+ ../../assignment_bsp/ps7_cortexa9_0/include/xuartps_hw.h \
+ ../src/configuration.h ../src/modulating.h ../src/idling.h
+
+../src/utilities.h:
 
 ../../assignment_bsp/ps7_cortexa9_0/include/FreeRTOS.h:
 
@@ -92,3 +95,9 @@ src/main.o src/main.o: ../src/main.c \
 G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:
 
 ../../assignment_bsp/ps7_cortexa9_0/include/xuartps_hw.h:
+
+../src/configuration.h:
+
+../src/modulating.h:
+
+../src/idling.h:

@@ -1,0 +1,25 @@
+/*
+ * utilities.h
+ *
+ *  Created on: 12 Dec 2023
+ *      Author: vraun
+ */
+
+#ifndef SRC_UTILITIES_H_
+#define SRC_UTILITIES_H_
+
+
+/* Global variables */
+#define INCREMENT_AMOUNT 0.1
+#define BUTTON_PRESS_DELAY 200
+#define BUFFER_SIZE 20
+
+void printMenu();
+void uart_send(char c);
+void uartSendString(char str[BUFFER_SIZE]);
+char uart_receive();
+void handleTaskExit();
+void floatToIntPrint(float fval);
+char* uartReceiveString();
+
+#endif /* SRC_UTILITIES_H_ */
