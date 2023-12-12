@@ -16,7 +16,7 @@ void modulating()
 	xil_printf("In modulating task\n");
 
 	TickType_t xLastWakeTime;
-	const TickType_t xPeriod = pdMS_TO_TICKS( 10 );
+	const TickType_t xPeriod = pdMS_TO_TICKS( 5 );
 	xLastWakeTime = xTaskGetTickCount();
 
 	float uRef = 2.0;

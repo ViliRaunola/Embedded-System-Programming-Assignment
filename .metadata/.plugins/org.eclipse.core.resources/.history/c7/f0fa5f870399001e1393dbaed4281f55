@@ -216,7 +216,7 @@ static void selectModeBasedOnInput(uint8_t modeNumber, uint8_t uartCheck)
 
 static void modeSelection()
 {
-	xil_printf("***TODO PROGRAM INTRODUCTION***\n\n\n");
+
 	printMenu();
 	uint8_t modeNumber = 0;
 
@@ -237,7 +237,7 @@ static void modeSelection()
 					selectModeBasedOnInput(modeNumber, 1);
 				}else
 				{
-					uartSendString("Invalid input! Type a number between 1 and 3.\n\n Select Mode:\n1. Configuration Mode\n2. Idling Mode\n3. Modulating mode \n\n");
+					uartSendString("Invalid input! :/ \n");
 				}
 			}
 
@@ -253,3 +253,4 @@ static void modeSelection()
 		}
 	}
 }
+

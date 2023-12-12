@@ -106,7 +106,7 @@ void configuration()
 				floatToIntPrint(gKp);
 				uartSendString("\n");
 			} else {
-				xil_printf("Invalid input! Type 'i' to change the Ki parameter.\nType 'p' to change the Kp parameter.\n Type 'e' to EXIT the mode. Type a number to set the parameter value.\n\n");
+				xil_printf("Invalid input! Type 'i' to change the Ki parameter.\nType 'p' to change the Kp parameter.\n Type 'e' to EXIT the mode. Type a number to set the parameter value.\n\n")
 			}
 
 

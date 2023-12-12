@@ -16,13 +16,12 @@ void modulating()
 	xil_printf("In modulating task\n");
 
 	TickType_t xLastWakeTime;
-	const TickType_t xPeriod = pdMS_TO_TICKS( 10 );
+	const TickType_t xPeriod = pdMS_TO_TICKS( 200 );
 	xLastWakeTime = xTaskGetTickCount();
 
 	float uRef = 2.0;
-	float u3 = 0;
-	float uIn;
-	int i = 0;
+	static float u3 = 0;
+	static float uIn;
 
 	for(;;)
 	{
@@ -37,14 +36,9 @@ void modulating()
 		u3 = converterModel(uIn);
 
 		//TODO: add the controller output is fed to the RGB led
-		if(i > 50)
-		{
-			uartSendString("Output voltage (u3): ");
-			floatToIntPrint(u3);
-			uartSendString("\n");
-			i = 0;
-		}
-		i++;
+		uartSendString("Output voltage (u3): ");
+		floatToIntPrint(u3);
+		uartSendString("\n");
 		vTaskDelayUntil( &xLastWakeTime, xPeriod );
 	}
 	handleTaskExit();

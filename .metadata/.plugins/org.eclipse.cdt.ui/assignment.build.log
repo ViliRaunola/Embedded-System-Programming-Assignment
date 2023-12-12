@@ -1,23 +1,8 @@
-17:10:48 **** Auto Build of configuration Debug for project assignment ****
+18:36:33 **** Incremental Build of configuration Debug for project assignment ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
-'Building file: ../src/modulating.c'
-'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
-'Finished building: ../src/modulating.c'
-' '
-'Building target: assignment.elf'
-'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
-'Finished building target: assignment.elf'
-' '
-'Invoking: ARM v7 Print Size'
-arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  90164	   3372	  89504	 183040	  2cb00	assignment.elf
-'Finished building: assignment.elf.size'
-' '
+make: Nothing to be done for 'main-build'.
 
-17:10:49 Build Finished (took 1s.2ms)
+18:36:33 Build Finished (took 189ms)
 

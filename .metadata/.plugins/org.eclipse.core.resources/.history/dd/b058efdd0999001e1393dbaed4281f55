@@ -37,7 +37,7 @@ void modulating()
 		u3 = converterModel(uIn);
 
 		//TODO: add the controller output is fed to the RGB led
-		if(i > 50)
+		if(i > 99999)
 		{
 			uartSendString("Output voltage (u3): ");
 			floatToIntPrint(u3);

@@ -61,9 +61,9 @@ void floatToIntPrint(float fval) {
 	whole = fval;
 	thousandths = abs(round((fval - whole) * 1000));
 	if(whole == 0 && fval < 0 && thousandths != 0) {
-		xil_printf("-%d.%03d", whole, thousandths);
+		xil_printf("-%d.%d", whole, thousandths);
 	} else {
-		xil_printf("%d.%03d", whole, thousandths);
+		xil_printf("%d.%d", whole, thousandths);
 	}
 }
 
@@ -91,9 +91,5 @@ char* uartReceiveString(){
 
 void printMenu()
 {
-    xil_printf("\n################################## MAIN MENU ##################################\n");
-	xil_printf("Select a mode by pressing the 1. button on the board or by typing a number 1-3.\n");
-	xil_printf("###############################################################################\n\n");
-	xil_printf("Select Mode:\n1. Configuration Mode\n2. Idling Mode\n3. Modulating mode\n\n");
-
+	xil_printf("Select a mode by pressing the 1. button\n1. mode is the configuration\n2. mode is the idling\n3. mode is the modulating\n\n");
 }

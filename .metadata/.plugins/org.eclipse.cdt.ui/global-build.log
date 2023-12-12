@@ -23395,3 +23395,532 @@ arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
   90164	   3372	  89504	 183040	  2cb00	assignment.elf
 'Finished building: assignment.elf.size'
 ' '
+17:31:10 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:31:16 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+../src/modulating.c: In function 'configuration':
+../src/modulating.c:109:183: error: expected ';' before '}' token
+     xil_printf("Invalid input! Type 'i' to change the Ki parameter.\nType 'p' to change the Kp parameter.\n Type 'e' to EXIT the mode. Type a number to set the parameter value.\n\n")
+                                                                                                                                                                                       ^
+                                                                                                                                                                                       ;
+    }
+    ~                                                                                                                                                                                   
+make: *** [src/subdir.mk:35: src/modulating.o] Error 1
+17:31:33 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:102:
+../src/modulating.h:15:14: warning: 'converterModel' declared 'static' but never defined [-Wunused-function]
+ static float converterModel(float uIn);
+              ^~~~~~~~~~~~~~
+../src/modulating.h:16:14: warning: 'controllerPi' declared 'static' but never defined [-Wunused-function]
+ static float controllerPi(float uRef, float uAct);
+              ^~~~~~~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+../src/modulating.c: In function 'configuration':
+../src/modulating.c:109:183: error: expected ';' before '}' token
+     xil_printf("Invalid input! Type 'i' to change the Ki parameter.\nType 'p' to change the Kp parameter.\n Type 'e' to EXIT the mode. Type a number to set the parameter value.\n\n")
+                                                                                                                                                                                       ^
+                                                                                                                                                                                       ;
+    }
+    ~                                                                                                                                                                                   
+make: *** [src/subdir.mk:35: src/modulating.o] Error 1
+17:31:51 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+../src/modulating.c: In function 'configuration':
+../src/modulating.c:109:183: error: expected ';' before '}' token
+     xil_printf("Invalid input! Type 'i' to change the Ki parameter.\nType 'p' to change the Kp parameter.\n Type 'e' to EXIT the mode. Type a number to set the parameter value.\n\n")
+                                                                                                                                                                                       ^
+                                                                                                                                                                                       ;
+    }
+    ~                                                                                                                                                                                   
+make: *** [src/subdir.mk:35: src/modulating.o] Error 1
+17:32:16 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+'Finished building: ../src/modulating.c'
+' '
+'Building file: ../src/utilities.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/utilities.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/utilities.d" -MT"src/utilities.o" -o "src/utilities.o" "../src/utilities.c"
+'Finished building: ../src/utilities.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90564	   3372	  89504	 183440	  2cc90	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+17:32:40 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/configuration.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/configuration.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/configuration.d" -MT"src/configuration.o" -o "src/configuration.o" "../src/configuration.c"
+../src/configuration.c: In function 'configuration':
+../src/configuration.c:109:183: error: expected ';' before '}' token
+     xil_printf("Invalid input! Type 'i' to change the Ki parameter.\nType 'p' to change the Kp parameter.\n Type 'e' to EXIT the mode. Type a number to set the parameter value.\n\n")
+                                                                                                                                                                                       ^
+                                                                                                                                                                                       ;
+    }
+    ~                                                                                                                                                                                   
+make: *** [src/subdir.mk:35: src/configuration.o] Error 1
+17:33:09 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/configuration.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/configuration.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/configuration.d" -MT"src/configuration.o" -o "src/configuration.o" "../src/configuration.c"
+'Finished building: ../src/configuration.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  91940	   3372	  89504	 184816	  2d1f0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+17:33:14 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:33:23 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:48:50 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  91940	   3372	  89504	 184816	  2d1f0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+17:59:48 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  91940	   3372	  89504	 184816	  2d1f0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+18:00:02 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  91876	   3372	  89488	 184736	  2d1a0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+18:00:05 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:00:28 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:04:12 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:05:24 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:11:28 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/utilities.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/utilities.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/utilities.d" -MT"src/utilities.o" -o "src/utilities.o" "../src/utilities.c"
+'Finished building: ../src/utilities.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  91876	   3372	  89488	 184736	  2d1a0	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+18:11:29 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:12:02 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/utilities.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/utilities.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/utilities.d" -MT"src/utilities.o" -o "src/utilities.o" "../src/utilities.c"
+'Finished building: ../src/utilities.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  91884	   3372	  89488	 184744	  2d1a8	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+18:12:03 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:14:57 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+../src/modulating.c: In function 'modulating':
+../src/modulating.c:19:19: warning: unused variable 'xPeriod' [-Wunused-variable]
+  const TickType_t xPeriod = pdMS_TO_TICKS( 200 );
+                   ^~~~~~~
+../src/modulating.c:18:13: warning: variable 'xLastWakeTime' set but not used [-Wunused-but-set-variable]
+  TickType_t xLastWakeTime;
+             ^~~~~~~~~~~~~
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  91884	   3372	  89488	 184744	  2d1a8	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+18:15:01 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:16:43 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  91948	   3372	  89488	 184808	  2d1e8	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+18:16:55 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  91948	   3372	  89488	 184808	  2d1e8	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+18:17:30 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  91948	   3372	  89488	 184808	  2d1e8	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+18:17:38 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  91948	   3372	  89488	 184808	  2d1e8	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+18:17:41 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  91948	   3372	  89488	 184808	  2d1e8	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+18:17:42 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:18:22 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  91948	   3372	  89488	 184808	  2d1e8	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+18:18:26 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:19:48 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  91948	   3372	  89488	 184808	  2d1e8	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+18:19:50 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:20:35 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  91948	   3372	  89488	 184808	  2d1e8	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+18:21:11 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:34:27 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  91948	   3372	  89488	 184808	  2d1e8	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+18:34:32 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:35:54 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:36:32 **** Auto Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/modulating.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/modulating.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../assignment_bsp/ps7_cortexa9_0/include -I"G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform" -MMD -MP -MF"src/modulating.d" -MT"src/modulating.o" -o "src/modulating.o" "../src/modulating.c"
+'Finished building: ../src/modulating.c'
+' '
+'Building target: assignment.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../assignment_bsp/ps7_cortexa9_0/lib -o "assignment.elf"  ./src/configuration.o ./src/idling.o ./src/main.o ./src/modulating.o ./src/utilities.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: assignment.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size assignment.elf  |tee "assignment.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  91948	   3372	  89488	 184808	  2d1e8	assignment.elf
+'Finished building: assignment.elf.size'
+' '
+18:36:33 **** Incremental Build of configuration Debug for project assignment ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.

@@ -61,9 +61,9 @@ void floatToIntPrint(float fval) {
 	whole = fval;
 	thousandths = abs(round((fval - whole) * 1000));
 	if(whole == 0 && fval < 0 && thousandths != 0) {
-		xil_printf("-%d.%03d", whole, thousandths);
+		xil_printf("-%d.%d", whole, thousandths);
 	} else {
-		xil_printf("%d.%03d", whole, thousandths);
+		xil_printf("%d.%d", whole, thousandths);
 	}
 }
 
