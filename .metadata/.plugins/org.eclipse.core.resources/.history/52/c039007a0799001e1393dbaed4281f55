@@ -1,0 +1,95 @@
+/*
+ * modulating.c
+ *
+ *  Created on: 12 Dec 2023
+ *      Author: vraun
+ */
+
+#include "modulating.h"
+
+extern float gKi;
+extern float gKp;
+
+void modulating()
+{
+	AXI_LED_DATA = 0b0111;
+	xil_printf("In modulating task\n");
+
+	TickType_t xLastWakeTime;
+	const TickType_t xPeriod = pdMS_TO_TICKS( 200 );
+	xLastWakeTime = xTaskGetTickCount();
+
+	float uRef = 2.0;
+	static float u3 = 0;
+	static float uIn;
+
+	for(;;)
+	{
+		//TODO: add refrence voltage increase/decrease by buttons
+		//TODO: add refreence voltage change by uart
+		if(AXI_BTN_DATA & 0b0001)
+		{
+			uartSendString("Exiting modulation\n\n");
+			handleTaskExit();
+		}
+		uIn = controllerPi(uRef, u3);
+		u3 = converterModel(uIn);
+
+		//TODO: add the controller output is fed to the RGB led
+		uartSendString("Output voltage (u3): ");
+		floatToIntPrint(u3);
+		uartSendString("\n");
+		vTaskDelayUntil( &xLastWakeTime, xPeriod );
+	}
+	handleTaskExit();
+}
+
+static float converterModel(float uIn)
+{
+	/* Old values */
+	static float i1K = 0;
+	static float u1K = 0;
+	static float i2K = 0;
+	static float u2K = 0;
+	static float i3K = 0;
+	static float u3K = 0;
+
+	/* Measurement */
+	static float i1KPlusH = 0;
+	static float u1KPlusH = 0;
+	static float i2KPlusH = 0;
+	static float u2KPlusH = 0;
+	static float i3KPlusH = 0;
+	static float u3KPlusH = 0;
+
+	i1KPlusH = 0.9652*i1K + (-0.0172)*u1K +  0.0057*i2K + (-0.0058)*u2K + 0.0052*i3K + (-0.0251)*u3K + 0.0471*uIn;
+	u1KPlusH = 0.7732*i1K + 0.1252*u1K +  0.2315*i2K + 0.07*u2K + 0.1282*i3K + 0.7754*u3K + 0.0377*uIn;
+	i2KPlusH = 0.8278*i1K + (-0.7522)*u1K +  (-0.0956)*i2K + 0.3299*u2K + (-0.4855)*i3K + 0.3915*u3K + 0.0404*uIn;
+	u2KPlusH = 0.9948*i1K + 0.2655*u1K +  (-0.3848)*i2K + 0.4212*u2K + 0.3927*i3K + 0.2899*u3K + 0.0485*uIn;
+	i3KPlusH = 0.7648*i1K + (-0.4165)*u1K +  (-0.4855)*i2K + (-0.3366)*u2K + (-0.0986)*i3K + 0.7281*u3K + 0.0373*uIn;
+	u3KPlusH = 1.1056*i1K + 0.7587*u1K +  0.1179*i2K + 0.0748*u2K + (-0.2192)*i3K + 0.1491*u3K + 0.0539*uIn;
+
+	i1K = i1KPlusH;
+	u1K = u1KPlusH;
+	i2K = i2KPlusH;
+	u2K = u2KPlusH;
+	i3K = i3KPlusH;
+	u3K = u3KPlusH;
+
+	return u3KPlusH;
+}
+
+static float controllerPi(float uRef, float uAct)
+{
+	static float u1Old = 0;
+	float errorNew, uNew, u1New;
+	errorNew = uRef - uAct;
+	u1New = u1Old + gKi*errorNew;
+	if(abs(u1New)>=U1MAX)
+	{
+		u1New = u1Old;
+	}
+	uNew = gKp*errorNew + u1New;
+	u1Old = u1New;
+	return uNew;
+}

@@ -1,0 +1,17 @@
+/*
+ * modulating.c
+ *
+ *  Created on: 12 Dec 2023
+ *      Author: vraun
+ */
+
+#include "modulating.h"
+
+void modulating()
+{
+	AXI_LED_DATA = 0b0111;
+	xil_printf("In modulating task\n");
+	vTaskDelay( pdMS_TO_TICKS( 1000 ) );
+
+	handleTaskExit();
+}

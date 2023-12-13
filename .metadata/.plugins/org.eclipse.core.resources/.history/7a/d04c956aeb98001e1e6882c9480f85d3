@@ -1,0 +1,22 @@
+/*
+ * utilities.h
+ *
+ *  Created on: 12 Dec 2023
+ *      Author: vraun
+ */
+
+#ifndef SRC_UTILITIES_H_
+#define SRC_UTILITIES_H_
+
+/* LUT includes. */
+#include "zynq_registers.h"
+#include <xuartps_hw.h>
+
+
+#define BUFFER_SIZE 20
+
+void uart_send(char c);
+void uartSendString(char str[BUFFER_SIZE]);
+char uart_receive();
+
+#endif /* SRC_UTILITIES_H_ */

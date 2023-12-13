@@ -95,50 +95,23 @@
     Modified by lindh LUT
 */
 
-/* FreeRTOS includes. */
-#include "FreeRTOS.h"
-#include "task.h"
-#include "semphr.h"
-
-/* Xilinx includes. */
-#include "xil_printf.h"
-#include "xparameters.h"
-#include "xil_types.h"
-#include <xuartps.h>
-
-/* LUT includes. */
-#include "zynq_registers.h"
-#include <xuartps_hw.h>
 
 /* Other imports */
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
+#include "utilities.h"
+#include "configuration.h"
+#include "modulating.h"
 
 /* Global variables */
-volatile float gKi = 0;
-volatile float gKp = 0;
-#define INCREMENT_AMOUNT 0.1
-#define BUFFER_SIZE 20
-#define BUTTON_PRESS_DELAY 200
+float gKi = 0;
+float gKp = 0;
 
 /* Function declarations */
 static void modeSelection();
-static void testTask();
-static void printMenu();
-static void idling();
-static void modulating();
-static void configuration();
 static void selectModeBasedOnInput(uint8_t modeNumber, uint8_t uartCheck);
-static char uart_receive();
-static void selectParameter(uint8_t selectedKParameter);
-static void uart_send(char c);
-static void uartSendString(char str[BUFFER_SIZE]);
-static void handleTaskExit();
-static char* uartReceiveString();
+
+
 
 /* Semaphores */
-SemaphoreHandle_t configurationSemaphore;
 SemaphoreHandle_t modeSemaphore = 0;
 SemaphoreHandle_t buttonSemaphore = 0;
 
@@ -171,11 +144,27 @@ int main( void ) {
 	UART_CTRL = r;
 
 
+	/* Initialize the PWM. Source: ex 5 */
+	TTC0_CLK_CNTRL  = (0 << XTTCPS_CLK_CNTRL_PS_VAL_SHIFT) | XTTCPS_CLK_CNTRL_PS_EN_MASK;
+	TTC0_CLK_CNTRL2 = (0 << XTTCPS_CLK_CNTRL_PS_VAL_SHIFT) | XTTCPS_CLK_CNTRL_PS_EN_MASK;
+	TTC0_CLK_CNTRL3 = (0 << XTTCPS_CLK_CNTRL_PS_VAL_SHIFT) | XTTCPS_CLK_CNTRL_PS_EN_MASK;
+
+	TTC0_CNT_CNTRL  = XTTCPS_CNT_CNTRL_RST_MASK | XTTCPS_CNT_CNTRL_DIS_MASK | XTTCPS_CNT_CNTRL_MATCH_MASK | XTTCPS_CNT_CNTRL_POL_WAVE_MASK;
+	TTC0_CNT_CNTRL2 = XTTCPS_CNT_CNTRL_RST_MASK | XTTCPS_CNT_CNTRL_DIS_MASK | XTTCPS_CNT_CNTRL_MATCH_MASK | XTTCPS_CNT_CNTRL_POL_WAVE_MASK; // Set identical to TTC0_CNT_CNTRL
+	TTC0_CNT_CNTRL3 = XTTCPS_CNT_CNTRL_RST_MASK | XTTCPS_CNT_CNTRL_DIS_MASK | XTTCPS_CNT_CNTRL_MATCH_MASK | XTTCPS_CNT_CNTRL_POL_WAVE_MASK; // Set identical to TTC0_CNT_CNTRL
+
+	TTC0_MATCH_0           = 0;
+	TTC0_MATCH_1_COUNTER_2 = 0;
+	TTC0_MATCH_1_COUNTER_3 = 0;
+
+	TTC0_CNT_CNTRL  &= ~XTTCPS_CNT_CNTRL_DIS_MASK;
+	TTC0_CNT_CNTRL2 &= ~XTTCPS_CNT_CNTRL_DIS_MASK;
+	TTC0_CNT_CNTRL3 &= ~XTTCPS_CNT_CNTRL_DIS_MASK;
+
 	/*
 	 Create the needed tasks to start the program
 	*/
 	xTaskCreate( modeSelection, "Mode Selection Task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, NULL );
-	xTaskCreate( testTask, "test task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, NULL );
 
 
 
@@ -195,43 +184,13 @@ int main( void ) {
 	xSemaphoreGive(buttonSemaphore);
 
 	// Start the tasks and timer running.
-	// https://www.freertos.org/a00132.html
 	vTaskStartScheduler();
 
 
-
-	/**
-	 * If all is well, the scheduler will now be running, and the following line
-	 * will never be reached.  If the following line does execute, then there was
-	 * insufficient FreeRTOS heap memory available for the idle and/or timer tasks
-	 * to be created.  See the memory management section on the FreeRTOS web site
-	 * for more details.
-	 */
 	for( ;; );
 }
 
 
-/* Implement a function in a C file to generate a periodic interrupt at the
-required frequency. */
-//void vSetupTickInterrupt( void )
-//{
-/* FreeRTOS_Tick_Handler() is itself defined in the RTOS port layer.  An extern
-declaration is required to allow the following code to compile. */
-//extern void FreeRTOS_Tick_Handler( void );
-
-    /* Assume TIMER1_configure() configures a hypothetical timer peripheral called
-    TIMER1 to generate a periodic interrupt with a frequency set by its parameter. */
-  //  TIMER1_configure( 10);
-
-    /* Next assume Install_Interrupt() installs the function passed as its second
-    parameter as the handler for the peripheral passed as its first parameter. */
-    //Install_Interrupt( TIMER1, FreeRTOS_Tick_Handler );
-//}
-
-static void printMenu()
-{
-	xil_printf("Select a mode by pressing the 1. button\n1. mode is the configuration\n2. mode is the idling\n3. mode is the modulating\n\n");
-}
 
 static void selectModeBasedOnInput(uint8_t modeNumber, uint8_t uartCheck)
 {
@@ -255,12 +214,6 @@ static void selectModeBasedOnInput(uint8_t modeNumber, uint8_t uartCheck)
 			case 2:
 				if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
 				{
-					xTaskCreate( idling, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
-				}
-				break;
-			case 3:
-				if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
-				{
 					xTaskCreate( modulating, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
 				}
 				break;
@@ -273,7 +226,7 @@ static void selectModeBasedOnInput(uint8_t modeNumber, uint8_t uartCheck)
 
 static void modeSelection()
 {
-
+	xil_printf("***TODO PROGRAM INTRODUCTION***\n\n\n");
 	printMenu();
 	uint8_t modeNumber = 0;
 
@@ -282,288 +235,31 @@ static void modeSelection()
 		if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
 		{
 			xSemaphoreGive(modeSemaphore);
-			char input = 'a';
-			// delay loop
-			for(uint32_t i = 1; i < (1 << 20); i++)
+			char* input;
+			input = uartReceiveString(); // polling UART receive buffer
+
+			if(input != 0)
 			{
-				//TODO: add check if there is more than one input given. Example givin 11 will go to mode 1 --> not desired?
-				input = uart_receive(); // polling UART receive buffer
-				if(input)
+				if ((input[0] >= '1' || '2' <= input[0]) && (strlen(input) < 2))
 				{
-					break;
+					int tempInput = input[0] - '0';
+					modeNumber = tempInput;
+					selectModeBasedOnInput(modeNumber, 1);
+				}else
+				{
+					uartSendString("Invalid input! Type a number between 1 and 3.\n\n Select Mode:\n1. Configuration Mode\n2. Idling Mode\n3. Modulating mode \n\n");
 				}
-			 }
-			int tempInput = input - '0';
-			if (input >= '1' || '3' <= input)
-			{
-				modeNumber = tempInput;
-				selectModeBasedOnInput(modeNumber, 1);
 			}
+
 
 			if(AXI_BTN_DATA & 0x01){
 				modeNumber++;
-				if(modeNumber > 3)
+				if(modeNumber > 2)
 				{
 					modeNumber = 1;
 				}
 				selectModeBasedOnInput(modeNumber, 0);
 			}
 		}
-		/*else
-		{
-			vTaskDelay( pdMS_TO_TICKS( 1000 ) );
-		}*/
-
-
 	}
 }
-
-// Check if UART receive FIFO is not empty and return the new data
-char uart_receive()
-{
- if ((UART_STATUS & XUARTPS_SR_RXEMPTY) == XUARTPS_SR_RXEMPTY) return 0;
- return UART_FIFO;
-}
-
-static void idling()
-{
-	AXI_LED_DATA = 0b0011;
-	xil_printf("In idling task\n");
-	vTaskDelay( pdMS_TO_TICKS( 1000 ) );
-
-	handleTaskExit();
-}
-
-// Send one character through UART interface
-void uart_send(char c) {
-	while (UART_STATUS & XUARTPS_SR_TNFUL);
-	UART_FIFO = c;
-	while (UART_STATUS & XUARTPS_SR_TACTIVE);
-}
-
-// Send string (character array) through UART interface
-void uartSendString(char str[BUFFER_SIZE]) {
-	char *ptr = str;
-	// While the string still continues.
-	while (*ptr != '\0') {
-		uart_send(*ptr);
-		ptr++;
-	}
-}
-
-// Source: https://support.xilinx.com/s/question/0D52E00006hpTYOSA2/how-to-print-float-value-on-hyperterminal-using-xilprintf?language=en_US
-void floatToIntPrint(float fval) {
-	int whole, thousandths;
-	whole = fval;
-	thousandths = abs(round((fval - whole) * 1000));
-	if(whole == 0 && fval < 0 && thousandths != 0) {
-		xil_printf("-%d.%d", whole, thousandths);
-	} else {
-		xil_printf("%d.%d", whole, thousandths);
-	}
-}
-
-static void selectParameter(uint8_t selectedKParameter)
-{
-	TickType_t xLastWakeTime;
-	const TickType_t xPeriod = pdMS_TO_TICKS( BUTTON_PRESS_DELAY );
-	xLastWakeTime = xTaskGetTickCount();
-	switch(selectedKParameter)
-	{
-		case 1:
-			if(AXI_BTN_DATA & 0b1000)
-			{
-				gKi += INCREMENT_AMOUNT;
-				uartSendString("Ki: ");
-				floatToIntPrint(gKi);
-				uartSendString("\n");
-				vTaskDelayUntil( &xLastWakeTime, xPeriod );
-			}
-			if(AXI_BTN_DATA & 0b0100)
-			{
-				gKi -= INCREMENT_AMOUNT;
-				uartSendString("Ki: ");
-				floatToIntPrint(gKi);
-				uartSendString("\n");
-				vTaskDelayUntil( &xLastWakeTime, xPeriod );
-			}
-			break;
-		case 2:
-			if(AXI_BTN_DATA & 0b1000)
-			{
-				gKp += INCREMENT_AMOUNT;
-				uartSendString("Kp: ");
-				floatToIntPrint(gKp);
-				uartSendString("\n");
-				vTaskDelayUntil( &xLastWakeTime, xPeriod );
-			}
-			if(AXI_BTN_DATA & 0b0100)
-			{
-				gKp -= INCREMENT_AMOUNT;
-				uartSendString("Kp: ");
-				floatToIntPrint(gKp);
-				uartSendString("\n");
-				vTaskDelayUntil( &xLastWakeTime, xPeriod );
-			}
-			break;
-		default:
-			break;
-	}
-}
-
-static void handleTaskExit()
-{
-	AXI_LED_DATA = 0b0000;
-	printMenu();
-	xSemaphoreGive(modeSemaphore);
-	vTaskDelete(NULL);
-}
-
-
-static char* uartReceiveString(){
-	static int index = 0;
-	static char rx_buf[BUFFER_SIZE];
-	char input = uart_receive();
-
-	// If an UART message was received.
-	if (input != 0){
-		// Depending on the serial terminal used, UART messages can be terminated
-		// by either carriage return '\r' or line feed '\n'.
-		if (input == '\r' || input == '\n'){
-			rx_buf[index] = '\0';
-			index = 0;
-			return rx_buf;
-		}
-		else {
-			rx_buf[index] = input;
-			index++;
-		}
-	}
-	return 0;
-}
-
-static void configuration()
-{
-	AXI_LED_DATA = 0b0001;
-	xil_printf("In configuration task\n");
-	xil_printf("Press the 2. button to toggle between Ki (default) and Kp values or write 'i' for Ki and 'p' for Kp\n");
-	xil_printf("Type 'e' to exit the mode\n\n");
-
-	uint8_t selectedKParameter = 1;
-	xil_printf("Ki selected\n");
-
-	for( ;; )
-	{
-		char* input;
-		// delay loop
-
-		input = uartReceiveString(); // polling UART receive buffer
-		if(input != 0)
-		{
-			if ((input[0] == 'i' || input[0] == 'p' ) && (strlen(input) < 2))
-			{
-				if(input[0] == 'i')
-				{
-					selectedKParameter = 1;
-					xil_printf("Ki selected\n");
-				}else
-				{
-					selectedKParameter = 2;
-					xil_printf("Kp selected\n");
-				}
-			}
-			if (input[0] == 'e' && (strlen(input) < 2))
-			{
-				uartSendString("Exiting configuration mode. Ki: ");
-				floatToIntPrint(gKi);
-				uartSendString(" Kp: ");
-				floatToIntPrint(gKp);
-				uartSendString("\n\n");
-
-				xSemaphoreGive(buttonSemaphore);
-				handleTaskExit();
-			}
-			float fuserInput = atof(input);
-			/* Set the user input as a float to the selected K-value */
-			if(selectedKParameter == 1  && (strlen(input) > 0) && fuserInput != 0)
-			{
-				gKi = fuserInput;
-				uartSendString("Ki: ");
-				floatToIntPrint(gKi);
-				uartSendString("\n");
-			}if(selectedKParameter == 2  && (strlen(input) > 0) && fuserInput != 0)
-			{
-				gKp = fuserInput;
-				uartSendString("Kp: ");
-				floatToIntPrint(gKp);
-				uartSendString("\n");
-			}
-			/* Special case if the user input for K-value is 0 */
-			if(selectedKParameter == 1  && (strlen(input) > 0) && input[0] == '0')
-			{
-				gKi = 0;
-				uartSendString("Ki: ");
-				floatToIntPrint(gKi);
-				uartSendString("\n");
-			}if(selectedKParameter == 2  && (strlen(input) > 0) && input[0] == '0')
-			{
-				gKp = 0;
-				uartSendString("Kp: ");
-				floatToIntPrint(gKp);
-				uartSendString("\n");
-			}
-		}
-
-
-		if((AXI_BTN_DATA & 0b0010) && uxSemaphoreGetCount(buttonSemaphore))
-		{
-			selectedKParameter++;
-			if(selectedKParameter > 2)
-			{
-				selectedKParameter = 1;
-			}
-			if(selectedKParameter == 1)
-			{
-				xil_printf("Ki selected\n");
-			}else
-			{
-				xil_printf("Kp selected\n");
-			}
-			TickType_t xLastWakeTime;
-			const TickType_t xPeriod = pdMS_TO_TICKS( BUTTON_PRESS_DELAY );
-			xLastWakeTime = xTaskGetTickCount();
-			vTaskDelayUntil( &xLastWakeTime, xPeriod );
-		}
-
-		if(uxSemaphoreGetCount(buttonSemaphore))
-		{
-			selectParameter(selectedKParameter);
-		}
-	}
-
-}
-
-static void modulating()
-{
-	AXI_LED_DATA = 0b0111;
-	xil_printf("In modulating task\n");
-	vTaskDelay( pdMS_TO_TICKS( 1000 ) );
-
-	handleTaskExit();
-}
-
-
-static void testTask()
-{
-	const TickType_t freq = pdMS_TO_TICKS( 500 );
-	TickType_t wakeTime;
-
-
-
-	wakeTime = xTaskGetTickCount();
-	for( ;; ) {
-		//xil_printf("test task\n");
-		vTaskDelayUntil( &wakeTime, freq );
-	}
-}
-

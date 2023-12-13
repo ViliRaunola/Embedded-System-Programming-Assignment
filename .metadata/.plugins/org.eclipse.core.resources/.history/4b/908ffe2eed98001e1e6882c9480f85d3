@@ -1,0 +1,83 @@
+/*
+
+ * utilities.c
+ *
+ *  Created on: 12 Dec 2023
+ *      Author: vraun
+ */
+
+#include "utilities.h"
+
+extern SemaphoreHandle_t modeSemaphore;
+
+// Send one character through UART interface
+void uart_send(char c) {
+	while (UART_STATUS & XUARTPS_SR_TNFUL);
+	UART_FIFO = c;
+	while (UART_STATUS & XUARTPS_SR_TACTIVE);
+}
+
+// Send string (character array) through UART interface
+void uartSendString(char str[BUFFER_SIZE]) {
+	char *ptr = str;
+	// While the string still continues.
+	while (*ptr != '\0') {
+		uart_send(*ptr);
+		ptr++;
+	}
+}
+
+// Check if UART receive FIFO is not empty and return the new data
+char uart_receive()
+{
+ if ((UART_STATUS & XUARTPS_SR_RXEMPTY) == XUARTPS_SR_RXEMPTY) return 0;
+ return UART_FIFO;
+}
+
+static void handleTaskExit()
+{
+	AXI_LED_DATA = 0b0000;
+	printMenu();
+	xSemaphoreGive(modeSemaphore);
+	vTaskDelete(NULL);
+}
+
+
+// Source: https://support.xilinx.com/s/question/0D52E00006hpTYOSA2/how-to-print-float-value-on-hyperterminal-using-xilprintf?language=en_US
+void floatToIntPrint(float fval) {
+	int whole, thousandths;
+	whole = fval;
+	thousandths = abs(round((fval - whole) * 1000));
+	if(whole == 0 && fval < 0 && thousandths != 0) {
+		xil_printf("-%d.%d", whole, thousandths);
+	} else {
+		xil_printf("%d.%d", whole, thousandths);
+	}
+}
+
+static char* uartReceiveString(){
+	static int index = 0;
+	static char rx_buf[BUFFER_SIZE];
+	char input = uart_receive();
+
+	// If an UART message was received.
+	if (input != 0){
+		// Depending on the serial terminal used, UART messages can be terminated
+		// by either carriage return '\r' or line feed '\n'.
+		if (input == '\r' || input == '\n'){
+			rx_buf[index] = '\0';
+			index = 0;
+			return rx_buf;
+		}
+		else {
+			rx_buf[index] = input;
+			index++;
+		}
+	}
+	return 0;
+}
+
+static void printMenu()
+{
+	xil_printf("Select a mode by pressing the 1. button\n1. mode is the configuration\n2. mode is the idling\n3. mode is the modulating\n\n");
+}

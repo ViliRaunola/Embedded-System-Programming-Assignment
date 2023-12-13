@@ -1,0 +1,31 @@
+/*
+
+ * utilities.c
+ *
+ *  Created on: 12 Dec 2023
+ *      Author: vraun
+ */
+
+// Send one character through UART interface
+void uart_send(char c) {
+	while (UART_STATUS & XUARTPS_SR_TNFUL);
+	UART_FIFO = c;
+	while (UART_STATUS & XUARTPS_SR_TACTIVE);
+}
+
+// Send string (character array) through UART interface
+void uartSendString(char str[BUFFER_SIZE]) {
+	char *ptr = str;
+	// While the string still continues.
+	while (*ptr != '\0') {
+		uart_send(*ptr);
+		ptr++;
+	}
+}
+
+// Check if UART receive FIFO is not empty and return the new data
+char uart_receive()
+{
+ if ((UART_STATUS & XUARTPS_SR_RXEMPTY) == XUARTPS_SR_RXEMPTY) return 0;
+ return UART_FIFO;
+}

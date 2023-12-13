@@ -1,0 +1,20 @@
+/*
+ * modulating.h
+ *
+ *  Created on: 12 Dec 2023
+ *      Author: vraun
+ */
+
+#ifndef SRC_MODULATING_H_
+#define SRC_MODULATING_H_
+
+/* Others */
+#include "utilities.h"
+
+#define MAX_INTEGRAL 1
+
+void modulating();
+static float converterModel(float uIn);
+static float controllerPi(float uRef, float uAct);
+
+#endif /* SRC_MODULATING_H_ */
