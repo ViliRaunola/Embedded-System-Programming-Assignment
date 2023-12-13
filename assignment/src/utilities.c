@@ -51,7 +51,7 @@ void handleTaskExit()
 	AXI_LED_DATA = 0b0000;
 	printMenu();
 	xSemaphoreGive(modeSemaphore);
-	vTaskDelete(NULL);
+	//vTaskDelete(NULL);
 }
 
 
@@ -142,8 +142,8 @@ int isNumber(char* input) {
 void printMenu()
 {
     xil_printf("\n################################## MAIN MENU ##################################\n");
-	xil_printf("Select a mode by pressing the 1. button on the board or by typing a number 1-2.\n");
+	xil_printf("Select a mode by pressing the 1. button on the board or by typing a number 1-2. Currently idling...\n");
 	xil_printf("###############################################################################\n\n");
-	xil_printf("Select Mode:\n1. Configuration Mode\n2. Modulating mode\n\n");
+	xil_printf("Select Mode:\n1. Configuration Mode\n2. Modulating Mode\n\n");
 
 }

@@ -16,7 +16,7 @@ static float controllerPi(float uRef, float uAct, float* pU1);
 
 void modulating()
 {
-	AXI_LED_DATA = 0b0111;
+	AXI_LED_DATA = 0b0011;
 	xil_printf("Modulating mode selected. Exit by typing 'e' or pressing the 1. button.\n Change the reference voltage from 3rd & 4th button or typing it.\n");
 
 	TickType_t xLastWakeTime;
@@ -60,6 +60,7 @@ void modulating()
 				uartSendString("Exiting modulation\n\n");
 				TTC0_MATCH_0 = TTC0_MATCH_1_COUNTER_2 = TTC0_MATCH_1_COUNTER_3 = 0;
 				handleTaskExit();
+				return;
 			}
 			else
 			{
@@ -92,7 +93,10 @@ void modulating()
 			TTC0_MATCH_0 = TTC0_MATCH_1_COUNTER_2 = TTC0_MATCH_1_COUNTER_3 = 0;
 			vTaskDelayUntil( &xLastWakeTime, yPeriod );
 			handleTaskExit();
+			return;
 		}
+
+		/* The controller part PI and the model */
 		uIn = controllerPi(uRef, u3, &pU1);
 		u3 = converterModel(uIn);
 
@@ -123,6 +127,7 @@ void modulating()
 		vTaskDelayUntil( &xLastWakeTime, xPeriod );
 	}
 	handleTaskExit();
+	return;
 }
 
 /* Controller model of the given circuit in the assignment.

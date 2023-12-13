@@ -27,7 +27,7 @@ extern float gKp;
 void configuration()
 {
 	AXI_LED_DATA = 0b0001;
-	if(uxSemaphoreGetCount(buttonSemaphore)) {
+	if(!uxSemaphoreGetCount(buttonSemaphore)) {
 		xil_printf("Configuration Mode selected through CLI. Buttons are disabled.\n");
 		xil_printf("Type 'i' to change the Ki parameter (Default)\nType 'p' to change the Kp parameter.\n Type 'e' to EXIT the mode\n\n");
 		xil_printf("Ki selected\n");
@@ -53,7 +53,7 @@ void configuration()
 			{
 				selectedKParameter = 1;
 				xil_printf("Ki selected\n");
-				if(uxSemaphoreGetCount(buttonSemaphore)) {
+				if(!uxSemaphoreGetCount(buttonSemaphore)) {
 					xil_printf("Type a value for the parameter: ");
 				}
 				else {
@@ -65,7 +65,7 @@ void configuration()
 			{
 				selectedKParameter = 2;
 				xil_printf("Kp selected\n");
-				if(uxSemaphoreGetCount(buttonSemaphore)) {
+				if(!uxSemaphoreGetCount(buttonSemaphore)) {
 					xil_printf("Type a value for the Kp parameter: ");
 				}
 				else {
@@ -82,6 +82,7 @@ void configuration()
 
 				xSemaphoreGive(buttonSemaphore);
 				handleTaskExit();
+				return;
 			}
 			else if(selectedKParameter == 1  && (strlen(input) > 0) && isNumber(input))
 			{
@@ -117,11 +118,12 @@ void configuration()
 				floatToIntPrint(gKp);
 				uartSendString("\n\n");
 				handleTaskExit();
+				return;
 			}
 			if(selectedKParameter == 1)
 			{
 				xil_printf("Ki selected\n");
-				if(uxSemaphoreGetCount(buttonSemaphore)) {
+				if(!uxSemaphoreGetCount(buttonSemaphore)) {
 					xil_printf("Type a value for the parameter: ");
 				}
 				else {
@@ -132,7 +134,7 @@ void configuration()
 			else
 			{
 				xil_printf("Kp selected\n");
-					if(uxSemaphoreGetCount(buttonSemaphore)) {
+					if(!uxSemaphoreGetCount(buttonSemaphore)) {
 					xil_printf("Type a value for the Kp parameter: ");
 				}
 				else {
@@ -151,7 +153,7 @@ void configuration()
 			selectParameter(selectedKParameter);
 		}
 	}
-
+	return;
 }
 
 void selectParameter(uint8_t selectedKParameter)

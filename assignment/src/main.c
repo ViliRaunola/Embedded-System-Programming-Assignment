@@ -150,8 +150,8 @@ int main( void ) {
 	TTC0_CLK_CNTRL3 = (0 << XTTCPS_CLK_CNTRL_PS_VAL_SHIFT) | XTTCPS_CLK_CNTRL_PS_EN_MASK;
 
 	TTC0_CNT_CNTRL  = XTTCPS_CNT_CNTRL_RST_MASK | XTTCPS_CNT_CNTRL_DIS_MASK | XTTCPS_CNT_CNTRL_MATCH_MASK | XTTCPS_CNT_CNTRL_POL_WAVE_MASK;
-	TTC0_CNT_CNTRL2 = XTTCPS_CNT_CNTRL_RST_MASK | XTTCPS_CNT_CNTRL_DIS_MASK | XTTCPS_CNT_CNTRL_MATCH_MASK | XTTCPS_CNT_CNTRL_POL_WAVE_MASK; // Set identical to TTC0_CNT_CNTRL
-	TTC0_CNT_CNTRL3 = XTTCPS_CNT_CNTRL_RST_MASK | XTTCPS_CNT_CNTRL_DIS_MASK | XTTCPS_CNT_CNTRL_MATCH_MASK | XTTCPS_CNT_CNTRL_POL_WAVE_MASK; // Set identical to TTC0_CNT_CNTRL
+	TTC0_CNT_CNTRL2 = XTTCPS_CNT_CNTRL_RST_MASK | XTTCPS_CNT_CNTRL_DIS_MASK | XTTCPS_CNT_CNTRL_MATCH_MASK | XTTCPS_CNT_CNTRL_POL_WAVE_MASK;
+	TTC0_CNT_CNTRL3 = XTTCPS_CNT_CNTRL_RST_MASK | XTTCPS_CNT_CNTRL_DIS_MASK | XTTCPS_CNT_CNTRL_MATCH_MASK | XTTCPS_CNT_CNTRL_POL_WAVE_MASK;
 
 	TTC0_MATCH_0           = 0;
 	TTC0_MATCH_1_COUNTER_2 = 0;
@@ -203,18 +203,18 @@ static void selectModeBasedOnInput(uint8_t modeNumber, uint8_t uartCheck)
 					{
 						if(xSemaphoreTake(buttonSemaphore, portMAX_DELAY))
 						{
-							xTaskCreate( configuration, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
+							configuration();
 						}
 					}else
 					{
-						xTaskCreate( configuration, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
+						configuration();
 					}
 				}
 				break;
 			case 2:
 				if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
 				{
-					xTaskCreate( modulating, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
+					modulating();
 				}
 				break;
 			default:
