@@ -13,6 +13,6 @@
 
 void modulating();
 static float converterModel(float uIn);
-static float controllerPi(float uRef, float uAct);
+static float controllerPi(float uRef, float uAct, float* pU1);
 
 #endif /* SRC_MODULATING_H_ */

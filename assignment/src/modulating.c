@@ -17,23 +17,59 @@ void modulating()
 
 	TickType_t xLastWakeTime;
 	const TickType_t xPeriod = pdMS_TO_TICKS( 10 );
+	const TickType_t yPeriod = pdMS_TO_TICKS( BUTTON_PRESS_DELAY );
 	xLastWakeTime = xTaskGetTickCount();
 
 	float uRef = 2.0;
 	float u3 = 0;
 	float uIn;
 	int i = 0;
+	float pU1 = 0;
 
 	for(;;)
 	{
-		//TODO: add refrence voltage increase/decrease by buttons
-		//TODO: add refreence voltage change by uart
+		char* input;
+		input = uartReceiveString(); // polling UART receive buffer
+		if(input != 0)
+		{
+			float fuserInput = atof(input);
+			if((strlen(input) > 0) && isNumber(input))
+			{
+				uRef = fuserInput;
+				uartSendString("New uRef: ");
+				floatToIntPrint(uRef);
+				uartSendString("\n");
+			}
+			else
+			{
+				uartSendString("Invalid input! Only numbers :( \n\n");
+			}
+		}
+
+		if(AXI_BTN_DATA & 0b1000)
+		{
+			uRef += REF_VOLT_INCREMENT;
+			uartSendString("Increased uRef: ");
+			floatToIntPrint(uRef);
+			uartSendString("\n");
+			vTaskDelayUntil( &xLastWakeTime, yPeriod );
+		}
+		if(AXI_BTN_DATA & 0b0100)
+		{
+			uRef -= REF_VOLT_INCREMENT;
+			uartSendString("Decreased uRef: ");
+			floatToIntPrint(uRef);
+			uartSendString("\n");
+			vTaskDelayUntil( &xLastWakeTime, yPeriod );
+		}
+
+
 		if(AXI_BTN_DATA & 0b0001)
 		{
 			uartSendString("Exiting modulation\n\n");
 			handleTaskExit();
 		}
-		uIn = controllerPi(uRef, u3);
+		uIn = controllerPi(uRef, u3, &pU1);
 		u3 = converterModel(uIn);
 
 		//TODO: add the controller output is fed to the RGB led
@@ -85,19 +121,30 @@ static float converterModel(float uIn)
 	return u3KPlusH;
 }
 
-static float controllerPi(float uRef, float uAct)
+/* Reentrant PI-controller with wind-up and saturation */
+static float controllerPi(float uRef, float uAct, float* pU1)
 {
-	//TODO: make reentrant
-	//TODO: +Extrafeatures
-	static float u1Old = 0;
+	float u1Old;
 	float errorNew, uNew, u1New;
+	u1Old = *pU1;
 	errorNew = uRef - uAct;
 	u1New = u1Old + gKi*errorNew;
-	if(abs(u1New)>=U1MAX)
+
+	/* Anti-windup */
+	if (u1New > MAX_INTEGRAL)
+	{
+		u1New = MAX_INTEGRAL;
+	} else if (u1New < -MAX_INTEGRAL) {
+		u1New = -MAX_INTEGRAL;
+	}
+
+	/* Saturation */
+	if(abs(u1New) >= U1MAX)
 	{
 		u1New = u1Old;
 	}
 	uNew = gKp*errorNew + u1New;
 	u1Old = u1New;
+	*pU1 = u1Old;
 	return uNew;
 }

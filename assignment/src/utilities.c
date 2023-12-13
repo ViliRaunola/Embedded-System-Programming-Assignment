@@ -60,6 +60,14 @@ void floatToIntPrint(float fval) {
 	int whole, thousandths;
 	whole = fval;
 	thousandths = abs(round((fval - whole) * 1000));
+	if(thousandths == 1000) {
+		if(fval < 0) {
+			whole--;
+		} else {
+			whole++;
+		}
+		thousandths = 0;
+	}
 	if(whole == 0 && fval < 0 && thousandths != 0) {
 		xil_printf("-%d.%03d", whole, thousandths);
 	} else {
@@ -87,6 +95,16 @@ char* uartReceiveString(){
 		}
 	}
 	return 0;
+}
+
+int isNumber(char* input)
+{
+    for(int i=0;i<strlen(input);i++) {
+        if(!isdigit(input[i])) {
+            return 0;
+        }
+    }
+    return 1;
 }
 
 void printMenu()

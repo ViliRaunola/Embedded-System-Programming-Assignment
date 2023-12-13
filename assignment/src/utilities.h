@@ -29,10 +29,12 @@
 #include <math.h>
 
 /* Global variables */
-#define INCREMENT_AMOUNT 0.1
+#define INCREMENT_AMOUNT 0.001
 #define BUTTON_PRESS_DELAY 200
-#define BUFFER_SIZE 20
+#define BUFFER_SIZE 40
 #define U1MAX 5
+#define MAX_INTEGRAL 3
+#define REF_VOLT_INCREMENT 0.1
 
 void printMenu();
 void uart_send(char c);
@@ -41,5 +43,6 @@ char uart_receive();
 void handleTaskExit();
 void floatToIntPrint(float fval);
 char* uartReceiveString();
+int isNumber(char* input);
 
 #endif /* SRC_UTILITIES_H_ */

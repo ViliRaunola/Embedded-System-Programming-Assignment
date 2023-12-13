@@ -103,6 +103,7 @@
 #include "idling.h"
 
 /* Global variables */
+//TODO: check if volatile is needed
 volatile float gKi = 0;
 volatile float gKp = 0;
 

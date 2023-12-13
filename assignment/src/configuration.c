@@ -171,7 +171,7 @@ void selectParameter(uint8_t selectedKParameter)
 			if(AXI_BTN_DATA & 0b1000)
 			{
 				gKi += INCREMENT_AMOUNT;
-				uartSendString("increased Ki: ");
+				uartSendString("Increased Ki: ");
 				floatToIntPrint(gKi);
 				uartSendString("\n");
 				vTaskDelayUntil( &xLastWakeTime, xPeriod );
@@ -189,7 +189,7 @@ void selectParameter(uint8_t selectedKParameter)
 			if(AXI_BTN_DATA & 0b1000)
 			{
 				gKp += INCREMENT_AMOUNT;
-				uartSendString("increased Kp: ");
+				uartSendString("Increased Kp: ");
 				floatToIntPrint(gKp);
 				uartSendString("\n");
 				vTaskDelayUntil( &xLastWakeTime, xPeriod );
