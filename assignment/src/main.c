@@ -100,12 +100,10 @@
 #include "utilities.h"
 #include "configuration.h"
 #include "modulating.h"
-#include "idling.h"
 
 /* Global variables */
-//TODO: check if volatile is needed
-volatile float gKi = 0;
-volatile float gKp = 0;
+float gKi = 0;
+float gKp = 0;
 
 /* Function declarations */
 static void modeSelection();
@@ -145,6 +143,23 @@ int main( void ) {
 	r &= ~(XUARTPS_CR_RX_DIS | XUARTPS_CR_TX_DIS); // Clear TX & RX disabled
 	UART_CTRL = r;
 
+
+	/* Initialize the PWM. Source: ex 5 */
+	TTC0_CLK_CNTRL  = (0 << XTTCPS_CLK_CNTRL_PS_VAL_SHIFT) | XTTCPS_CLK_CNTRL_PS_EN_MASK;
+	TTC0_CLK_CNTRL2 = (0 << XTTCPS_CLK_CNTRL_PS_VAL_SHIFT) | XTTCPS_CLK_CNTRL_PS_EN_MASK;
+	TTC0_CLK_CNTRL3 = (0 << XTTCPS_CLK_CNTRL_PS_VAL_SHIFT) | XTTCPS_CLK_CNTRL_PS_EN_MASK;
+
+	TTC0_CNT_CNTRL  = XTTCPS_CNT_CNTRL_RST_MASK | XTTCPS_CNT_CNTRL_DIS_MASK | XTTCPS_CNT_CNTRL_MATCH_MASK | XTTCPS_CNT_CNTRL_POL_WAVE_MASK;
+	TTC0_CNT_CNTRL2 = XTTCPS_CNT_CNTRL_RST_MASK | XTTCPS_CNT_CNTRL_DIS_MASK | XTTCPS_CNT_CNTRL_MATCH_MASK | XTTCPS_CNT_CNTRL_POL_WAVE_MASK; // Set identical to TTC0_CNT_CNTRL
+	TTC0_CNT_CNTRL3 = XTTCPS_CNT_CNTRL_RST_MASK | XTTCPS_CNT_CNTRL_DIS_MASK | XTTCPS_CNT_CNTRL_MATCH_MASK | XTTCPS_CNT_CNTRL_POL_WAVE_MASK; // Set identical to TTC0_CNT_CNTRL
+
+	TTC0_MATCH_0           = 0;
+	TTC0_MATCH_1_COUNTER_2 = 0;
+	TTC0_MATCH_1_COUNTER_3 = 0;
+
+	TTC0_CNT_CNTRL  &= ~XTTCPS_CNT_CNTRL_DIS_MASK;
+	TTC0_CNT_CNTRL2 &= ~XTTCPS_CNT_CNTRL_DIS_MASK;
+	TTC0_CNT_CNTRL3 &= ~XTTCPS_CNT_CNTRL_DIS_MASK;
 
 	/*
 	 Create the needed tasks to start the program
@@ -199,12 +214,6 @@ static void selectModeBasedOnInput(uint8_t modeNumber, uint8_t uartCheck)
 			case 2:
 				if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
 				{
-					xTaskCreate( idling, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
-				}
-				break;
-			case 3:
-				if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
-				{
 					xTaskCreate( modulating, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
 				}
 				break;
@@ -231,7 +240,7 @@ static void modeSelection()
 
 			if(input != 0)
 			{
-				if ((input[0] >= '1' || '3' <= input[0]) && (strlen(input) < 2))
+				if ((input[0] >= '1' || '2' <= input[0]) && (strlen(input) < 2))
 				{
 					int tempInput = input[0] - '0';
 					modeNumber = tempInput;
@@ -245,7 +254,7 @@ static void modeSelection()
 
 			if(AXI_BTN_DATA & 0x01){
 				modeNumber++;
-				if(modeNumber > 3)
+				if(modeNumber > 2)
 				{
 					modeNumber = 1;
 				}

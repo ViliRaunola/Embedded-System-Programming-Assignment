@@ -31,6 +31,8 @@ src/configuration.o src/configuration.o: ../src/configuration.c \
  ../../assignment_bsp/ps7_cortexa9_0/include/xplatform_info.h \
  G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h \
  ../../assignment_bsp/ps7_cortexa9_0/include/xuartps_hw.h \
+ ../../assignment_bsp/ps7_cortexa9_0/include/xttcps.h \
+ ../../assignment_bsp/ps7_cortexa9_0/include/xttcps_hw.h \
  ../src/configuration.h
 
 ../src/utilities.h:
@@ -96,5 +98,9 @@ src/configuration.o src/configuration.o: ../src/configuration.c \
 G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platform/zynq_registers.h:
 
 ../../assignment_bsp/ps7_cortexa9_0/include/xuartps_hw.h:
+
+../../assignment_bsp/ps7_cortexa9_0/include/xttcps.h:
+
+../../assignment_bsp/ps7_cortexa9_0/include/xttcps_hw.h:
 
 ../src/configuration.h:

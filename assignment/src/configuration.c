@@ -32,7 +32,8 @@ void configuration()
 		xil_printf("Type 'i' to change the Ki parameter (Default)\nType 'p' to change the Kp parameter.\n Type 'e' to EXIT the mode\n\n");
 		xil_printf("Ki selected\n");
 		xil_printf("Type a value for the Ki parameter");
-	} else {
+	}
+	else {
 		xil_printf("Configuration Mode selected\n");
 		xil_printf("Press the 2. button to select between Ki, Kp and EXIT. Default parameter is Ki.\nPress the button once to change to Kp parameter and two times to EXIT the mode.\n");
 		xil_printf("Type 'i' to change the Ki parameter.\nType 'p' to change the Kp parameter.\n Type 'e' to EXIT the mode\n\n");
@@ -48,28 +49,31 @@ void configuration()
 		input = uartReceiveString(); // polling UART receive buffer
 		if(input != 0)
 		{
-			float fuserInput = atof(input);
 			if((input[0] == 'i') && (strlen(input) < 2))
 			{
 				selectedKParameter = 1;
 				xil_printf("Ki selected\n");
 				if(uxSemaphoreGetCount(buttonSemaphore)) {
 					xil_printf("Type a value for the parameter: ");
-				} else {
+				}
+				else {
 					xil_printf("Press the 3. button to decrease or the 4. button to increase the Ki parameter value.\n");
 					xil_printf("Type a value for the Ki parameter: \n");
 				}
-			} else if ((input[0] == 'p') && (strlen(input) < 2))
+			}
+			else if ((input[0] == 'p') && (strlen(input) < 2))
 			{
 				selectedKParameter = 2;
 				xil_printf("Kp selected\n");
-					if(uxSemaphoreGetCount(buttonSemaphore)) {
+				if(uxSemaphoreGetCount(buttonSemaphore)) {
 					xil_printf("Type a value for the Kp parameter: ");
-				} else {
+				}
+				else {
 					xil_printf("Press the 3. button to decrease or the 4. button to increase the Kp parameter value.\n");
 					xil_printf("Type a value for the parameter: \n");
 				}
-			} else if ((input[0] == 'e') && (strlen(input) < 2)){
+			}
+			else if ((input[0] == 'e') && (strlen(input) < 2)){
 				uartSendString("Exiting Configuration Mode.\nParameters set as:\n Ki: ");
 				floatToIntPrint(gKi);
 				uartSendString("\nKp: ");
@@ -78,31 +82,18 @@ void configuration()
 
 				xSemaphoreGive(buttonSemaphore);
 				handleTaskExit();
-			} else if(selectedKParameter == 1  && (strlen(input) > 0) && fuserInput != 0)
+			}
+			else if(selectedKParameter == 1  && (strlen(input) > 0) && isNumber(input))
 			{
-				gKi = fuserInput;
+				gKi = atof(input);
 				uartSendString("Set Ki as: ");
 				floatToIntPrint(gKi);
 				uartSendString("\n");
-			} else if(selectedKParameter == 2  && (strlen(input) > 0) && fuserInput != 0)
+			}
+			else if(selectedKParameter == 2  && (strlen(input) > 0) && isNumber(input))
 			{
-				gKp = fuserInput;
+				gKp = atof(input);
 				uartSendString("Set Kp as: ");
-				floatToIntPrint(gKp);
-				uartSendString("\n");
-			}
-			/* Special case if the user input for K-value is 0 */
-			else if(selectedKParameter == 1  && (strlen(input) > 0) && input[0] == '0')
-			{
-				gKi = 0;
-				uartSendString("Set Ki as: ");
-				floatToIntPrint(gKi);
-				uartSendString("\n");
-			}
-			else if(selectedKParameter == 2  && (strlen(input) > 0) && input[0] == '0')
-			{
-				gKp = 0;
-				uartSendString("set Kp as: ");
 				floatToIntPrint(gKp);
 				uartSendString("\n");
 			} else {
@@ -132,16 +123,19 @@ void configuration()
 				xil_printf("Ki selected\n");
 				if(uxSemaphoreGetCount(buttonSemaphore)) {
 					xil_printf("Type a value for the parameter: ");
-				} else {
+				}
+				else {
 					xil_printf("Press the 3. button to decrease or the 4. button to increase the Ki parameter value.\n");
 					xil_printf("Type a value for the Ki parameter: \n");
 				}
-			} else
+			}
+			else
 			{
 				xil_printf("Kp selected\n");
 					if(uxSemaphoreGetCount(buttonSemaphore)) {
 					xil_printf("Type a value for the Kp parameter: ");
-				} else {
+				}
+				else {
 					xil_printf("Press the 3. button to decrease or the 4. button to increase the Kp parameter value.\n");
 					xil_printf("Type a value for the parameter: \n");
 				}

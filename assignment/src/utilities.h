@@ -22,6 +22,8 @@
 /* LUT includes. */
 #include "zynq_registers.h"
 #include <xuartps_hw.h>
+#include <xttcps.h>
+#include <zynq_registers.h>
 
 /* Standard imports */
 #include <stdlib.h>
@@ -30,12 +32,13 @@
 
 /* Global variables */
 #define INCREMENT_AMOUNT 0.001
-#define BUTTON_PRESS_DELAY 200
+#define BUTTON_PRESS_DELAY 1000
 #define BUFFER_SIZE 40
-#define U1MAX 5
-#define MAX_INTEGRAL 3
+#define U1MAX 1000
+#define MAX_INTEGRAL 1000
 #define REF_VOLT_INCREMENT 0.1
 
+/* Functions */
 void printMenu();
 void uart_send(char c);
 void uartSendString(char str[BUFFER_SIZE]);

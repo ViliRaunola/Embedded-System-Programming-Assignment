@@ -8,21 +8,18 @@ LD_SRCS += \
 
 C_SRCS += \
 ../src/configuration.c \
-../src/idling.c \
 ../src/main.c \
 ../src/modulating.c \
 ../src/utilities.c 
 
 OBJS += \
 ./src/configuration.o \
-./src/idling.o \
 ./src/main.o \
 ./src/modulating.o \
 ./src/utilities.o 
 
 C_DEPS += \
 ./src/configuration.d \
-./src/idling.d \
 ./src/main.d \
 ./src/modulating.d \
 ./src/utilities.d 

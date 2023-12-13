@@ -97,11 +97,43 @@ char* uartReceiveString(){
 	return 0;
 }
 
-int isNumber(char* input)
-{
-    for(int i=0;i<strlen(input);i++) {
-        if(!isdigit(input[i])) {
+int isNumber(char* input) {
+    int points = 0;
+    if(strlen(input) == 1 && (input[0] == '-')) {
+        return 0;
+    } else if (input[0] == '-') {
+        if(strlen(input) > 2 && input[1] == '0'  && input[2] != '.') {
             return 0;
+        }
+        for(int i=1;i<strlen(input);i++) {
+            if(strlen(input) > 1 && input[i] == '.') {
+                points++;
+                if (points > 1) {
+                    return 0;
+                } else {
+                    continue;
+                }
+            }
+            if(!isdigit(input[i])) {
+                return 0;
+            }
+        }
+    } else {
+        if(strlen(input) > 1 && input[0] == '0' && input[1] != '.') {
+            return 0;
+        }
+        for(int i=0;i<strlen(input);i++) {
+            if(strlen(input) > 1 && input[i] == '.') {
+                points++;
+                if (points > 1) {
+                    return 0;
+                } else {
+                    continue;
+                }
+            }
+            if(!isdigit(input[i])) {
+                return 0;
+            }
         }
     }
     return 1;
@@ -110,8 +142,8 @@ int isNumber(char* input)
 void printMenu()
 {
     xil_printf("\n################################## MAIN MENU ##################################\n");
-	xil_printf("Select a mode by pressing the 1. button on the board or by typing a number 1-3.\n");
+	xil_printf("Select a mode by pressing the 1. button on the board or by typing a number 1-2.\n");
 	xil_printf("###############################################################################\n\n");
-	xil_printf("Select Mode:\n1. Configuration Mode\n2. Idling Mode\n3. Modulating mode\n\n");
+	xil_printf("Select Mode:\n1. Configuration Mode\n2. Modulating mode\n\n");
 
 }

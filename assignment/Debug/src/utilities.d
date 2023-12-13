@@ -30,7 +30,9 @@ src/utilities.o src/utilities.o: ../src/utilities.c \
  ../../assignment_bsp/ps7_cortexa9_0/include/xuartps.h \
  ../../assignment_bsp/ps7_cortexa9_0/include/xstatus.h \
  ../../assignment_bsp/ps7_cortexa9_0/include/xuartps_hw.h \
- ../../assignment_bsp/ps7_cortexa9_0/include/xplatform_info.h
+ ../../assignment_bsp/ps7_cortexa9_0/include/xplatform_info.h \
+ ../../assignment_bsp/ps7_cortexa9_0/include/xttcps.h \
+ ../../assignment_bsp/ps7_cortexa9_0/include/xttcps_hw.h
 
 ../../assignment_bsp/ps7_cortexa9_0/include/FreeRTOS.h:
 
@@ -95,3 +97,7 @@ G:\Opiskelu\Yliopisto\5.vuosi\EmbeddedSystemsProgramming\assignment\zybo_platfor
 ../../assignment_bsp/ps7_cortexa9_0/include/xuartps_hw.h:
 
 ../../assignment_bsp/ps7_cortexa9_0/include/xplatform_info.h:
+
+../../assignment_bsp/ps7_cortexa9_0/include/xttcps.h:
+
+../../assignment_bsp/ps7_cortexa9_0/include/xttcps_hw.h:
