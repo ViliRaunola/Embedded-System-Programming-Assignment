@@ -19,6 +19,7 @@ extern SemaphoreHandle_t modulationSemaphore;
 extern SemaphoreHandle_t uRefSemaphore;
 extern TaskHandle_t printModulationHandle;
 extern TaskHandle_t calculateModulationHandle;
+extern TaskHandle_t modulationLedHandle;
 
 /* Functions */
 void modulating();

@@ -37,6 +37,7 @@ void modulating()
 	// Resuming the printing task
 	vTaskResume(calculateModulationHandle);
 	vTaskResume(printModulationHandle);
+	vTaskResume(modulationLedHandle);
 
 	for(;;)
 	{
@@ -60,6 +61,7 @@ void modulating()
 			{
 				vTaskSuspend( calculateModulationHandle );
 				vTaskSuspend( printModulationHandle );
+				vTaskSuspend( modulationLedHandle );
 				uartSendString("Exiting modulation\n\n");
 				TTC0_MATCH_0 = TTC0_MATCH_1_COUNTER_2 = TTC0_MATCH_1_COUNTER_3 = 0;
 				handleTaskExit();
@@ -102,6 +104,7 @@ void modulating()
 		{
 			vTaskSuspend( calculateModulationHandle );
 			vTaskSuspend( printModulationHandle );
+			vTaskSuspend( modulationLedHandle );
 			uartSendString("Exiting modulation\n\n");
 			TTC0_MATCH_0 = TTC0_MATCH_1_COUNTER_2 = TTC0_MATCH_1_COUNTER_3 = 0;
 			vTaskDelayUntil( &xLastWakeTime, yPeriod );

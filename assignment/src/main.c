@@ -125,6 +125,7 @@ SemaphoreHandle_t uRefSemaphore = 0;
 /* Task handle */
 TaskHandle_t printModulationHandle;
 TaskHandle_t calculateModulationHandle;
+TaskHandle_t modulationLedHandle;
 
 
 int main( void ) {
@@ -178,8 +179,10 @@ int main( void ) {
 	xTaskCreate( modeSelection, "Mode Selection Task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, NULL );
 	xTaskCreate( printModulationValues, "Printing modulation results", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, &printModulationHandle );
 	xTaskCreate( calculateModulation, "Calculates the modulation values", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, &calculateModulationHandle );
+	xTaskCreate( modulationLed, "Adjusts the LED based on U3", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, &calculateModulationHandle );
 	vTaskSuspend( printModulationHandle );
 	vTaskSuspend(calculateModulationHandle);
+	vTaskSuspend(modulationLedHandle);
 
 
 	/* Attempt to create a semaphore. */
