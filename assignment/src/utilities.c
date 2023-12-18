@@ -17,10 +17,6 @@
 
 #include "utilities.h"
 
-extern SemaphoreHandle_t modeSemaphore;
-extern float gKi;
-extern float gKp;
-
 
 // Send one character through UART interface
 void uart_send(char c) {

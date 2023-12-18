@@ -18,11 +18,6 @@
 
 #include "configuration.h"
 
-extern SemaphoreHandle_t buttonSemaphore;
-extern SemaphoreHandle_t modeSemaphore;
-extern float gKi;
-extern float gKp;
-
 
 void configuration()
 {

@@ -10,18 +10,24 @@ C_SRCS += \
 ../src/configuration.c \
 ../src/main.c \
 ../src/modulating.c \
+../src/modulationCalculationTask.c \
+../src/modulationPrintTask.c \
 ../src/utilities.c 
 
 OBJS += \
 ./src/configuration.o \
 ./src/main.o \
 ./src/modulating.o \
+./src/modulationCalculationTask.o \
+./src/modulationPrintTask.o \
 ./src/utilities.o 
 
 C_DEPS += \
 ./src/configuration.d \
 ./src/main.d \
 ./src/modulating.d \
+./src/modulationCalculationTask.d \
+./src/modulationPrintTask.d \
 ./src/utilities.d 
 
 

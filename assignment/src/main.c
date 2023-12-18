@@ -100,10 +100,14 @@
 #include "utilities.h"
 #include "configuration.h"
 #include "modulating.h"
+#include "modulationPrintTask.h"
+#include "modulationCalculationTask.h"
 
 /* Global variables */
 float gKi = 0;
 float gKp = 0;
+float gU3 = 0;
+float gURef = 2.0;
 
 /* Function declarations */
 static void modeSelection();
@@ -114,6 +118,13 @@ static void selectModeBasedOnInput(uint8_t modeNumber, uint8_t uartCheck);
 /* Semaphores */
 SemaphoreHandle_t modeSemaphore = 0;
 SemaphoreHandle_t buttonSemaphore = 0;
+SemaphoreHandle_t modulationSemaphore = 0;
+SemaphoreHandle_t u3Semaphore = 0;
+SemaphoreHandle_t uRefSemaphore = 0;
+
+/* Task handle */
+TaskHandle_t printModulationHandle;
+TaskHandle_t calculateModulationHandle;
 
 
 int main( void ) {
@@ -165,7 +176,10 @@ int main( void ) {
 	 Create the needed tasks to start the program
 	*/
 	xTaskCreate( modeSelection, "Mode Selection Task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, NULL );
-
+	xTaskCreate( printModulationValues, "Printing modulation results", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, &printModulationHandle );
+	xTaskCreate( calculateModulation, "Calculates the modulation values", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, &calculateModulationHandle );
+	vTaskSuspend( printModulationHandle );
+	vTaskSuspend(calculateModulationHandle);
 
 
 	/* Attempt to create a semaphore. */
@@ -182,6 +196,26 @@ int main( void ) {
 		xil_printf("Insufficient FreeRTOS heap available for the semaphore to be created successfully.");
 	}
 	xSemaphoreGive(buttonSemaphore);
+
+	modulationSemaphore = xSemaphoreCreateBinary();
+	if( modulationSemaphore == NULL )
+	{
+		xil_printf("Insufficient FreeRTOS heap available for the semaphore to be created successfully.");
+	}
+
+	u3Semaphore = xSemaphoreCreateBinary();
+	if( u3Semaphore == NULL )
+	{
+		xil_printf("Insufficient FreeRTOS heap available for the semaphore to be created successfully.");
+	}
+	xSemaphoreGive(u3Semaphore);
+
+	uRefSemaphore = xSemaphoreCreateBinary();
+	if( uRefSemaphore == NULL )
+	{
+		xil_printf("Insufficient FreeRTOS heap available for the semaphore to be created successfully.");
+	}
+	xSemaphoreGive(uRefSemaphore);
 
 	// Start the tasks and timer running.
 	vTaskStartScheduler();
