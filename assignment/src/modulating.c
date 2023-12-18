@@ -55,7 +55,7 @@ void modulating()
 					floatToIntPrint(gURef);
 					xSemaphoreGive(uRefSemaphore);
 				}
-				uartSendString(" (Exit by typing 'e' or pressing the 1. button.)\n");
+				uartSendString(" (Exit by typing 'e' or pressing the 1. button.)\n\n");
 			}
 			else if ((input[0] == 'e') && (strlen(input) < 2))
 			{
@@ -83,7 +83,7 @@ void modulating()
 				floatToIntPrint(gURef);
 				xSemaphoreGive(uRefSemaphore);
 			}
-			uartSendString("\n");
+			uartSendString("\n\n");
 			vTaskDelayUntil( &xLastWakeTime, yPeriod );
 		}
 		if(AXI_BTN_DATA & 0b0100)
@@ -95,7 +95,7 @@ void modulating()
 				floatToIntPrint(gURef);
 				xSemaphoreGive(uRefSemaphore);
 			}
-			uartSendString("\n");
+			uartSendString("\n\n");
 			vTaskDelayUntil( &xLastWakeTime, yPeriod );
 		}
 
@@ -110,26 +110,6 @@ void modulating()
 			vTaskDelayUntil( &xLastWakeTime, yPeriod );
 			handleTaskExit();
 			return;
-		}
-
-
-
-
-
-		/* Controlling the Red and Green led brightness.
-		 * If the voltage is positive the green led's brightness is adjusted.
-		 * For negative values the red led is used.
-		 */
-		// TODO: make own task
-		if(gU3 >= 0)
-		{
-			TTC0_MATCH_0 = 0;
-			TTC0_MATCH_1_COUNTER_2 = gU3;
-		}
-		else
-		{
-			TTC0_MATCH_0 = abs(gU3);
-			TTC0_MATCH_1_COUNTER_2 = 0;
 		}
 
 		vTaskDelayUntil( &xLastWakeTime, xPeriod );

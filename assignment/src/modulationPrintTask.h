@@ -11,7 +11,6 @@
 #include "utilities.h"
 
 extern float gU3;
-extern SemaphoreHandle_t modulationSemaphore;
 extern SemaphoreHandle_t u3Semaphore;
 
 void printModulationValues();

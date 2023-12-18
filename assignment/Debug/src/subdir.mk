@@ -11,6 +11,7 @@ C_SRCS += \
 ../src/main.c \
 ../src/modulating.c \
 ../src/modulationCalculationTask.c \
+../src/modulationLedTask.c \
 ../src/modulationPrintTask.c \
 ../src/utilities.c 
 
@@ -19,6 +20,7 @@ OBJS += \
 ./src/main.o \
 ./src/modulating.o \
 ./src/modulationCalculationTask.o \
+./src/modulationLedTask.o \
 ./src/modulationPrintTask.o \
 ./src/utilities.o 
 
@@ -27,6 +29,7 @@ C_DEPS += \
 ./src/main.d \
 ./src/modulating.d \
 ./src/modulationCalculationTask.d \
+./src/modulationLedTask.d \
 ./src/modulationPrintTask.d \
 ./src/utilities.d 
 

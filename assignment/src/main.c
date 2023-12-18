@@ -102,6 +102,7 @@
 #include "modulating.h"
 #include "modulationPrintTask.h"
 #include "modulationCalculationTask.h"
+#include "modulationLedTask.h"
 
 /* Global variables */
 float gKi = 0;
@@ -116,9 +117,7 @@ static void selectModeBasedOnInput(uint8_t modeNumber, uint8_t uartCheck);
 
 
 /* Semaphores */
-SemaphoreHandle_t modeSemaphore = 0;
 SemaphoreHandle_t buttonSemaphore = 0;
-SemaphoreHandle_t modulationSemaphore = 0;
 SemaphoreHandle_t u3Semaphore = 0;
 SemaphoreHandle_t uRefSemaphore = 0;
 
@@ -179,32 +178,19 @@ int main( void ) {
 	xTaskCreate( modeSelection, "Mode Selection Task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, NULL );
 	xTaskCreate( printModulationValues, "Printing modulation results", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, &printModulationHandle );
 	xTaskCreate( calculateModulation, "Calculates the modulation values", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, &calculateModulationHandle );
-	xTaskCreate( modulationLed, "Adjusts the LED based on U3", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, &calculateModulationHandle );
+	xTaskCreate( modulationLed, "Adjusts the LED based on U3", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, &modulationLedHandle );
 	vTaskSuspend( printModulationHandle );
 	vTaskSuspend(calculateModulationHandle);
 	vTaskSuspend(modulationLedHandle);
 
 
 	/* Attempt to create a semaphore. */
-	modeSemaphore = xSemaphoreCreateBinary();
-	if( modeSemaphore == NULL )
-	{
-		xil_printf("Insufficient FreeRTOS heap available for the semaphore to be created successfully.");
-	}
-	xSemaphoreGive(modeSemaphore);
-
 	buttonSemaphore = xSemaphoreCreateBinary();
 	if( buttonSemaphore == NULL )
 	{
 		xil_printf("Insufficient FreeRTOS heap available for the semaphore to be created successfully.");
 	}
 	xSemaphoreGive(buttonSemaphore);
-
-	modulationSemaphore = xSemaphoreCreateBinary();
-	if( modulationSemaphore == NULL )
-	{
-		xil_printf("Insufficient FreeRTOS heap available for the semaphore to be created successfully.");
-	}
 
 	u3Semaphore = xSemaphoreCreateBinary();
 	if( u3Semaphore == NULL )
@@ -234,25 +220,19 @@ static void selectModeBasedOnInput(uint8_t modeNumber, uint8_t uartCheck)
 	switch(modeNumber)
 		{
 			case 1:
-				if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
+				if(uartCheck)
 				{
-					if(uartCheck)
-					{
-						if(xSemaphoreTake(buttonSemaphore, portMAX_DELAY))
-						{
-							configuration();
-						}
-					}else
+					if(xSemaphoreTake(buttonSemaphore, portMAX_DELAY))
 					{
 						configuration();
 					}
+				}else
+				{
+					configuration();
 				}
 				break;
 			case 2:
-				if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
-				{
-					modulating();
-				}
+				modulating();
 				break;
 			default:
 				break;
@@ -263,15 +243,12 @@ static void selectModeBasedOnInput(uint8_t modeNumber, uint8_t uartCheck)
 
 static void modeSelection()
 {
-	xil_printf("***TODO PROGRAM INTRODUCTION***\n\n\n");
+	xil_printf("***Welcome to 'Switched mode power converter simulator/emulator' program***\n\n\n");
 	printMenu();
 	uint8_t modeNumber = 0;
 
 	for( ;; )
 	{
-		if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
-		{
-			xSemaphoreGive(modeSemaphore);
 			char* input;
 			input = uartReceiveString(); // polling UART receive buffer
 
@@ -284,7 +261,7 @@ static void modeSelection()
 					selectModeBasedOnInput(modeNumber, 1);
 				}else
 				{
-					uartSendString("Invalid input! Type a number between 1 and 3.\n\n Select Mode:\n1. Configuration Mode\n2. Idling Mode\n3. Modulating mode \n\n");
+					uartSendString("Invalid input! Type a number between 1 and 2.\n\n Select Mode:\n1. Configuration Mode\n2. Modulating mode \n\n");
 				}
 			}
 
@@ -297,6 +274,5 @@ static void modeSelection()
 				}
 				selectModeBasedOnInput(modeNumber, 0);
 			}
-		}
 	}
 }

@@ -26,7 +26,7 @@ void configuration()
 		xil_printf("Configuration Mode selected through CLI. Buttons are disabled.\n");
 		xil_printf("Type 'i' to change the Ki parameter (Default)\nType 'p' to change the Kp parameter.\n Type 'e' to EXIT the mode\n\n");
 		xil_printf("Ki selected\n");
-		xil_printf("Type a value for the Ki parameter");
+		xil_printf("Type a value for the Ki parameter: \n");
 	}
 	else {
 		xil_printf("Configuration Mode selected\n");
@@ -47,7 +47,7 @@ void configuration()
 			if((input[0] == 'i') && (strlen(input) < 2))
 			{
 				selectedKParameter = 1;
-				xil_printf("Ki selected\n");
+				xil_printf("\nKi selected\n");
 				if(!uxSemaphoreGetCount(buttonSemaphore)) {
 					xil_printf("Type a value for the parameter: ");
 				}
@@ -59,9 +59,9 @@ void configuration()
 			else if ((input[0] == 'p') && (strlen(input) < 2))
 			{
 				selectedKParameter = 2;
-				xil_printf("Kp selected\n");
+				xil_printf("\nKp selected\n");
 				if(!uxSemaphoreGetCount(buttonSemaphore)) {
-					xil_printf("Type a value for the Kp parameter: ");
+					xil_printf("Type a value for the Kp parameter: \n");
 				}
 				else {
 					xil_printf("Press the 3. button to decrease or the 4. button to increase the Kp parameter value.\n");
@@ -69,7 +69,7 @@ void configuration()
 				}
 			}
 			else if ((input[0] == 'e') && (strlen(input) < 2)){
-				uartSendString("Exiting Configuration Mode.\nParameters set as:\n Ki: ");
+				uartSendString("\nExiting Configuration Mode.\nParameters set as:\nKi: ");
 				floatToIntPrint(gKi);
 				uartSendString("\nKp: ");
 				floatToIntPrint(gKp);
@@ -93,7 +93,7 @@ void configuration()
 				floatToIntPrint(gKp);
 				uartSendString("\n");
 			} else {
-				xil_printf("Invalid input! Type 'i' to change the Ki parameter.\nType 'p' to change the Kp parameter.\n Type 'e' to EXIT the mode. Type a number to set the parameter value.\n\n");
+				xil_printf("\n\nInvalid input! Type 'i' to change the Ki parameter.\nType 'p' to change the Kp parameter.\nType 'e' to EXIT the mode. Type a number to set the parameter value.\n\n");
 			}
 
 
@@ -107,7 +107,7 @@ void configuration()
 			selectedKParameter++;
 			if(selectedKParameter > 2)
 			{
-				uartSendString("Exiting Configuration Mode.\nParameters set as:\n Ki: ");
+				uartSendString("\nExiting Configuration Mode.\nParameters set as:\nKi: ");
 				floatToIntPrint(gKi);
 				uartSendString("\nKp: ");
 				floatToIntPrint(gKp);
@@ -117,7 +117,7 @@ void configuration()
 			}
 			if(selectedKParameter == 1)
 			{
-				xil_printf("Ki selected\n");
+				xil_printf("\nKi selected\n");
 				if(!uxSemaphoreGetCount(buttonSemaphore)) {
 					xil_printf("Type a value for the parameter: ");
 				}
@@ -128,9 +128,9 @@ void configuration()
 			}
 			else
 			{
-				xil_printf("Kp selected\n");
+				xil_printf("\nKp selected\n");
 					if(!uxSemaphoreGetCount(buttonSemaphore)) {
-					xil_printf("Type a value for the Kp parameter: ");
+					xil_printf("Type a value for the Kp parameter: \n");
 				}
 				else {
 					xil_printf("Press the 3. button to decrease or the 4. button to increase the Kp parameter value.\n");

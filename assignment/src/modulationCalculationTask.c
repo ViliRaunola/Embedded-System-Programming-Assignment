@@ -16,7 +16,7 @@ void calculateModulation()
 	float uIn;
 	float pU1 = 0;
 	TickType_t xLastWakeTime;
-	const TickType_t xPeriod = pdMS_TO_TICKS( 10 );
+	const TickType_t xPeriod = pdMS_TO_TICKS( CALCULATION_INTERVAL_MS );
 	xLastWakeTime = xTaskGetTickCount();
 
 	for(;;)
@@ -83,6 +83,8 @@ static float controllerPi(float uRef, float uAct, float* pU1)
 	float errorNew, uNew, u1New;
 	u1Old = *pU1;
 	errorNew = uRef - uAct;
+
+	/* Integral */
 	u1New = u1Old + gKi*errorNew;
 
 	/* Anti-windup */
@@ -98,7 +100,10 @@ static float controllerPi(float uRef, float uAct, float* pU1)
 	{
 		u1New = u1Old;
 	}
+
+	/* Error */
 	uNew = gKp*errorNew + u1New;
+
 	u1Old = u1New;
 	*pU1 = u1Old;
 	return uNew;

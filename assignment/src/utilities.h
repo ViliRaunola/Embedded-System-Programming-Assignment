@@ -37,8 +37,8 @@
 #define U1MAX 1000
 #define MAX_INTEGRAL 1000
 #define REF_VOLT_INCREMENT 0.1
+#define CALCULATION_INTERVAL_MS 10
 
-extern SemaphoreHandle_t modeSemaphore;
 extern float gKi;
 extern float gKp;
 

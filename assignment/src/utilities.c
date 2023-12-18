@@ -46,8 +46,6 @@ void handleTaskExit()
 {
 	AXI_LED_DATA = 0b0000;
 	printMenu();
-	xSemaphoreGive(modeSemaphore);
-	//vTaskDelete(NULL);
 }
 
 
@@ -80,7 +78,16 @@ char* uartReceiveString(){
 	if (input != 0){
 		// Depending on the serial terminal used, UART messages can be terminated
 		// by either carriage return '\r' or line feed '\n'.
-		if (input == '\r' || input == '\n'){
+		if (input == '\r' || input == '\n' || index >= BUFFER_SIZE){
+			if(index >= BUFFER_SIZE)
+			{
+				xil_printf("Maximum buffer size reached. UART buffer cleared.\n");
+				char tempInput = input;
+				while((tempInput != '\r') || (tempInput == '\n' ))
+				{
+					tempInput = uart_receive();
+				}
+			}
 			rx_buf[index] = '\0';
 			index = 0;
 			return rx_buf;
