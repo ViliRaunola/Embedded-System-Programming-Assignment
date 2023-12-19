@@ -6,14 +6,6 @@
  *      Author: vraun
  */
 
-/* FreeRTOS includes. */
-#include "FreeRTOS.h"
-#include "task.h"
-#include "semphr.h"
-
-/* LUT includes. */
-#include "zynq_registers.h"
-#include <xuartps_hw.h>
 
 #include "utilities.h"
 
@@ -49,7 +41,9 @@ void handleTaskExit()
 }
 
 
-// Source: https://support.xilinx.com/s/question/0D52E00006hpTYOSA2/how-to-print-float-value-on-hyperterminal-using-xilprintf?language=en_US
+/* Source: https://support.xilinx.com/s/question/0D52E00006hpTYOSA2/how-to-print-float-value-on-hyperterminal-using-xilprintf?language=en_US
+ * Function to print a float to the UART. Converts the passed float to int and prints it.
+ * */
 void floatToIntPrint(float fval) {
 	int whole, thousandths;
 	whole = fval;
@@ -69,6 +63,7 @@ void floatToIntPrint(float fval) {
 	}
 }
 
+/* Can be used to receive a incoming message from UART. Returns a pointer to the created string. */
 char* uartReceiveString(){
 	static int index = 0;
 	static char rx_buf[BUFFER_SIZE];
@@ -100,6 +95,7 @@ char* uartReceiveString(){
 	return 0;
 }
 
+/* Checks that the given string is a valid number. Returns true if the number is float or an integer. Works for negative and positive values. */
 int isNumber(char* input) {
     int points = 0;
     if(strlen(input) == 1 && (input[0] == '-')) {

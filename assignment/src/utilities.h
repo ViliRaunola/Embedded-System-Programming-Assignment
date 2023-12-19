@@ -39,6 +39,7 @@
 #define REF_VOLT_INCREMENT 0.1
 #define CALCULATION_INTERVAL_MS 10
 
+/* Global variables */
 extern float gKi;
 extern float gKp;
 
