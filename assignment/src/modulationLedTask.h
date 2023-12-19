@@ -1,0 +1,19 @@
+/*
+ * modulationLedTask.h
+ *
+ *  Created on: 18 Dec 2023
+ *      Author: jesse
+ */
+
+#ifndef SRC_MODULATIONLEDTASK_H_
+#define SRC_MODULATIONLEDTASK_H_
+
+#include "utilities.h"
+
+extern float gU3;
+extern SemaphoreHandle_t u3Semaphore;
+
+void modulationLed();
+
+
+#endif /* SRC_MODULATIONLEDTASK_H_ */

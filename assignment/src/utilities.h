@@ -30,13 +30,17 @@
 #include <stdio.h>
 #include <math.h>
 
-/* Global variables */
+/* Definitions/ macros */
 #define INCREMENT_AMOUNT 0.001
 #define BUTTON_PRESS_DELAY 1000
 #define BUFFER_SIZE 40
 #define U1MAX 1000
 #define MAX_INTEGRAL 1000
 #define REF_VOLT_INCREMENT 0.1
+#define CALCULATION_INTERVAL_MS 10
+
+extern float gKi;
+extern float gKp;
 
 /* Functions */
 void printMenu();

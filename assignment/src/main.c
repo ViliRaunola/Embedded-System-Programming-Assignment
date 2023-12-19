@@ -100,10 +100,15 @@
 #include "utilities.h"
 #include "configuration.h"
 #include "modulating.h"
+#include "modulationPrintTask.h"
+#include "modulationCalculationTask.h"
+#include "modulationLedTask.h"
 
 /* Global variables */
 float gKi = 0;
 float gKp = 0;
+float gU3 = 0;
+float gURef = 2.0;
 
 /* Function declarations */
 static void modeSelection();
@@ -112,8 +117,14 @@ static void selectModeBasedOnInput(uint8_t modeNumber, uint8_t uartCheck);
 
 
 /* Semaphores */
-SemaphoreHandle_t modeSemaphore = 0;
 SemaphoreHandle_t buttonSemaphore = 0;
+SemaphoreHandle_t u3Semaphore = 0;
+SemaphoreHandle_t uRefSemaphore = 0;
+
+/* Task handle */
+TaskHandle_t printModulationHandle;
+TaskHandle_t calculateModulationHandle;
+TaskHandle_t modulationLedHandle;
 
 
 int main( void ) {
@@ -150,8 +161,8 @@ int main( void ) {
 	TTC0_CLK_CNTRL3 = (0 << XTTCPS_CLK_CNTRL_PS_VAL_SHIFT) | XTTCPS_CLK_CNTRL_PS_EN_MASK;
 
 	TTC0_CNT_CNTRL  = XTTCPS_CNT_CNTRL_RST_MASK | XTTCPS_CNT_CNTRL_DIS_MASK | XTTCPS_CNT_CNTRL_MATCH_MASK | XTTCPS_CNT_CNTRL_POL_WAVE_MASK;
-	TTC0_CNT_CNTRL2 = XTTCPS_CNT_CNTRL_RST_MASK | XTTCPS_CNT_CNTRL_DIS_MASK | XTTCPS_CNT_CNTRL_MATCH_MASK | XTTCPS_CNT_CNTRL_POL_WAVE_MASK; // Set identical to TTC0_CNT_CNTRL
-	TTC0_CNT_CNTRL3 = XTTCPS_CNT_CNTRL_RST_MASK | XTTCPS_CNT_CNTRL_DIS_MASK | XTTCPS_CNT_CNTRL_MATCH_MASK | XTTCPS_CNT_CNTRL_POL_WAVE_MASK; // Set identical to TTC0_CNT_CNTRL
+	TTC0_CNT_CNTRL2 = XTTCPS_CNT_CNTRL_RST_MASK | XTTCPS_CNT_CNTRL_DIS_MASK | XTTCPS_CNT_CNTRL_MATCH_MASK | XTTCPS_CNT_CNTRL_POL_WAVE_MASK;
+	TTC0_CNT_CNTRL3 = XTTCPS_CNT_CNTRL_RST_MASK | XTTCPS_CNT_CNTRL_DIS_MASK | XTTCPS_CNT_CNTRL_MATCH_MASK | XTTCPS_CNT_CNTRL_POL_WAVE_MASK;
 
 	TTC0_MATCH_0           = 0;
 	TTC0_MATCH_1_COUNTER_2 = 0;
@@ -165,23 +176,35 @@ int main( void ) {
 	 Create the needed tasks to start the program
 	*/
 	xTaskCreate( modeSelection, "Mode Selection Task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, NULL );
-
+	xTaskCreate( printModulationValues, "Printing modulation results", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, &printModulationHandle );
+	xTaskCreate( calculateModulation, "Calculates the modulation values", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, &calculateModulationHandle );
+	xTaskCreate( modulationLed, "Adjusts the LED based on U3", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, &modulationLedHandle );
+	vTaskSuspend( printModulationHandle );
+	vTaskSuspend(calculateModulationHandle);
+	vTaskSuspend(modulationLedHandle);
 
 
 	/* Attempt to create a semaphore. */
-	modeSemaphore = xSemaphoreCreateBinary();
-	if( modeSemaphore == NULL )
-	{
-		xil_printf("Insufficient FreeRTOS heap available for the semaphore to be created successfully.");
-	}
-	xSemaphoreGive(modeSemaphore);
-
 	buttonSemaphore = xSemaphoreCreateBinary();
 	if( buttonSemaphore == NULL )
 	{
 		xil_printf("Insufficient FreeRTOS heap available for the semaphore to be created successfully.");
 	}
 	xSemaphoreGive(buttonSemaphore);
+
+	u3Semaphore = xSemaphoreCreateBinary();
+	if( u3Semaphore == NULL )
+	{
+		xil_printf("Insufficient FreeRTOS heap available for the semaphore to be created successfully.");
+	}
+	xSemaphoreGive(u3Semaphore);
+
+	uRefSemaphore = xSemaphoreCreateBinary();
+	if( uRefSemaphore == NULL )
+	{
+		xil_printf("Insufficient FreeRTOS heap available for the semaphore to be created successfully.");
+	}
+	xSemaphoreGive(uRefSemaphore);
 
 	// Start the tasks and timer running.
 	vTaskStartScheduler();
@@ -197,25 +220,19 @@ static void selectModeBasedOnInput(uint8_t modeNumber, uint8_t uartCheck)
 	switch(modeNumber)
 		{
 			case 1:
-				if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
+				if(uartCheck)
 				{
-					if(uartCheck)
+					if(xSemaphoreTake(buttonSemaphore, portMAX_DELAY))
 					{
-						if(xSemaphoreTake(buttonSemaphore, portMAX_DELAY))
-						{
-							xTaskCreate( configuration, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
-						}
-					}else
-					{
-						xTaskCreate( configuration, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
+						configuration();
 					}
+				}else
+				{
+					configuration();
 				}
 				break;
 			case 2:
-				if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
-				{
-					xTaskCreate( modulating, "configuration task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+2, NULL );
-				}
+				modulating();
 				break;
 			default:
 				break;
@@ -226,15 +243,12 @@ static void selectModeBasedOnInput(uint8_t modeNumber, uint8_t uartCheck)
 
 static void modeSelection()
 {
-	xil_printf("***TODO PROGRAM INTRODUCTION***\n\n\n");
+	xil_printf("***Welcome to 'Switched mode power converter simulator/emulator' program***\n\n\n");
 	printMenu();
 	uint8_t modeNumber = 0;
 
 	for( ;; )
 	{
-		if(xSemaphoreTake(modeSemaphore, portMAX_DELAY))
-		{
-			xSemaphoreGive(modeSemaphore);
 			char* input;
 			input = uartReceiveString(); // polling UART receive buffer
 
@@ -247,7 +261,7 @@ static void modeSelection()
 					selectModeBasedOnInput(modeNumber, 1);
 				}else
 				{
-					uartSendString("Invalid input! Type a number between 1 and 3.\n\n Select Mode:\n1. Configuration Mode\n2. Idling Mode\n3. Modulating mode \n\n");
+					uartSendString("Invalid input! Type a number between 1 and 2.\n\n Select Mode:\n1. Configuration Mode\n2. Modulating mode \n\n");
 				}
 			}
 
@@ -260,6 +274,5 @@ static void modeSelection()
 				}
 				selectModeBasedOnInput(modeNumber, 0);
 			}
-		}
 	}
 }

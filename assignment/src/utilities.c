@@ -17,10 +17,6 @@
 
 #include "utilities.h"
 
-extern SemaphoreHandle_t modeSemaphore;
-extern float gKi;
-extern float gKp;
-
 
 // Send one character through UART interface
 void uart_send(char c) {
@@ -50,8 +46,6 @@ void handleTaskExit()
 {
 	AXI_LED_DATA = 0b0000;
 	printMenu();
-	xSemaphoreGive(modeSemaphore);
-	vTaskDelete(NULL);
 }
 
 
@@ -84,7 +78,16 @@ char* uartReceiveString(){
 	if (input != 0){
 		// Depending on the serial terminal used, UART messages can be terminated
 		// by either carriage return '\r' or line feed '\n'.
-		if (input == '\r' || input == '\n'){
+		if (input == '\r' || input == '\n' || index >= BUFFER_SIZE){
+			if(index >= BUFFER_SIZE)
+			{
+				xil_printf("Maximum buffer size reached. UART buffer cleared.\n");
+				char tempInput = input;
+				while((tempInput != '\r') || (tempInput == '\n' ))
+				{
+					tempInput = uart_receive();
+				}
+			}
 			rx_buf[index] = '\0';
 			index = 0;
 			return rx_buf;
@@ -142,8 +145,8 @@ int isNumber(char* input) {
 void printMenu()
 {
     xil_printf("\n################################## MAIN MENU ##################################\n");
-	xil_printf("Select a mode by pressing the 1. button on the board or by typing a number 1-2.\n");
+	xil_printf("Select a mode by pressing the 1. button on the board or by typing a number 1-2. Currently idling...\n");
 	xil_printf("###############################################################################\n\n");
-	xil_printf("Select Mode:\n1. Configuration Mode\n2. Modulating mode\n\n");
+	xil_printf("Select Mode:\n1. Configuration Mode\n2. Modulating Mode\n\n");
 
 }
