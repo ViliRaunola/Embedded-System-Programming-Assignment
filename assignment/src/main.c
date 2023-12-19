@@ -214,7 +214,7 @@ int main( void ) {
 }
 
 
-
+/* Starts Configuration mode or the Modulating mode. */
 static void selectModeBasedOnInput(uint8_t modeNumber, uint8_t uartCheck)
 {
 	switch(modeNumber)
@@ -243,7 +243,16 @@ static void selectModeBasedOnInput(uint8_t modeNumber, uint8_t uartCheck)
 
 static void modeSelection()
 {
-	xil_printf("***Welcome to 'Switched mode power converter simulator/emulator' program***\n\n\n");
+	xil_printf("Welcome to the 'Switched mode power converter simulator/emulator' program.\n\n
+	In the configuration mode you can choose the Ki and Kp parameters. 
+	When accessing configuration mode through UART, the buttons are disabled. However, when it is accessed by using the buttons on the board, both functionalities work at the same time. 
+	There are set ways how you can exit the configuration mode. When using the UART, you simply type 'i' or 'p' to switch between the parameters, and 'e' for exit. 
+	You can also change the Ki and Kp parameters by pressing buttons 3 and 4 to decrease and increase the value, respectively. 
+	The second button on the board can also be used to change which parameter and exit. As the default is Ki, pressing it once chooses the Kp parameter, and pressing it twice exits the configuration mode. 
+	This returns you back to the main menu. \n\n
+	The modulation mode starts converter. In the modulating mode you can change the reference voltage in two ways. First, you can type a number in the UART to set it. 
+	The second way to change the voltage is by pressing the 3rd and 4th button to decrease and increase it, respectively. 
+	You can exit the modulating mode by typing 'e' in the UART or by pressing the first button on the board. This returns you back to the main menu.(Main menu = 0 LEDs, Configuration mode = 1 LED, Modulating mode = 2 LEDs) \n\n\n");
 	printMenu();
 	uint8_t modeNumber = 0;
 
@@ -251,7 +260,7 @@ static void modeSelection()
 	{
 			char* input;
 			input = uartReceiveString(); // polling UART receive buffer
-
+			/* Parsing user input for numbers 1 or 2 */
 			if(input != 0)
 			{
 				if ((input[0] >= '1' || '2' <= input[0]) && (strlen(input) < 2))
@@ -265,7 +274,7 @@ static void modeSelection()
 				}
 			}
 
-
+			/* Changes the mode number by pressing the 1st button */
 			if(AXI_BTN_DATA & 0x01){
 				modeNumber++;
 				if(modeNumber > 2)
